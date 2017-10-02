@@ -9,7 +9,7 @@ This package includes various tools to help with applying motion to user interfa
 ## Installation and build
 
 ```
-$ npm install --save-dev @ibm/motion
+$ npm install @ibm/motion
 ```
 
 ## Guidelines
