@@ -2,9 +2,33 @@
 
 This package includes various tools to help with applying motion to user interfaces.
 
+---
+
+**Warning:** IBM motion is in development and things may change. Look out for a stable release later this year (2017).
+
+## Installation and build
+
+```
+$ npm install @ibm/motion
+
+$ npm run build
+```
+
+## demo site
+
+```
+localhost:8080
+```
+
+## Guidelines
+
+**Note:** detailed motion guide will be published with the aforementioned stable release.
+
 ## Components
 
 ### getDuration
+
+Calculate recommended duration based on various factors including distance, size.
 
 ```
 import getDuration from '@ibm/motion';
@@ -20,6 +44,8 @@ console.log(getDuration(
 
 ### getCurve
 
+Calculate recommended bezier curve based on various factors including distance, size.
+
 ```
 import getCurve from '@ibm/motion';
 console.log(getCurve(
@@ -33,6 +59,8 @@ console.log(getCurve(
 ```
 
 ### getMotion
+
+Generate a full JavaScript object that contains durations and curves based on various factors including distance, size.
 
 ```
 import getMotion from '@ibm/motion';
