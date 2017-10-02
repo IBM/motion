@@ -25,8 +25,8 @@ Calculate recommended duration based on various factors including distance, size
 ```
 import getDuration from '@ibm/motion';
 console.log(getDuration(
-	200, // distance of motion
-	20, // size. set to 20 for the standard size
+	200, // distance of motion in pixels
+	20, // size (area) of the element being animated. set to 20 for the standard size
 	'move', // property. 'move', 'scale', 'fade'
 	'mechanical', // motion mode. 'natural', 'mechanical'
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
@@ -43,8 +43,8 @@ Calculate recommended bezier curve based on various factors including distance, 
 ```
 import getCurve from '@ibm/motion';
 console.log(getCurve(
-	200, // distance of motion
-	20, // size. set to 20 for the standard size
+	200, // distance of motion in pixels
+	20, // size (area) of the element being animated. set to 20 for the standard size
 	'move', // property. 'move', 'scale', 'fade'
 	'mechanical', // motion mode. 'natural', 'mechanical'
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
@@ -61,8 +61,8 @@ Generate a full JavaScript object that contains durations and curves based on va
 ```
 import getMotion from '@ibm/motion';
 console.log(getMotion(
-	200, // distance of motion
-	20, // size. set to 20 for the standard size
+	200, // distance of motion in pixels
+	20, // size (area) of the element being animated. set to 20 for the standard size
 	'move', // property. 'move', 'scale', 'fade'
 	'mechanical', // motion mode. 'natural', 'mechanical'
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
