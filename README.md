@@ -21,7 +21,7 @@ console.log(getDuration(
 ### getCurve
 
 ```
-import getDuration from '@ibm/motion';
+import getCurve from '@ibm/motion';
 console.log(getCurve(
 	200, // distance of motion
 	20, // size. set to 20 for the standard size
@@ -35,7 +35,7 @@ console.log(getCurve(
 ### getMotion
 
 ```
-import getDuration from '@ibm/motion';
+import getMotion from '@ibm/motion';
 console.log(getMotion(
 	200, // distance of motion
 	20, // size. set to 20 for the standard size
