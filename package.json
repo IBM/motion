@@ -1,0 +1,43 @@
+{
+  "name": "@ibm/motion",
+  "version": "1.0.0",
+  "description": "motion definitions for IBM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --presets babel-preset-env --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IBM/motion.git"
+  },
+  "keywords": [
+    "motion",
+    "ibm"
+  ],
+  "author": "Wonil Suh (wonilsuh, wonil.suh1@ibm.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IBM/motion/issues"
+  },
+  "homepage": "https://github.com/IBM/motion#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.16.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.1",
+    "file-loader": "^0.11.2"
+  }
+}
