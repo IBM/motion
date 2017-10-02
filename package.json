@@ -2,7 +2,7 @@
   "name": "@ibm/motion",
   "version": "0.1.0",
   "description": "motion definitions for IBM",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --presets babel-preset-env --out-dir dist && webpack",

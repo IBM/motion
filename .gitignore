@@ -2,6 +2,7 @@
 node_modules
 bower_components
 .npmrc
+*.tgz
 
 # Ignore built files and static folder
 dist-demo

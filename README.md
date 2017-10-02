@@ -9,15 +9,7 @@ This package includes various tools to help with applying motion to user interfa
 ## Installation and build
 
 ```
-$ npm install @ibm/motion
-
-$ npm run build
-```
-
-## demo site
-
-```
-localhost:8080
+$ npm install --save-dev @ibm/motion
 ```
 
 ## Guidelines
@@ -40,6 +32,8 @@ console.log(getDuration(
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
 	7 // motion definition version. supports 6 and 7
 )):
+
+// returns a float value, duration in ms.
 ```
 
 ### getCurve
@@ -56,6 +50,8 @@ console.log(getCurve(
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
 	7 // motion definition version. supports 6 and 7
 )):
+
+// returns a float value, duration in ms.
 ```
 
 ### getMotion
@@ -72,5 +68,7 @@ console.log(getMotion(
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
 	7 // motion definition version. supports 6 and 7
 )):
+
+// returns a float value, duration in ms.
 ```
 
