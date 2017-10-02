@@ -50,3 +50,7 @@ Use this function to calculate suggested duration for a given element.
 							* passing null for @param:mode will return a slightly different object that contains motion definitions for all three modes.
  */
 ```
+
+import {duration, curve}
+duration.get()
+curve.get()

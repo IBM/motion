@@ -1,11 +1,12 @@
 {
   "name": "@ibm/motion",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "motion definitions for IBM",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src --presets babel-preset-env --out-dir dist"
+    "build": "babel src --presets babel-preset-env --out-dir dist && webpack",
+    "start": "http-server -c1"
   },
   "repository": {
     "type": "git",
@@ -16,13 +17,14 @@
     "ibm"
   ],
   "author": "Wonil Suh (wonilsuh, wonil.suh1@ibm.com)",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/IBM/motion/issues"
   },
   "homepage": "https://github.com/IBM/motion#readme",
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -31,13 +33,27 @@
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-polyfill": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "body-parser": "^1.16.1",
+    "copy-webpack-plugin": "^4.1.0",
+    "css-loader": "^0.28.0",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
-    "file-loader": "^0.11.2"
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.5.1",
+    "http-server": "^0.10.0",
+    "img-loader": "^2.0.0",
+    "imports-loader": "^0.7.1",
+    "node-sass": "^4.5.3",
+    "postcss": "^5.2.17",
+    "postcss-loader": "^1.3.3",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.6.0",
+    "webpack-build-notifier": "^0.1.16"
   }
 }
