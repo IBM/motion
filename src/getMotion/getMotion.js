@@ -41,8 +41,10 @@
 import "babel-polyfill";
 import getDuration from '../getDuration';
 import getCurve from '../getCurve';
-const getMotion = (distance = 200, size = 20, property = 'move', version = 7, params = {}) => {
-	console.log('getMotion...', distance, size, property, version, params);
+import constants from '../constants'
+import helpers from '../helpers.js';
+const getMotion = (distance = 200, size = 20, property = constants.PROPERTY_MOVE, version = 7, params = {}) => {
+	// console.log('getMotion...', distance, size, property, version, params);
 
 	params.durationMultiplier = params.durationMultiplier || 1;
 
@@ -52,12 +54,12 @@ const getMotion = (distance = 200, size = 20, property = 'move', version = 7, pa
 
 		case 6:{
 			const 
-				SIZE_BASE = 20
+				SIZE_BASE = constants.SIZE_BASE
 			;
 			
 			let 
-				sizeFactorNatural = Math.min(1.5, Math.pow(SIZE_BASE /size, 0.1 *params.sizeFactorAdjuster || 1)),
-				sizeFactorMechanical = Math.min(1.5, Math.pow(SIZE_BASE /size, 0.05 *params.sizeFactorAdjuster || 1))
+				sizeFactorNatural = helpers.getSizeFactor(distance, size, constants.MOMENT_CELEBRATORY, 1),
+				sizeFactorMechanical = helpers.getSizeFactor(distance, size, constants.MOMENT_PRODUCTIVE, 1)
 			;
 
 			distance = parseFloat(distance);
@@ -66,47 +68,47 @@ const getMotion = (distance = 200, size = 20, property = 'move', version = 7, pa
 
 			switch(property){
 
-				case 'fade':{
+				case constants.PROPERTY_FADE:{
 					ret = {
-						natural:{
+						[constants.MOMENT_CELEBRATORY]:{
 							curves:{
-								easeInOut:getCurve(distance, size, property, 'natural', 'easeInOut', version, params),
-								easeIn:getCurve(distance, size, property, 'natural', 'easeIn', version, params),
-								easeOut:getCurve(distance, size, property, 'natural', 'easeOut', version, params)
+								easeInOut:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN_OUT, version, params),
+								easeIn:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN, version, params),
+								easeOut:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_OUT, version, params)
 							},
-							duration:getDuration(distance, size, property, 'natural', 'easeInOut', version, params)
+							duration:getDuration(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN_OUT, version, params)
 						},
-						mechanical:{
+						[constants.MOMENT_PRODUCTIVE]:{
 							curves:{
-								easeInOut:'cubic-bezier(0.2, 0.2, 0.38, 0.9)',
-								easeIn:'cubic-bezier(0.2, 0, 1, 0.9)',
-								easeOut:'cubic-bezier(0, 0, 0.38, 0.9)'
+								easeInOut:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN_OUT, version, params),
+								easeIn:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN, version, params),
+								easeOut:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_OUT, version, params)
 							},
-							duration:getDuration(distance, size, property, 'mechanical', 'easeInOut', version, params)
+							duration:getDuration(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN_OUT, version, params)
 						}
 					};
 					break;
 				}
 
-				case 'move':
-				case 'scale':
+				case constants.PROPERTY_MOVE:
+				case constants.PROPERTY_SCALE:
 				default:{
 					ret = {
-						natural:{
+						[constants.MOMENT_CELEBRATORY]:{
 							curves:{
-								easeInOut:'cubic-bezier(0.4, 0.14, 0.3, 1)',
-								easeIn:'cubic-bezier(0.4, 0.14, 1, 1)',
-								easeOut:'cubic-bezier(0, 0, 0.3, 1)'
+								easeInOut:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN_OUT, version, params),
+								easeIn:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN, version, params),
+								easeOut:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_OUT, version, params)
 							},
-							duration:getDuration(distance, size, property, 'natural', 'easeInOut', version, params)
+							duration:getDuration(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN_OUT, version, params)
 						},
-						mechanical:{
+						[constants.MOMENT_PRODUCTIVE]:{
 							curves:{
-								easeInOut:'cubic-bezier(0.2, 0.2, 0.38, 0.9)',
-								easeIn:'cubic-bezier(0.2, 0, 1, 1)',
-								easeOut:'cubic-bezier(0, 0, 0.38, 0.9)'
+								easeInOut:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN_OUT, version, params),
+								easeIn:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN, version, params),
+								easeOut:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_OUT, version, params)
 							},
-							duration:getDuration(distance, size, property, 'mechanical', 'easeInOut', version, params)
+							duration:getDuration(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN_OUT, version, params)
 						}
 					};
 					break;
@@ -119,12 +121,12 @@ const getMotion = (distance = 200, size = 20, property = 'move', version = 7, pa
 		case 7:{
 
 			const 
-				SIZE_BASE = 20
+				SIZE_BASE = constants.SIZE_BASE
 			;
 			
 			let 
-				sizeFactorNatural = Math.min(1.5, Math.pow(SIZE_BASE /size, 0.1 *params.sizeFactorAdjuster || 1)),
-				sizeFactorMechanical = Math.min(1.5, Math.pow(SIZE_BASE /size, 0.05 *params.sizeFactorAdjuster || 1))
+				sizeFactorNatural = helpers.getSizeFactor(distance, size, constants.MOMENT_CELEBRATORY, 1),
+				sizeFactorMechanical = helpers.getSizeFactor(distance, size, constants.MOMENT_PRODUCTIVE, 1)
 			;
 
 			distance = parseFloat(distance);
@@ -133,50 +135,50 @@ const getMotion = (distance = 200, size = 20, property = 'move', version = 7, pa
 
 			switch(property){
 
-				case 'fade':{
+				case constants.PROPERTY_FADE:{
 
 					let adjustedSize = size / SIZE_BASE *100;
 
 					ret = {
-						natural:{
+						[constants.MOMENT_CELEBRATORY]:{
 							curves:{
-								easeInOut:'cubic-bezier(0.4, 0.14, 0.3, 1)',
-								easeIn:'cubic-bezier(0.4, 0.14, 1, 1)',
-								easeOut:'cubic-bezier(0, 0, 0.3, 1)'
+								easeInOut:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN_OUT, version, params),
+								easeIn:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN, version, params),
+								easeOut:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_OUT, version, params)
 							},
-							duration:getDuration(distance, size, property, 'natural', 'easeInOut', version, params)
+							duration:getDuration(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN_OUT, version, params)
 						},
-						mechanical:{
+						[constants.MOMENT_PRODUCTIVE]:{
 							curves:{
-								easeInOut:'cubic-bezier(0.2, 0.2, 0.38, 0.9)',
-								easeIn:'cubic-bezier(0.2, 0, 1, 0.9)',
-								easeOut:'cubic-bezier(0, 0, 0.38, 0.9)'
+								easeInOut:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN_OUT, version, params),
+								easeIn:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN, version, params),
+								easeOut:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_OUT, version, params)
 							},
-							duration:getDuration(distance, size, property, 'mechanical', 'easeInOut', version, params)
+							duration:getDuration(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN_OUT, version, params)
 						}
 					}
 					break;
 				}
 
-				case 'move':
-				case 'scale':
+				case constants.PROPERTY_MOVE:
+				case constants.PROPERTY_SCALE:
 				default:{
 					ret = {
-						natural:{
+						[constants.MOMENT_CELEBRATORY]:{
 							curves:{
-								easeInOut:'cubic-bezier(0.4, 0.14, 0.3, 1)',
-								easeIn:'cubic-bezier(0.4, 0.14, 1, 1)',
-								easeOut:'cubic-bezier(0, 0, 0.3, 1)'
+								easeInOut:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN_OUT, version, params),
+								easeIn:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN, version, params),
+								easeOut:getCurve(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_OUT, version, params)
 							},
-							duration:getDuration(distance, size, property, 'natural', 'easeInOut', version, params)
+							duration:getDuration(distance, size, property, constants.MOMENT_CELEBRATORY, constants.EASE_IN_OUT, version, params)
 						},
-						mechanical:{
+						[constants.MOMENT_PRODUCTIVE]:{
 							curves:{
-								easeInOut:'cubic-bezier(0.2, 0.2, 0.38, 0.9)',
-								easeIn:'cubic-bezier(0.2, 0.1, 1, 1)',
-								easeOut:'cubic-bezier(0, 0, 0.38, 0.9)'
+								easeInOut:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN_OUT, version, params),
+								easeIn:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN, version, params),
+								easeOut:getCurve(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_OUT, version, params)
 							},
-							duration:getDuration(distance, size, property, 'mechanical', 'easeInOut', version, params)
+							duration:getDuration(distance, size, property, constants.MOMENT_PRODUCTIVE, constants.EASE_IN_OUT, version, params)
 						}
 					};
 					break;
