@@ -4,11 +4,7 @@ bower_components
 .npmrc
 
 # Ignore built files and static folder
-demo/*.css
-demo/*.map
-demo/*.js
-!demo/index.js
-dist
+dist-demo
 
 # OSX
 .DS_Store
