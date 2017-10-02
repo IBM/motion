@@ -4,7 +4,7 @@ This package includes various tools to help with applying motion to user interfa
 
 ---
 
-**Warning:** IBM motion is in development and things may change. Look out for a stable release later this year (2017).
+**Warning:** IBM Motion is in development and things may change. Look out for a stable release later this year (2017).
 
 ## Installation and build
 
