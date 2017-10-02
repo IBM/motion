@@ -42,9 +42,9 @@ var CURVES = (_CURVES = {}, (0, _defineProperty3.default)(_CURVES, '7', (_ = {},
 	}
 }), _constants$PROPERTY_M)), _)), (0, _defineProperty3.default)(_CURVES, '6', (_2 = {}, (0, _defineProperty3.default)(_2, _constants2.default.PROPERTY_FADE, (_constants$PROPERTY_F2 = {}, (0, _defineProperty3.default)(_constants$PROPERTY_F2, _constants2.default.MOMENT_CELEBRATORY, {
 	curves: {
-		easeInOut: 'cubic-bezier(0.4, 0.14, 0.3, 1)',
-		easeIn: 'cubic-bezier(0.4, 0.14, 1, 1)',
-		easeOut: 'cubic-bezier(0, 0, 0.3, 1)'
+		easeInOut: 'cubic-bezier(0.2, 0.2, 0.6, 1)',
+		easeIn: 'cubic-bezier(0.4, 0.2, 0, 1)',
+		easeOut: 'cubic-bezier(0, 0, 0.6, 1)'
 	}
 }), (0, _defineProperty3.default)(_constants$PROPERTY_F2, _constants2.default.MOMENT_PRODUCTIVE, {
 	curves: {
@@ -54,15 +54,15 @@ var CURVES = (_CURVES = {}, (0, _defineProperty3.default)(_CURVES, '7', (_ = {},
 	}
 }), _constants$PROPERTY_F2)), (0, _defineProperty3.default)(_2, _constants2.default.PROPERTY_MOVE, (_constants$PROPERTY_M2 = {}, (0, _defineProperty3.default)(_constants$PROPERTY_M2, _constants2.default.MOMENT_CELEBRATORY, {
 	curves: {
-		easeInOut: 'cubic-bezier(0.4, 0.14, 0.3, 1)',
-		easeIn: 'cubic-bezier(0.4, 0.14, 1, 1)',
-		easeOut: 'cubic-bezier(0, 0, 0.3, 1)'
+		easeInOut: 'cubic-bezier(0.4, 0.2, 0.4, 1)',
+		easeIn: 'cubic-bezier(0.6, 0, 0, 1)',
+		easeOut: 'cubic-bezier(0, 0, 0.4, 1)'
 	}
 }), (0, _defineProperty3.default)(_constants$PROPERTY_M2, _constants2.default.MOMENT_PRODUCTIVE, {
 	curves: {
-		easeInOut: 'cubic-bezier(0.2, 0.2, 0.38, 0.9)',
-		easeIn: 'cubic-bezier(0.2, 0, 1, 1)',
-		easeOut: 'cubic-bezier(0, 0, 0.38, 0.9)'
+		easeInOut: 'cubic-bezier(0.2, 0.2, 0.6, 1)',
+		easeIn: 'cubic-bezier(0.4, 0.2, 0, 1)',
+		easeOut: 'cubic-bezier(0, 0, 0.6, 1)'
 	}
 }), _constants$PROPERTY_M2)), _2)), _CURVES);
 
