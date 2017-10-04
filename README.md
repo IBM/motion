@@ -31,7 +31,7 @@ console.log(getDuration(
 	'mechanical', // motion mode. 'natural', 'mechanical'
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
 	7 // motion definition version. supports 6 and 7
-)):
+));
 
 // returns a float value, duration in ms.
 ```
@@ -49,7 +49,7 @@ console.log(getCurve(
 	'mechanical', // motion mode. 'natural', 'mechanical'
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
 	7 // motion definition version. supports 6 and 7
-)):
+));
 
 // returns a float value, duration in ms.
 ```
@@ -67,7 +67,7 @@ console.log(getMotion(
 	'mechanical', // motion mode. 'natural', 'mechanical'
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
 	7 // motion definition version. supports 6 and 7
-)):
+));
 
 // returns a float value, duration in ms.
 ```
