@@ -32,9 +32,9 @@ $ npm install @ibm/motion
 
 **Note:** detailed motion guide will be published with the aforementioned stable release.
 
-## Components
+## Components of this package
 
-### getDuration
+### getDuration() method
 
 Calculate recommended duration based on various factors including distance, size.
 
@@ -52,7 +52,7 @@ console.log(getDuration(
 // returns a float value, duration in ms.
 ```
 
-### getCurve
+### getCurve() method
 
 Calculate recommended bezier curve based on various factors including distance, size.
 
@@ -70,7 +70,7 @@ console.log(getCurve(
 // returns a float value, duration in ms.
 ```
 
-### getMotion
+### getMotion() method
 
 Generate a full JavaScript object that contains durations and curves based on various factors including distance, size.
 
