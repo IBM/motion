@@ -43,7 +43,13 @@ import getDuration from '../getDuration';
 import getCurve from '../getCurve';
 import constants from '../constants'
 import helpers from '../helpers.js';
-const getMotion = (distance = 200, size = 20, property = constants.PROPERTY_MOVE, version = 7, params = {}) => {
+const getMotion = (
+	distance = 200, 
+	size = 20, 
+	property = constants.PROPERTY_MOVE, 
+	version = 7, 
+	params = {}
+) => {
 	// console.log('getMotion...', distance, size, property, version, params);
 
 	params.durationMultiplier = params.durationMultiplier || 1;

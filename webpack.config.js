@@ -28,8 +28,7 @@ module.exports = {
 			{
 				"test":/\.js$/,
 				"include":[
-					path.resolve(__dirname, "src-demo"),
-					path.resolve(__dirname, "modules")
+					path.resolve(__dirname, "src-demo")
 				],
 				"loader":"babel-loader",
 				"query": {

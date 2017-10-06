@@ -1,7 +1,15 @@
 import constants from '../constants'
 import helpers from '../helpers.js';
 
-const getDuration = (distance = 100, size = 20, property = constants.PROPERTY_MOVE, motionMode = constants.MOMENT_PRODUCTIVE, easing = constants.EASE_IN_OUT, version = 7, params = {}) => {
+const getDuration = (
+	distance = 100, 
+	size = 20, 
+	property = constants.PROPERTY_MOVE, 
+	motionMode = constants.MOMENT_PRODUCTIVE, 
+	easing = constants.EASE_IN_OUT, 
+	version = 7, 
+	params = {}
+) => {
 
 	params.durationMultiplier = params.durationMultiplier || 1;
 	distance = parseFloat(distance);

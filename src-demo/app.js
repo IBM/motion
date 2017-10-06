@@ -1,5 +1,11 @@
-console.log('app.js');
-
 import motion from '../dist';
+import ready from 'document-ready-promise';
 
-window.motion = motion;
+ready().then( () => {
+
+	console.log('app.js!');
+
+	
+
+});
+
