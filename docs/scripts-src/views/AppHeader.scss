@@ -1,0 +1,21 @@
+@import './colors.scss';
+
+.AppHeader{
+	border-bottom:solid 1px $color-grey-40;
+	
+	.name-wrap{
+
+	}
+
+	.link-wrap{
+		display:flex;
+		flex-direction:row;
+		justify-content:flex-end;
+	}
+
+	@media only screen and (max-width:640px){
+		.link-wrap{
+			justify-content:flex-start;
+		}
+	}
+}

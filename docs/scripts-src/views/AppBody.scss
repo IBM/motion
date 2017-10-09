@@ -1,0 +1,11 @@
+@import './colors.scss';
+
+.AppBody{
+	flex:1;
+	display:flex;
+	flex-direction:row;
+	
+	.left-column{
+		border-right:solid 1px $color-grey-40;
+	}
+}

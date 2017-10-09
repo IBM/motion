@@ -1,0 +1,21 @@
+@import './colors.scss';
+
+html, body{
+	height:100%;
+}
+
+#app{
+	height:100%;
+	display:flex;
+	flex-direction:column;
+}
+
+.AppView{
+	flex:1;
+	display:flex;
+	flex-direction:column;
+	
+	a{
+		color:$color-blue-30;
+	}
+}

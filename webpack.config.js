@@ -5,7 +5,8 @@ const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 module.exports = {
 	entry: {
-		"dist-demo/js/app":"./src-demo/app.js"
+		"dist-demo/js/app":"./src-demo/app.js",
+		"docs/scripts/main":"./docs/scripts-src/main.js"
 	},
 	output: {
 		filename: '[name].js',
@@ -28,7 +29,8 @@ module.exports = {
 			{
 				"test":/\.js$/,
 				"include":[
-					path.resolve(__dirname, "src-demo")
+					path.resolve(__dirname, "src-demo"),
+					path.resolve(__dirname, "docs")
 				],
 				"loader":"babel-loader",
 				"query": {
@@ -45,6 +47,13 @@ module.exports = {
 				test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
 				"include":[
 					path.resolve(__dirname, "modules/duo/plex")
+				],
+				loader: 'url-loader'
+			},
+			{
+				test: /\.svg$/, 
+				"include":[
+					path.resolve(__dirname, "docs")
 				],
 				loader: 'url-loader'
 			},

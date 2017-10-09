@@ -38,7 +38,6 @@
 							}
 							* passing null for @param:mode will return a slightly different object that contains motion definitions for all three modes.
  */
-import "babel-polyfill";
 import getDuration from '../getDuration';
 import getCurve from '../getCurve';
 import constants from '../constants'

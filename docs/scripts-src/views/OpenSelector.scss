@@ -1,0 +1,12 @@
+@import 'colors.scss';
+
+.OpenSelector{
+	display:flex;
+	flex-direction:row;
+
+	.option{
+		background-color:$color-pure-white;
+		border:solid 1px $color-grey-50;
+		padding:0.24rem;
+	}
+}
