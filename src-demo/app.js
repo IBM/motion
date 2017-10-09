@@ -5,7 +5,7 @@ ready().then( () => {
 
 	console.log('app.js!');
 
-	
+	window.motion = motion;
 
 });
 

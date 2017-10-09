@@ -12,8 +12,6 @@ var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
-require('babel-polyfill');
-
 var _getDuration = require('../getDuration');
 
 var _getDuration2 = _interopRequireDefault(_getDuration);
@@ -32,6 +30,46 @@ var _helpers2 = _interopRequireDefault(_helpers);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*-----------------------------------------------------
+ *	generates motion parameters based on the distance (amount of change) of the motion, and optionally the size of the element.
+ *	@param 		{float}		distance - the distance or amount of change in pixels, or percent in the case of fade.
+ *	@param 		{float} 	size - the size (area) of the element to be animated, in px^2. passing 20 will result in the standard speed.
+ *	@param 		{string} 	property - ["move"|"scale"|"fade"]. 
+ * 	@param 		{int}		version - 6 or 7
+ *	@param 		{object} 	params - NOT USED IN THIS VERSION
+ *	@returns	{object}	an example return object structure is as follows
+							{
+								"meta":{
+									"version":6,
+									"params":{}
+								},
+								"input":{
+									"distance":100
+									"size":20
+								},
+								"natural":{
+									"curves":{
+										"easeInOut":"cubic-bezier(0.4, 0.14, 0.3, 1)",
+										"easeIn":"cubic-bezier(0.4, 0.14, 1, 1)",
+										"easeOut":"cubic-bezier(0, 0, 0.3, 1)"
+									},
+									"speed":1600,
+									"duration":80
+								},
+								"mechanical":{
+									"curves":{
+										"easeInOut":'cubic-bezier(0.2, 0.2, 0.38, 0.9)',
+										"easeIn":'cubic-bezier(0.2, 0, 1, 0.9)',
+										"easeOut":'cubic-bezier(0, 0, 0.38, 0.9)'
+									},
+									"speed":2100,
+									"duration":60
+								},
+								speedUnit:'px/s',
+								durationUnit:'ms'
+							}
+							* passing null for @param:mode will return a slightly different object that contains motion definitions for all three modes.
+ */
 var getMotion = function getMotion() {
 	var distance = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 200;
 	var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 20;
@@ -194,44 +232,6 @@ var getMotion = function getMotion() {
 	});
 
 	return ret;
-}; /*-----------------------------------------------------
-    *	generates motion parameters based on the distance (amount of change) of the motion, and optionally the size of the element.
-    *	@param 		{float}		distance - the distance or amount of change in pixels, or percent in the case of fade.
-    *	@param 		{float} 	size - the size (area) of the element to be animated, in px^2. passing 20 will result in the standard speed.
-    *	@param 		{string} 	property - ["move"|"scale"|"fade"]. 
-    * 	@param 		{int}		version - 6 or 7
-    *	@param 		{object} 	params - NOT USED IN THIS VERSION
-    *	@returns	{object}	an example return object structure is as follows
-   							{
-   								"meta":{
-   									"version":6,
-   									"params":{}
-   								},
-   								"input":{
-   									"distance":100
-   									"size":20
-   								},
-   								"natural":{
-   									"curves":{
-   										"easeInOut":"cubic-bezier(0.4, 0.14, 0.3, 1)",
-   										"easeIn":"cubic-bezier(0.4, 0.14, 1, 1)",
-   										"easeOut":"cubic-bezier(0, 0, 0.3, 1)"
-   									},
-   									"speed":1600,
-   									"duration":80
-   								},
-   								"mechanical":{
-   									"curves":{
-   										"easeInOut":'cubic-bezier(0.2, 0.2, 0.38, 0.9)',
-   										"easeIn":'cubic-bezier(0.2, 0, 1, 0.9)',
-   										"easeOut":'cubic-bezier(0, 0, 0.38, 0.9)'
-   									},
-   									"speed":2100,
-   									"duration":60
-   								},
-   								speedUnit:'px/s',
-   								durationUnit:'ms'
-   							}
-   							* passing null for @param:mode will return a slightly different object that contains motion definitions for all three modes.
-    */
+};
+
 exports.default = getMotion;
