@@ -22,8 +22,6 @@ var _constants2 = _interopRequireDefault(_constants);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log('@ibm/motion/index.js!');
-
 exports.default = {
 	getCurve: _getCurve2.default,
 	getDuration: _getDuration2.default,
