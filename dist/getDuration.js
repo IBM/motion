@@ -26,9 +26,9 @@ var getDuration = function getDuration() {
 	var params = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : {};
 
 
+	var distance = parseFloat(_distance);
+	var size = parseFloat(_size);
 	params.durationMultiplier = params.durationMultiplier || 1;
-	distance = parseFloat(_distance);
-	size = parseFloat(_size);
 	params.sizeFactorAdjuster = parseFloat(params.sizeFactorAdjuster || 1);
 
 	var SIZE_BASE = _constants2.default.SIZE_BASE;

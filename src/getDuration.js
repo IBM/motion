@@ -11,9 +11,9 @@ const getDuration = (
 	params = {}
 ) => {
 
+	let distance = parseFloat(_distance);
+	let size = parseFloat(_size);
 	params.durationMultiplier = params.durationMultiplier || 1;
-	distance = parseFloat(_distance);
-	size = parseFloat(_size);
 	params.sizeFactorAdjuster = parseFloat(params.sizeFactorAdjuster || 1);
 
 	const 

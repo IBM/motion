@@ -64,8 +64,8 @@ const getMotion = (
 		sizeFactorMechanical = helpers.getSizeFactor(distance, size, constants.MOMENT_PRODUCTIVE, 1)
 	;
 
-	distance = parseFloat(_distance);
-	size = parseFloat(_size);
+	let distance = parseFloat(_distance);
+	let size = parseFloat(_size);
 	params.sizeFactorAdjuster = parseFloat(params.sizeFactorAdjuster);
 
 	let meta = {

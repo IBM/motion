@@ -86,8 +86,8 @@ var getMotion = function getMotion() {
 	var sizeFactorNatural = _helpers2.default.getSizeFactor(distance, size, _constants2.default.MOMENT_CELEBRATORY, 1),
 	    sizeFactorMechanical = _helpers2.default.getSizeFactor(distance, size, _constants2.default.MOMENT_PRODUCTIVE, 1);
 
-	distance = parseFloat(_distance);
-	size = parseFloat(_size);
+	var distance = parseFloat(_distance);
+	var size = parseFloat(_size);
 	params.sizeFactorAdjuster = parseFloat(params.sizeFactorAdjuster);
 
 	var meta = {
