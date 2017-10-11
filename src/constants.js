@@ -1,23 +1,11 @@
-const 
-	MOMENT_CELEBRATORY = 'natural',
-	MOMENT_PRODUCTIVE= 'mechanical',
-	SIZE_BASE = 20,
-	PROPERTY_MOVE = 'move',
-	PROPERTY_SCALE = 'scale',
-	PROPERTY_FADE = 'fade',
-	EASE_IN_OUT = 'easeInOut',
-	EASE_IN = 'easeIn',
-	EASE_OUT = 'easeOut'
-;
-
 export default {
-	MOMENT_CELEBRATORY,
-	MOMENT_PRODUCTIVE,
-	SIZE_BASE,
-	PROPERTY_MOVE,
-	PROPERTY_SCALE,
-	PROPERTY_FADE,
-	EASE_IN_OUT,
-	EASE_IN,
-	EASE_OUT
+	MOMENT_CELEBRATORY:"natural",
+	MOMENT_PRODUCTIVE:"mechanical",
+	SIZE_BASE:20,
+	PROPERTY_MOVE:"move",
+	PROPERTY_SCALE:"scale",
+	PROPERTY_FADE:"fade",
+	EASE_IN_OUT:"easeInOut",
+	EASE_IN:"easeIn",
+	EASE_OUT:"easeOut",
 }

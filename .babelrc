@@ -1,4 +1,9 @@
 {
   "presets": ["env"],
-  "plugins": ["transform-es2015-destructuring", "transform-object-rest-spread", "transform-runtime"]
+  "plugins": [
+  	"transform-es2015-destructuring", 
+  	"transform-object-rest-spread", 
+  	"transform-runtime",
+  	"syntax-trailing-function-commas"
+  ]
 }

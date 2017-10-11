@@ -4,7 +4,8 @@
   "description": "motion definitions for IBM",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint dist",
+    "test-src": "eslint -c eslint-test-src-config.json src",
     "dev": "babel src --presets babel-preset-env --out-dir dist && webpack",
     "start": "http-server -c1"
   },
@@ -27,6 +28,7 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -39,6 +41,7 @@
     "css-loader": "^0.28.0",
     "document-ready-promise": "^3.0.1",
     "dotenv": "^4.0.0",
+    "eslint": "^4.8.0",
     "express": "^4.14.1",
     "file-loader": "^0.11.2",
     "html-loader": "^0.5.1",
