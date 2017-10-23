@@ -8,7 +8,7 @@ var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
-var _constants = require('./constants');
+var _constants = require('./constants.js');
 
 var _constants2 = _interopRequireDefault(_constants);
 
@@ -49,7 +49,7 @@ var getCurve = function getCurve() {
 			easeIn: 'cubic-bezier(0.2, 0.1, 1, 1)',
 			easeOut: 'cubic-bezier(0, 0, 0.38, 0.9)'
 		}
-	}), _constants$PROPERTY_M)), _))['7'][property === _constants2.default.PROPERTY_SCALE ? _constants2.default.PROPERTY_MOVE : property][motionMode].curves[easing];
+	}), _constants$PROPERTY_M)), _))['7'][property === _constants2.default.PROPERTY_SCALE || property === _constants2.default.PROPERTY_ROTATE ? _constants2.default.PROPERTY_MOVE : property][motionMode].curves[easing];
 };
 
 exports.default = getCurve;

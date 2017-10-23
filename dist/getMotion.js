@@ -137,6 +137,7 @@ var getMotion = function getMotion() {
 				break;
 			}
 
+		case _constants2.default.PROPERTY_ROTATE:
 		case _constants2.default.PROPERTY_MOVE:
 		case _constants2.default.PROPERTY_SCALE:
 		default:

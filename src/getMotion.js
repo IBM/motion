@@ -179,6 +179,7 @@ const getMotion = (
 			break;
 		}
 
+		case constants.PROPERTY_ROTATE:
 		case constants.PROPERTY_MOVE:
 		case constants.PROPERTY_SCALE:
 		default:{

@@ -61,6 +61,27 @@ var getDuration = function getDuration() {
 				break;
 			}
 
+		case _constants2.default.PROPERTY_ROTATE:
+			{
+
+				switch (motionMode) {
+
+					case _constants2.default.MOMENT_CELEBRATORY:
+						{
+							ret = (24 * Math.sqrt(size * 0.00001526251526) + 9) / 8 * distance * 0.03 + 3;
+							break;
+						}
+
+					case _constants2.default.MOMENT_PRODUCTIVE:
+						{
+							ret = (18 * Math.sqrt(size * 0.00001526251526) + 4.7) / 5 * distance * 0.01666666667 + 2;
+							break;
+						}
+				}
+				ret = ret / 60 * 1000;
+				break;
+			}
+
 		case _constants2.default.PROPERTY_MOVE:
 		case _constants2.default.PROPERTY_SCALE:
 		default:

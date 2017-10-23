@@ -1,12 +1,12 @@
 {
   "name": "@ibm/motion",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "motion definitions for IBM",
   "main": "dist/index.js",
   "scripts": {
     "test": "eslint dist",
     "test-src": "eslint -c eslint-test-src-config.json src",
-    "dev": "babel src --presets babel-preset-env --out-dir dist && webpack",
+    "dev": "babel src --presets babel-preset-env --out-dir dist -w",
     "start": "http-server -c1"
   },
   "repository": {

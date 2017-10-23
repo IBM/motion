@@ -1,4 +1,4 @@
-import constants from './constants';
+import constants from './constants.js';
 
 const getCurve = 
 	(
@@ -44,7 +44,7 @@ const getCurve =
 					},
 				},
 			},
-		})['7'][property === constants.PROPERTY_SCALE ? constants.PROPERTY_MOVE : property][motionMode].curves[easing]
+		})['7'][property === constants.PROPERTY_SCALE || property === constants.PROPERTY_ROTATE ? constants.PROPERTY_MOVE : property][motionMode].curves[easing]
 ;
 
 export default getCurve;
