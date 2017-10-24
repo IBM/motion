@@ -1,3 +1,4 @@
 .gitignore
 src
 *.tgz
+dist-demo

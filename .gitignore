@@ -4,9 +4,6 @@ bower_components
 .npmrc
 *.tgz
 
-# Ignore built files and static folder
-dist-demo
-
 # OSX
 .DS_Store
 
