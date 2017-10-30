@@ -1,6 +1,6 @@
 {
   "name": "@ibm/motion",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "motion definitions for IBM",
   "main": "dist/index.js",
   "scripts": {
