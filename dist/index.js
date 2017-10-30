@@ -4,15 +4,15 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _getCurve = require("./getCurve");
+var _getCurve = require("./getCurve.js");
 
 var _getCurve2 = _interopRequireDefault(_getCurve);
 
-var _getDuration = require("./getDuration");
+var _getDuration = require("./getDuration.js");
 
 var _getDuration2 = _interopRequireDefault(_getDuration);
 
-var _getMotion = require("./getMotion");
+var _getMotion = require("./getMotion.js");
 
 var _getMotion2 = _interopRequireDefault(_getMotion);
 
