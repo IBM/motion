@@ -4,14 +4,9 @@
   "description": "motion definitions for IBM",
   "main": "dist/index.js",
   "scripts": {
-<<<<<<< HEAD
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "babel src --presets babel-preset-env --out-dir dist && webpack -w",
-=======
     "test": "eslint dist",
     "test-src": "eslint -c eslint-test-src-config.json src",
     "dev": "babel src --presets babel-preset-env --out-dir dist -w",
->>>>>>> master
     "start": "http-server -c1"
   },
   "repository": {
@@ -28,9 +23,11 @@
     "url": "https://github.com/IBM/motion/issues"
   },
   "homepage": "https://github.com/IBM/motion#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@ibm/grid": "^0.2.3",
+    "@ibm/type": "^0.1.4"
+  },
   "devDependencies": {
-    "@ibm/type": "^0.1.4",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",

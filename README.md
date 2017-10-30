@@ -39,7 +39,7 @@ $ npm install @ibm/motion
 Calculate recommended duration based on various factors including distance, size.
 
 ```
-import getDuration from '@ibm/motion';
+import getDuration from '@ibm/motion/getDuration.js';
 console.log(getDuration(
 	200, // distance of motion in pixels
 	20, // size (area) of the element being animated. set to 20 for the standard size
@@ -57,7 +57,7 @@ console.log(getDuration(
 Calculate recommended bezier curve based on various factors including distance, size.
 
 ```
-import getCurve from '@ibm/motion';
+import getCurve from '@ibm/motion/getCurve.js';
 console.log(getCurve(
 	200, // distance of motion in pixels
 	20, // size (area) of the element being animated. set to 20 for the standard size
@@ -75,7 +75,7 @@ console.log(getCurve(
 Generate a full JavaScript object that contains durations and curves based on various factors including distance, size.
 
 ```
-import getMotion from '@ibm/motion';
+import getMotion from '@ibm/motion/getMotion.js';
 console.log(getMotion(
 	200, // distance of motion in pixels
 	20, // size (area) of the element being animated. set to 20 for the standard size
