@@ -3,6 +3,7 @@
 import React from 'react';
 import globals from '../views/globals.js';
 import Label from './Label.js';
+import Button from './Button';
 
 class TabbedOptions extends React.Component{
 	constructor(){
@@ -31,17 +32,17 @@ class TabbedOptions extends React.Component{
 					}}
 				>
 					{this.props.options.map( (entry, entryId) => (
-						<div 
+						<Button
+							key={`tab-option-${entryId}`}
 							className="tabbed-option ibm-type-c"
 							style={{
-								border:globals.styles.border,
 								backgroundColor:this.state.selected === entry ? '#161616' : 'transparent',
 								color:this.state.selected === entry ? 'white' : 'black',
-								padding:'0.5rem 1rem'
 							}}
-						>
-							<div className="label">{entry}</div>
-						</div>
+							onClick={ evt => this.setState({
+								selected:entry
+							})}
+						>{entry}</Button>
 					))}
 				</div>
 			</div>

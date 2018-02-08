@@ -28,6 +28,7 @@ tests/coverage
 /scss
 /html
 /docs/js
+/_temp
 
 # a11y testing
 .aat.yml

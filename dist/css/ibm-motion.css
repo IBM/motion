@@ -1,0 +1,278 @@
+/* Transition timing (easing) classes */
+/* class pattern: ibm-motion-[motion mode: n | m]-ease-[in-out | in | out] */
+.ibm-motion-expr-move-ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1); }
+
+.ibm-motion-expr-move-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0.14, 1, 1); }
+
+.ibm-motion-expr-move-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1); }
+
+.ibm-motion-prod-move-ease-in-out {
+  transition-timing-function: cubic-bezier(0.2, 0.2, 0.38, 0.9); }
+
+.ibm-motion-prod-move-ease-in {
+  transition-timing-function: cubic-bezier(0.2, 0, 1, 0.9); }
+
+.ibm-motion-prod-move-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9); }
+
+.ibm-motion-expr-scale-ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1); }
+
+.ibm-motion-expr-scale-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0.14, 1, 1); }
+
+.ibm-motion-expr-scale-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1); }
+
+.ibm-motion-prod-scale-ease-in-out {
+  transition-timing-function: cubic-bezier(0.2, 0.2, 0.38, 0.9); }
+
+.ibm-motion-prod-scale-ease-in {
+  transition-timing-function: cubic-bezier(0.2, 0, 1, 0.9); }
+
+.ibm-motion-prod-scale-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9); }
+
+.ibm-motion-expr-fade-ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1); }
+
+.ibm-motion-expr-fade-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0.14, 1, 1); }
+
+.ibm-motion-expr-fade-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1); }
+
+.ibm-motion-prod-fade-ease-in-out {
+  transition-timing-function: cubic-bezier(0.2, 0.2, 0.38, 0.9); }
+
+.ibm-motion-prod-fade-ease-in {
+  transition-timing-function: cubic-bezier(0.2, 0, 1, 0.9); }
+
+.ibm-motion-prod-fade-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9); }
+
+.ibm-motion-expr-rotate-ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1); }
+
+.ibm-motion-expr-rotate-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0.14, 1, 1); }
+
+.ibm-motion-expr-rotate-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1); }
+
+.ibm-motion-prod-rotate-ease-in-out {
+  transition-timing-function: cubic-bezier(0.2, 0.2, 0.38, 0.9); }
+
+.ibm-motion-prod-rotate-ease-in {
+  transition-timing-function: cubic-bezier(0.2, 0, 1, 0.9); }
+
+.ibm-motion-prod-rotate-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9); }
+
+/* Transition duration classes */
+.ibm-motion-expr-move-dur-10 {
+  transition-duration: 113ms; }
+
+.ibm-motion-expr-move-dur-25 {
+  transition-duration: 115ms; }
+
+.ibm-motion-expr-move-dur-50 {
+  transition-duration: 117ms; }
+
+.ibm-motion-expr-move-dur-75 {
+  transition-duration: 120ms; }
+
+.ibm-motion-expr-move-dur-100 {
+  transition-duration: 122ms; }
+
+.ibm-motion-expr-move-dur-200 {
+  transition-duration: 132ms; }
+
+.ibm-motion-expr-move-dur-400 {
+  transition-duration: 188ms; }
+
+.ibm-motion-expr-move-dur-800 {
+  transition-duration: 240ms; }
+
+.ibm-motion-expr-move-dur-1600 {
+  transition-duration: 279ms; }
+
+.ibm-motion-expr-move-dur-3200 {
+  transition-duration: 304ms; }
+
+.ibm-motion-prod-move-dur-10 {
+  transition-duration: 95ms; }
+
+.ibm-motion-prod-move-dur-25 {
+  transition-duration: 96ms; }
+
+.ibm-motion-prod-move-dur-50 {
+  transition-duration: 97ms; }
+
+.ibm-motion-prod-move-dur-75 {
+  transition-duration: 97ms; }
+
+.ibm-motion-prod-move-dur-100 {
+  transition-duration: 98ms; }
+
+.ibm-motion-prod-move-dur-200 {
+  transition-duration: 101ms; }
+
+.ibm-motion-prod-move-dur-400 {
+  transition-duration: 107ms; }
+
+.ibm-motion-prod-move-dur-800 {
+  transition-duration: 135ms; }
+
+.ibm-motion-prod-move-dur-1600 {
+  transition-duration: 161ms; }
+
+.ibm-motion-prod-move-dur-3200 {
+  transition-duration: 178ms; }
+
+.ibm-motion-expr-scale-dur-100 {
+  transition-duration: 122ms; }
+
+.ibm-motion-expr-scale-dur-200 {
+  transition-duration: 132ms; }
+
+.ibm-motion-expr-scale-dur-400 {
+  transition-duration: 188ms; }
+
+.ibm-motion-expr-scale-dur-800 {
+  transition-duration: 240ms; }
+
+.ibm-motion-expr-scale-dur-1600 {
+  transition-duration: 279ms; }
+
+.ibm-motion-expr-scale-dur-3200 {
+  transition-duration: 304ms; }
+
+.ibm-motion-expr-scale-dur-6400 {
+  transition-duration: 318ms; }
+
+.ibm-motion-expr-scale-dur-12800 {
+  transition-duration: 325ms; }
+
+.ibm-motion-expr-scale-dur-25600 {
+  transition-duration: 329ms; }
+
+.ibm-motion-expr-scale-dur-51200 {
+  transition-duration: 331ms; }
+
+.ibm-motion-expr-scale-dur-102400 {
+  transition-duration: 332ms; }
+
+.ibm-motion-expr-scale-dur-204800 {
+  transition-duration: 333ms; }
+
+.ibm-motion-prod-scale-dur-100 {
+  transition-duration: 98ms; }
+
+.ibm-motion-prod-scale-dur-200 {
+  transition-duration: 101ms; }
+
+.ibm-motion-prod-scale-dur-400 {
+  transition-duration: 107ms; }
+
+.ibm-motion-prod-scale-dur-800 {
+  transition-duration: 135ms; }
+
+.ibm-motion-prod-scale-dur-1600 {
+  transition-duration: 161ms; }
+
+.ibm-motion-prod-scale-dur-3200 {
+  transition-duration: 178ms; }
+
+.ibm-motion-prod-scale-dur-6400 {
+  transition-duration: 189ms; }
+
+.ibm-motion-prod-scale-dur-12800 {
+  transition-duration: 194ms; }
+
+.ibm-motion-prod-scale-dur-25600 {
+  transition-duration: 197ms; }
+
+.ibm-motion-prod-scale-dur-51200 {
+  transition-duration: 198ms; }
+
+.ibm-motion-prod-scale-dur-102400 {
+  transition-duration: 199ms; }
+
+.ibm-motion-prod-scale-dur-204800 {
+  transition-duration: 200ms; }
+
+.ibm-motion-expr-fade-dur-25 {
+  transition-duration: 143ms; }
+
+.ibm-motion-expr-fade-dur-50 {
+  transition-duration: 143ms; }
+
+.ibm-motion-expr-fade-dur-75 {
+  transition-duration: 143ms; }
+
+.ibm-motion-expr-fade-dur-100 {
+  transition-duration: 143ms; }
+
+.ibm-motion-prod-fade-dur-25 {
+  transition-duration: 83ms; }
+
+.ibm-motion-prod-fade-dur-50 {
+  transition-duration: 83ms; }
+
+.ibm-motion-prod-fade-dur-75 {
+  transition-duration: 83ms; }
+
+.ibm-motion-prod-fade-dur-100 {
+  transition-duration: 83ms; }
+
+.ibm-motion-expr-rotate-dur-30 {
+  transition-duration: 70ms; }
+
+.ibm-motion-expr-rotate-dur-60 {
+  transition-duration: 89ms; }
+
+.ibm-motion-expr-rotate-dur-90 {
+  transition-duration: 109ms; }
+
+.ibm-motion-expr-rotate-dur-120 {
+  transition-duration: 129ms; }
+
+.ibm-motion-expr-rotate-dur-150 {
+  transition-duration: 148ms; }
+
+.ibm-motion-expr-rotate-dur-180 {
+  transition-duration: 168ms; }
+
+.ibm-motion-expr-rotate-dur-270 {
+  transition-duration: 227ms; }
+
+.ibm-motion-expr-rotate-dur-360 {
+  transition-duration: 286ms; }
+
+.ibm-motion-prod-rotate-dur-30 {
+  transition-duration: 43ms; }
+
+.ibm-motion-prod-rotate-dur-60 {
+  transition-duration: 53ms; }
+
+.ibm-motion-prod-rotate-dur-90 {
+  transition-duration: 62ms; }
+
+.ibm-motion-prod-rotate-dur-120 {
+  transition-duration: 72ms; }
+
+.ibm-motion-prod-rotate-dur-150 {
+  transition-duration: 82ms; }
+
+.ibm-motion-prod-rotate-dur-180 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-rotate-dur-270 {
+  transition-duration: 121ms; }
+
+.ibm-motion-prod-rotate-dur-360 {
+  transition-duration: 150ms; }

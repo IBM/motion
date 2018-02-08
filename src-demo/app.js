@@ -1,18 +1,20 @@
 import ready from 'document-ready-promise';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import motion from '../dist';
 
-import MotionGeneratorView from './views/MotionGeneratorView.js';
+import MainView from './views/MainView';
 
-ready().then( () => {
+ready()
+	.then( () => {
+		console.log('App!!!');
 
-	ReactDOM.render(
-		<MotionGeneratorView/>,
-		document.getElementById('app')
-	);
+		ReactDOM.render(
+			<MainView/>,
+			document.getElementById('app')
+		);
 
-	window.motion = motion;
-
-});
-
+	})
+	.catch(e => {
+		console.log('Readycatch!');
+	})
+;
