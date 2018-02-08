@@ -13,6 +13,7 @@ const motionConstants = require('./src/config-constants.js');
 var gulpFn  = require('gulp-fn');
 import getDuration from './src/getDuration.js';
 const autoprefixer = require('gulp-autoprefixer');
+const gulpCopy = require('gulp-copy');
 
 gulp.task('build-script', () => {
 	return browserify({entries: './src/motion.js', debug: true})
@@ -132,7 +133,14 @@ gulp.task('demo-script:watch', function(){
 	gulp.watch('src-demo/**/*', ['build-demo-script']);
 });
 
+gulp.task('copy-ibm-type-files', () => {
+	return gulp
+		.src('./node_modules/@ibm/type/dist/**/*')
+	    .pipe(gulpCopy('./dist-demo/css'))
+	;
+});
+
 gulp.task('watch', ['script:watch', 'demo-script:watch', 'sass:watch', 'demo-sass:watch']);
 
-gulp.task('default', ['build-script', 'build-demo-script', 'sass', 'demo-sass']);
+gulp.task('default', ['build-script', 'build-demo-script', 'sass', 'demo-sass', 'copy-ibm-type-files']);
 
