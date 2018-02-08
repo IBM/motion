@@ -17,6 +17,7 @@ const autoprefixer = require('gulp-autoprefixer');
 gulp.task('build-script', () => {
 	return browserify({entries: './src/motion.js', debug: true})
 		.transform("babelify", { presets: ["env"] })
+		.on('error', err => console.log(err))
 		.bundle()
 		.pipe(source('motion.js'))
 		.pipe(buffer())
@@ -85,6 +86,16 @@ function buildSassFiles(){
 
 }
 
+gulp.task('demo-sass', () => {
+
+	return gulp
+		.src('src-demo/styles/index.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(rename('index.css'))
+	    .pipe(gulp.dest('./dist-demo/css'))
+	;
+});
+
 gulp.task('sass', () => {
 
 	return gulp
@@ -109,6 +120,9 @@ gulp.task('sass', () => {
 gulp.task('sass:watch', function () {
 	gulp.watch('src/scss/**/*.scss', ['sass']);
 });
+gulp.task('demo-sass:watch', function () {
+	gulp.watch('src-demo/styles/**/*.scss', ['demo-sass']);
+});
 
 gulp.task('script:watch', function(){
 	gulp.watch('src/**/*', ['build-script']);
@@ -118,6 +132,7 @@ gulp.task('demo-script:watch', function(){
 	gulp.watch('src-demo/**/*', ['build-demo-script']);
 });
 
-gulp.task('watch', ['script:watch', 'demo-script:watch', 'sass:watch']);
+gulp.task('watch', ['script:watch', 'demo-script:watch', 'sass:watch', 'demo-sass:watch']);
 
-gulp.task('default', ['build-script', 'build-demo-script', 'sass']);
+gulp.task('default', ['build-script', 'build-demo-script', 'sass', 'demo-sass']);
+

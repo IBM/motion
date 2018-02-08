@@ -11,7 +11,9 @@ class MainView extends React.Component{
 
 	render(){
 		return(
-			<div className="MainView">
+			<div className="MainView" style={{
+				
+			}}>
 				<SiteHeader/>
 				<SiteBody/>
 			</div>

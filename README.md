@@ -10,9 +10,9 @@ Motion in interface design is defined by many things such as the property that i
 
 ### Core concepts
 
-#### Moments
+#### Motion modes
 
-This package recognizes that there is a need for multiple types of motion for different moments. Currently it supports two type of moments, the productive moment that is efficient and quick for micro interactions, and the celebratory moment for more conversational exprience. Much attention has been given to maintaining consistency between these two moments - even though they use different acceleration curves and different duration, they feel the same.
+This package recognizes that there is a need for multiple types of motion for different moments. Currently it supports two type of motions for different moments - the productive motion that is efficient and quick, ideal for micro interactions, and the  expressive motion for more conversational exprience. Much attention has been given to maintaining consistency between these two modes - even though they use different acceleration curves and different duration, they feel the same.
 
 #### Dynamic duration
 
@@ -28,11 +28,27 @@ The duration should change depending on the distance (or the amount of scaling o
 $ npm install @ibm/motion
 ```
 
+## Demo site
+
+This package includes a simple demo site.
+
+```
+$ npm install
+$ gulp
+$ npm start
+```
+
 ## Guidelines
 
 **Note:** detailed motion guide will be published with the aforementioned stable release.
 
-## Components of this package
+### Transition timing function classes (easing)
+
+This package provides classes that sets the `transition-timing-function` rule on your element.
+
+|---|---|---|
+
+## JavascriptcComponents of this package
 
 ### getDuration() method
 
@@ -87,4 +103,38 @@ console.log(getMotion(
 
 // returns a float value, duration in ms.
 ```
+
+## Motion Classes
+
+This package includes classes for easier implementation of IBM motions.
+
+### Transition timing function classes (easing)
+
+These classes follow this pattern:
+
+`ibm-motion-[motion mode:expr|prod]-[property:move|scale|rotate|fade]-[ease-in-out|ease-in|ease-out]`
+
+Examples:
+
+`ibm-motion-expr-move-ease-in-out`
+
+### Transition duration classes
+
+These classes allow you to simply use classes to approximate the dynamic duration instead of using the JavaScript function to calculate on the fly.
+
+The classes for `move` use distance of the travel and follow this pattern:
+
+`ibm-motion-[motion mode:expr|prod]-[property:move|scale|fade|rotate]-dur-[distance steps:10|25|50|75|100|200|400|800|1600|3200]`
+
+The classes for `fade` use amount of opacity change and follow this pattern:
+
+`ibm-motion-[motion mode:expr|prod]-[property:move|scale|fade|rotate]-dur-[distance steps:25|50|75|100]`
+
+The classes for `rotate` use amount of angle change and follow this pattern:
+
+`ibm-motion-[motion mode:expr|prod]-[property:move|scale|fade|rotate]-dur-[distance steps:30|60|90|120|150|180|270|360]`
+
+The classes for `scale` uses the size change as the differentiator and follows this pattern:
+
+`ibm-motion-[motion mode:expr|prod]-[property:move|scale|fade|rotate]-dur-[width*height steps:64|256|1024|4096|16384|65536|262144|1048576|4194304|16777216]`
 

@@ -1,0 +1,20 @@
+$unit:16px;
+
+*{
+	box-sizing:border-box;
+}
+
+body{
+	padding:0 $unit;
+	margin:0;
+}
+
+.padding-h{
+	padding-left:$unit;
+	padding-right:$unit;
+}
+
+.padding-v{
+	padding-top:$unit;
+	padding-bottom:$unit;
+}

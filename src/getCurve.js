@@ -1,3 +1,4 @@
+import configConstnats from './config-constants.js';
 import constants from './constants.js';
 
 const getCurve = 
@@ -10,8 +11,7 @@ const getCurve =
 		version = 7, 
 		params = {}
 	) => {
-		console.log('getCurve!');
-		return constants.curves[property][motionMode === constants.MOMENT_PRODUCTIVE ? 'n' : 'm'][constants.EASE_IN_OUT]
+		return configConstnats.curves[property][motionMode][easing]
 	}
 ;
 

@@ -1,3 +1,7 @@
+/*-----------------------------------------------------
+ *	IBM Motion Rules
+ *	For details, visit https://github.com/IBM/motion
+ */
 /* Transition timing (easing) classes */
 /* class pattern: ibm-motion-[motion mode: n | m]-ease-[in-out | in | out] */
 .ibm-motion-expr-move-ease-in-out {

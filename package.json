@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/IBM/motion#readme",
   "dependencies": {
-    "@ibm/grid": "^0.2.3",
     "@ibm/type": "^0.1.4",
     "babel-register": "^6.26.0"
   },
