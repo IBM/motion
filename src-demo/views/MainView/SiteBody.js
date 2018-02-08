@@ -177,10 +177,19 @@ class SiteBody extends React.Component{
 							</div>
 						</div>
 						<div className="inputs"
-							style={inputsStyles}
+							style={{
+								...inputsStyles,
+								height:'auto'
+							}}
 						>
-							<div style={inputSetStyles}>
-								<Button 
+							<div style={{
+								...inputSetStyles,
+								height:'auto',
+								padding:'16px 0'
+							}}>
+								<Button
+									normalColor="#0F6FFF"
+									hoverColor="#054ADA"
 									label="Get motion"
 									onClick={ evt => this.onGetMotion(evt)}
 								/>
