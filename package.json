@@ -6,7 +6,6 @@
   "scripts": {
     "test": "eslint dist",
     "test-src": "eslint -c eslint-test-src-config.json src",
-    "dev": "babel src --presets babel-preset-env --out-dir dist -w",
     "start": "http-server -c1"
   },
   "repository": {
@@ -23,20 +22,26 @@
     "url": "https://github.com/IBM/motion/issues"
   },
   "homepage": "https://github.com/IBM/motion#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@ibm/type": "^0.1.4",
+    "babel-register": "^6.26.0"
+  },
   "devDependencies": {
+    "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
+    "babelify": "^8.0.0",
     "body-parser": "^1.16.1",
+    "browserify": "^14.5.0",
     "copy-webpack-plugin": "^4.1.0",
     "css-loader": "^0.28.0",
     "document-ready-promise": "^3.0.1",
@@ -44,6 +49,16 @@
     "eslint": "^4.8.0",
     "express": "^4.14.1",
     "file-loader": "^0.11.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-fn": "0.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-import": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
     "html-loader": "^0.5.1",
     "http-server": "^0.10.0",
     "img-loader": "^2.0.0",
@@ -51,9 +66,13 @@
     "node-sass": "^4.5.3",
     "postcss": "^5.2.17",
     "postcss-loader": "^1.3.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "webpack": "^3.6.0",
     "webpack-build-notifier": "^0.1.16"
   }

@@ -1,26 +1,13 @@
 <!doctype html>
 <html>
 	<head>
-		<script src='./dist-demo/js/app.js'></script>
+		<title>Motion Generator</title>
+		<link rel="stylesheet" type="text/css" href="./node_modules/@ibm/type/dist/css/ibm-type.min.css">
+		<link rel="stylesheet" type="text/css" href="./dist-demo/css/index.css">
+		<script src="./dist/motion.js"></script>
+		<script src="./dist-demo/app.js"></script>
 	</head>
 	<body>
-		<div class="app">
-			<h1>IBM Motion Calculator</h1>
-			<p>
-				<ol>
-					<li>Open browser console.</li>
-					<li>Try the following codes:
-<pre>
-<code> > window.motion</code>
-<code> > window.motion.getDuration() </code>
-<code> > window.motion.getDuration(300, 20, 'move', 'mechanical', 'easeInOut') </code>
-<code> > window.motion.getCurve(300, 20, 'move', 'mechanical', 'easeInOut') </code>
-<code> > window.motion.getCurve(300, 20, 'scale', 'mechanical', 'easeInOut') </code>
-<code> > window.motion.getCurve(180, 20, 'scale', 'natural', 'easeInOut') </code>
-</pre>
-					</li>
-				</ol>
-			</p>
-		</div>
+		<div id="app" class="ibm">#app</div>
 	</body>
 </html>

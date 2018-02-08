@@ -1,6 +1,6 @@
 export default {
-	MOMENT_CELEBRATORY:"natural",
-	MOMENT_PRODUCTIVE:"mechanical",
+	MOMENT_CELEBRATORY:"expr",
+	MOMENT_PRODUCTIVE:"prod",
 	SIZE_BASE:20,
 	PROPERTY_MOVE:"move",
 	PROPERTY_SCALE:"scale",

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "js/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 120);
+/******/ 	return __webpack_require__(__webpack_require__.s = 136);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2207,22 +2207,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 64 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = {
-	styles: {
-		border: "solid 1px #D8D8D8"
-	}
-};
-
-/***/ }),
+/* 64 */,
 /* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23311,15 +23296,27 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 120 */
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-var _documentReadyPromise = __webpack_require__(121);
-
-var _documentReadyPromise2 = _interopRequireDefault(_documentReadyPromise);
 
 var _react = __webpack_require__(1);
 
@@ -23329,51 +23326,24 @@ var _reactDom = __webpack_require__(67);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _MotionGeneratorView = __webpack_require__(122);
+var _AppView = __webpack_require__(137);
 
-var _MotionGeneratorView2 = _interopRequireDefault(_MotionGeneratorView);
+var _AppView2 = _interopRequireDefault(_AppView);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _documentReadyPromise2.default)().then(function () {
-	console.log('App!!!');
+(function () {
+	console.log('main.js...');
 
-	_reactDom2.default.render(_react2.default.createElement(_MotionGeneratorView2.default, null), document.getElementById('app'));
-});
-
-/***/ }),
-/* 121 */
-/***/ (function(module, exports, __webpack_require__) {
-
-(function (document, promise) {
-  if (true) module.exports = promise
-  else document.ready = promise
-})(window.document, function (chainVal) {
-  'use strict'
-
-  var d = document,
-      w = window,
-      loaded = /^loaded|^i|^c/.test(d.readyState),
-      DOMContentLoaded = 'DOMContentLoaded',
-      load = 'load'
-
-  return new Promise(function (resolve) {
-    if (loaded) return resolve(chainVal)
-
-    function onReady () {
-      resolve(chainVal)
-      d.removeEventListener(DOMContentLoaded, onReady)
-      w.removeEventListener(load, onReady)
-    }
-
-    d.addEventListener(DOMContentLoaded, onReady)
-    w.addEventListener(load, onReady)
-  })
-})
-
+	window.motionCalculator = {
+		init: function init(targetElId) {
+			return _reactDom2.default.render(_react2.default.createElement(_AppView2.default, null), document.getElementById(targetElId));
+		}
+	};
+})();
 
 /***/ }),
-/* 122 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23407,433 +23377,56 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Header = __webpack_require__(123);
+__webpack_require__(138);
 
-var _Header2 = _interopRequireDefault(_Header);
+__webpack_require__(140);
 
-var _BodyView = __webpack_require__(124);
+var _AppHeader = __webpack_require__(142);
 
-var _BodyView2 = _interopRequireDefault(_BodyView);
+var _AppHeader2 = _interopRequireDefault(_AppHeader);
 
-var _globals = __webpack_require__(64);
+var _AppBody = __webpack_require__(146);
 
-var _globals2 = _interopRequireDefault(_globals);
+var _AppBody2 = _interopRequireDefault(_AppBody);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MotionGeneratorView = function (_React$Component) {
-	(0, _inherits3.default)(MotionGeneratorView, _React$Component);
+var AppView = function (_React$Component) {
+	(0, _inherits3.default)(AppView, _React$Component);
 
-	function MotionGeneratorView() {
-		(0, _classCallCheck3.default)(this, MotionGeneratorView);
+	function AppView() {
+		(0, _classCallCheck3.default)(this, AppView);
 
-		var _this = (0, _possibleConstructorReturn3.default)(this, (MotionGeneratorView.__proto__ || (0, _getPrototypeOf2.default)(MotionGeneratorView)).call(this));
+		var _this = (0, _possibleConstructorReturn3.default)(this, (AppView.__proto__ || (0, _getPrototypeOf2.default)(AppView)).call(this));
 
-		console.log("MotionGeneratorView!!!");
+		console.log("AppView!!!");
 		return _this;
 	}
 
-	(0, _createClass3.default)(MotionGeneratorView, [{
+	(0, _createClass3.default)(AppView, [{
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
 				'div',
-				{
-					className: 'MotionGeneratorView',
-					style: {
-						display: 'flex',
-						flexDirection: 'column',
-						borderBottom: _globals2.default.styles.border
-					}
-				},
-				_react2.default.createElement(_Header2.default, null),
-				_react2.default.createElement(_BodyView2.default, null)
+				{ className: 'AppView' },
+				_react2.default.createElement(_AppHeader2.default, null),
+				_react2.default.createElement(_AppBody2.default, null)
 			);
 		}
 	}]);
-	return MotionGeneratorView;
+	return AppView;
 }(_react2.default.Component);
 
-exports.default = MotionGeneratorView;
+exports.default = AppView;
 
 /***/ }),
-/* 123 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _getPrototypeOf = __webpack_require__(10);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(12);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(13);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(17);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Header = function (_React$Component) {
-	(0, _inherits3.default)(Header, _React$Component);
-
-	function Header() {
-		(0, _classCallCheck3.default)(this, Header);
-
-		var _this = (0, _possibleConstructorReturn3.default)(this, (Header.__proto__ || (0, _getPrototypeOf2.default)(Header)).call(this));
-
-		console.log("Header!!!");
-		return _this;
-	}
-
-	(0, _createClass3.default)(Header, [{
-		key: "render",
-		value: function render() {
-			return _react2.default.createElement(
-				"div",
-				{
-					className: "Header ibm",
-					style: {
-						backgroundColor: '#F3F3F3'
-					}
-				},
-				_react2.default.createElement(
-					"div",
-					{ className: "ibm-col-lg-14 ibm-height-lg-4 ibm-col-md-6" },
-					_react2.default.createElement(
-						"div",
-						{ className: "ibm-type-e" },
-						"IBM Motion Generator"
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "ibm-col-lg-2 ibm-height-lg-4 ibm-col-md-2",
-						style: {
-							textAlign: 'right'
-						}
-					},
-					_react2.default.createElement(
-						"a",
-						{ className: "ibm-type-a", href: "#" },
-						"IBM Motion Guide"
-					)
-				)
-			);
-		}
-	}]);
-	return Header;
-}(_react2.default.Component);
-
-exports.default = Header;
-
-/***/ }),
-/* 124 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _getPrototypeOf = __webpack_require__(10);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(12);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(13);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(17);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _globals = __webpack_require__(64);
-
-var _globals2 = _interopRequireDefault(_globals);
-
-var _TabbedOptions = __webpack_require__(125);
-
-var _TabbedOptions2 = _interopRequireDefault(_TabbedOptions);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var BodyView = function (_React$Component) {
-	(0, _inherits3.default)(BodyView, _React$Component);
-
-	function BodyView() {
-		(0, _classCallCheck3.default)(this, BodyView);
-
-		var _this = (0, _possibleConstructorReturn3.default)(this, (BodyView.__proto__ || (0, _getPrototypeOf2.default)(BodyView)).call(this));
-
-		console.log("BodyView!!!");
-		return _this;
-	}
-
-	(0, _createClass3.default)(BodyView, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				{ className: 'BodyView ibm ibm-height-lg-40' },
-				_react2.default.createElement(
-					'div',
-					{
-						className: 'left-column ibm-col-lg-6 ibm-col-md-3',
-						style: {
-							borderRight: _globals2.default.styles.border
-						}
-					},
-					_react2.default.createElement(_TabbedOptions2.default, {
-						options: ['move', 'scale', 'fade', 'rotate']
-					})
-				),
-				_react2.default.createElement(
-					'div',
-					{
-						className: 'ibm-col-lg-8 ibm-col-md-5',
-						style: {
-							borderRight: _globals2.default.styles.border
-						}
-					},
-					'output'
-				)
-			);
-		}
-	}]);
-	return BodyView;
-}(_react2.default.Component);
-
-exports.default = BodyView;
-
-/***/ }),
-/* 125 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _getPrototypeOf = __webpack_require__(10);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(12);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(13);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(17);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _globals = __webpack_require__(64);
-
-var _globals2 = _interopRequireDefault(_globals);
-
-var _Label = __webpack_require__(126);
-
-var _Label2 = _interopRequireDefault(_Label);
-
-var _Button = __webpack_require__(129);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var TabbedOptions = function (_React$Component) {
-	(0, _inherits3.default)(TabbedOptions, _React$Component);
-
-	function TabbedOptions() {
-		(0, _classCallCheck3.default)(this, TabbedOptions);
-
-		var _this = (0, _possibleConstructorReturn3.default)(this, (TabbedOptions.__proto__ || (0, _getPrototypeOf2.default)(TabbedOptions)).call(this));
-
-		console.log("TabbedOptions!!!");
-		return _this;
-	}
-
-	(0, _createClass3.default)(TabbedOptions, [{
-		key: 'componentWillMount',
-		value: function componentWillMount() {
-			this.setState({
-				selected: this.props.options[0]
-			});
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var _this2 = this;
-
-			return _react2.default.createElement(
-				'div',
-				{ className: 'TabbedOptions ibm-padding', style: {
-						paddingLeft: 0,
-						paddingRight: 0
-					} },
-				_react2.default.createElement(
-					_Label2.default,
-					null,
-					'Animating property'
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'tabbed-options-wrap',
-						style: {
-							display: 'flex',
-							flexDirection: 'row',
-							justifyContent: 'flex-start'
-						}
-					},
-					this.props.options.map(function (entry, entryId) {
-						return _react2.default.createElement(
-							_Button2.default,
-							{
-								key: 'tab-option-' + entryId,
-								className: 'tabbed-option ibm-type-c',
-								style: {
-									backgroundColor: _this2.state.selected === entry ? '#161616' : 'transparent',
-									color: _this2.state.selected === entry ? 'white' : 'black'
-								},
-								onClick: function onClick(evt) {
-									return _this2.setState({
-										selected: entry
-									});
-								}
-							},
-							entry
-						);
-					})
-				)
-			);
-		}
-	}]);
-	return TabbedOptions;
-}(_react2.default.Component);
-
-exports.default = TabbedOptions;
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _getPrototypeOf = __webpack_require__(10);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(12);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(13);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(17);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-__webpack_require__(127);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Label = function (_React$Component) {
-	(0, _inherits3.default)(Label, _React$Component);
-
-	function Label() {
-		(0, _classCallCheck3.default)(this, Label);
-
-		var _this = (0, _possibleConstructorReturn3.default)(this, (Label.__proto__ || (0, _getPrototypeOf2.default)(Label)).call(this));
-
-		console.log("Label!!!");
-		return _this;
-	}
-
-	(0, _createClass3.default)(Label, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				{ className: 'Label ibm-type-a' },
-				this.props.children
-			);
-		}
-	}]);
-	return Label;
-}(_react2.default.Component);
-
-exports.default = Label;
-
-/***/ }),
-/* 127 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(128);
+var content = __webpack_require__(139);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -23847,8 +23440,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!../../node_modules/postcss-loader/index.js!./Label.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!../../node_modules/postcss-loader/index.js!./Label.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./colors.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./colors.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -23858,7 +23451,7 @@ if(false) {
 }
 
 /***/ }),
-/* 128 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(43)(undefined);
@@ -23866,35 +23459,58 @@ exports = module.exports = __webpack_require__(43)(undefined);
 
 
 // module
-exports.push([module.i, ".Label {\n  color: '#8A8A8A'; }\n", ""]);
+exports.push([module.i, "/*-----------------------------------------------------\n *\tcolors\n */\n.color-grey-100 {\n  color: #272727; }\n\n.color-grey-90 {\n  color: #393939; }\n\n.color-grey-80 {\n  color: #4e4e4e; }\n\n.color-grey-70 {\n  color: #626262; }\n\n.color-grey-60 {\n  color: #8c8c8c; }\n\n.color-grey-50 {\n  color: #a3a4a3; }\n\n.color-grey-40 {\n  color: #b4b4b4; }\n\n.color-grey-30 {\n  color: #c6c6c6; }\n\n.color-grey-20 {\n  color: #d8d8d8; }\n\n.color-grey-10 {\n  color: #eaeaea; }\n\n.color-natural-white {\n  color: #f4f4f4; }\n\n.color-cool-grey-100 {\n  color: #23292e; }\n\n.color-cool-grey-90 {\n  color: #343c41; }\n\n.color-cool-grey-80 {\n  color: #484f55; }\n\n.color-cool-grey-70 {\n  color: #5d636a; }\n\n.color-cool-grey-60 {\n  color: #868c91; }\n\n.color-cool-white {\n  color: #EDF5FF; }\n\n.color-warm-grey-50 {\n  color: #A8A3A3; }\n\n.color-warm-grey-40 {\n  color: #B9B4B4; }\n\n.color-warm-grey-30 {\n  color: #CAC5C5; }\n\n.color-warm-grey-20 {\n  color: #DCD7D6; }\n\n.color-warm-grey-10 {\n  color: #EDE9E7; }\n\n.color-warm-white {\n  color: #F8F4F2; }\n\n.color-pure-white {\n  color: #ffffff; }\n\n.color-black {\n  color: #000000; }\n\n.color-teal-40 {\n  color: #26B4CE; }\n\n.color-teal-30 {\n  color: #61E4E2; }\n\n.color-teal-20 {\n  color: #58FED3; }\n\n.color-cyan-40 {\n  color: #005EB1; }\n\n.color-cyan-30 {\n  color: #338FE5; }\n\n.color-cyan-20 {\n  color: #61C9F0; }\n\n.color-blue-60 {\n  color: #00155D; }\n\n.color-blue-50 {\n  color: #002087; }\n\n.color-blue-40 {\n  color: #0044C6; }\n\n.color-blue-30 {\n  color: #006CFC; }\n\n.color-blue-20 {\n  color: #68A9FD; }\n\n.color-blue-10 {\n  color: #C5DFFE; }\n\n.color-purple-40 {\n  color: #6D1E7B; }\n\n.color-purple-30 {\n  color: #854DB6; }\n\n.color-purple-20 {\n  color: #B184DE; }\n\n.color-pink-40 {\n  color: #A62070; }\n\n.color-pink-30 {\n  color: #D92763; }\n\n.color-pink-20 {\n  color: #D55392; }\n\n.color-watson-violet-1 {\n  color: #ece8f5; }\n\n.color-watson-violet-10 {\n  color: #e2d2f4; }\n\n.color-watson-violet-20 {\n  color: #d2b5f0; }\n\n.color-watson-violet-30 {\n  color: #bf93eb; }\n\n.color-watson-violet-40 {\n  color: #b07ce8; }\n\n.color-watson-violet-50 {\n  color: #9753e1; }\n\n.color-watson-violet-60 {\n  color: #7732bb; }\n\n.color-watson-violet-70 {\n  color: #602797; }\n\n.color-watson-violet-80 {\n  color: #44216a; }\n\n.color-watson-violet-90 {\n  color: #321c4c; }\n\n.bgcolor-grey-100 {\n  background-color: #272727; }\n\n.bgcolor-grey-90 {\n  background-color: #393939; }\n\n.bgcolor-grey-80 {\n  background-color: #4e4e4e; }\n\n.bgcolor-grey-70 {\n  background-color: #626262; }\n\n.bgcolor-grey-60 {\n  background-color: #8c8c8c; }\n\n.bgcolor-grey-50 {\n  background-color: #a3a4a3; }\n\n.bgcolor-grey-40 {\n  background-color: #b4b4b4; }\n\n.bgcolor-grey-30 {\n  background-color: #c6c6c6; }\n\n.bgcolor-grey-20 {\n  background-color: #d8d8d8; }\n\n.bgcolor-grey-10 {\n  background-color: #eaeaea; }\n\n.bgcolor-natural-white {\n  background-color: #f4f4f4; }\n\n.bgcolor-cool-grey-100 {\n  background-color: #23292e; }\n\n.bgcolor-cool-grey-90 {\n  background-color: #343c41; }\n\n.bgcolor-cool-grey-80 {\n  background-color: #484f55; }\n\n.bgcolor-cool-grey-70 {\n  background-color: #5d636a; }\n\n.bgcolor-cool-grey-60 {\n  background-color: #868c91; }\n\n.bgcolor-cool-white {\n  background-color: #EDF5FF; }\n\n.bgcolor-warm-grey-50 {\n  background-color: #A8A3A3; }\n\n.bgcolor-warm-grey-40 {\n  background-color: #B9B4B4; }\n\n.bgcolor-warm-grey-30 {\n  background-color: #CAC5C5; }\n\n.bgcolor-warm-grey-20 {\n  background-color: #DCD7D6; }\n\n.bgcolor-warm-grey-10 {\n  background-color: #EDE9E7; }\n\n.bgcolor-warm-white {\n  background-color: #F8F4F2; }\n\n.bgcolor-pure-white {\n  background-color: #ffffff; }\n\n.bgcolor-black {\n  background-color: #000000; }\n\n.bgcolor-teal-40 {\n  background-color: #26B4CE; }\n\n.bgcolor-teal-30 {\n  background-color: #61E4E2; }\n\n.bgcolor-teal-20 {\n  background-color: #58FED3; }\n\n.bgcolor-cyan-40 {\n  background-color: #005EB1; }\n\n.bgcolor-cyan-30 {\n  background-color: #338FE5; }\n\n.bgcolor-cyan-20 {\n  background-color: #61C9F0; }\n\n.bgcolor-blue-60 {\n  background-color: #00155D; }\n\n.bgcolor-blue-50 {\n  background-color: #002087; }\n\n.bgcolor-blue-40 {\n  background-color: #0044C6; }\n\n.bgcolor-blue-30 {\n  background-color: #006CFC; }\n\n.bgcolor-blue-20 {\n  background-color: #68A9FD; }\n\n.bgcolor-blue-10 {\n  background-color: #C5DFFE; }\n\n.bgcolor-purple-40 {\n  background-color: #6D1E7B; }\n\n.bgcolor-purple-30 {\n  background-color: #854DB6; }\n\n.bgcolor-purple-20 {\n  background-color: #B184DE; }\n\n.bgcolor-pink-40 {\n  background-color: #A62070; }\n\n.bgcolor-pink-30 {\n  background-color: #D92763; }\n\n.bgcolor-pink-20 {\n  background-color: #D55392; }\n\n.bgcolor-watson-violet-1 {\n  color: #ece8f5; }\n\n.bgcolor-watson-violet-10 {\n  color: #e2d2f4; }\n\n.bgcolor-watson-violet-20 {\n  color: #d2b5f0; }\n\n.bgcolor-watson-violet-30 {\n  color: #bf93eb; }\n\n.bgcolor-watson-violet-40 {\n  color: #b07ce8; }\n\n.bgcolor-watson-violet-50 {\n  color: #9753e1; }\n\n.bgcolor-watson-violet-60 {\n  color: #7732bb; }\n\n.bgcolor-watson-violet-70 {\n  color: #602797; }\n\n.bgcolor-watson-violet-80 {\n  color: #44216a; }\n\n.bgcolor-watson-violet-90 {\n  color: #321c4c; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 129 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
+// load the styles
+var content = __webpack_require__(141);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _Button = __webpack_require__(130);
-
-Object.defineProperty(exports, 'default', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_Button).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(44)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./AppView.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./AppView.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
-/* 130 */
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(43)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*-----------------------------------------------------\n *\tcolors\n */\n.color-grey-100 {\n  color: #272727; }\n\n.color-grey-90 {\n  color: #393939; }\n\n.color-grey-80 {\n  color: #4e4e4e; }\n\n.color-grey-70 {\n  color: #626262; }\n\n.color-grey-60 {\n  color: #8c8c8c; }\n\n.color-grey-50 {\n  color: #a3a4a3; }\n\n.color-grey-40 {\n  color: #b4b4b4; }\n\n.color-grey-30 {\n  color: #c6c6c6; }\n\n.color-grey-20 {\n  color: #d8d8d8; }\n\n.color-grey-10 {\n  color: #eaeaea; }\n\n.color-natural-white {\n  color: #f4f4f4; }\n\n.color-cool-grey-100 {\n  color: #23292e; }\n\n.color-cool-grey-90 {\n  color: #343c41; }\n\n.color-cool-grey-80 {\n  color: #484f55; }\n\n.color-cool-grey-70 {\n  color: #5d636a; }\n\n.color-cool-grey-60 {\n  color: #868c91; }\n\n.color-cool-white {\n  color: #EDF5FF; }\n\n.color-warm-grey-50 {\n  color: #A8A3A3; }\n\n.color-warm-grey-40 {\n  color: #B9B4B4; }\n\n.color-warm-grey-30 {\n  color: #CAC5C5; }\n\n.color-warm-grey-20 {\n  color: #DCD7D6; }\n\n.color-warm-grey-10 {\n  color: #EDE9E7; }\n\n.color-warm-white {\n  color: #F8F4F2; }\n\n.color-pure-white {\n  color: #ffffff; }\n\n.color-black {\n  color: #000000; }\n\n.color-teal-40 {\n  color: #26B4CE; }\n\n.color-teal-30 {\n  color: #61E4E2; }\n\n.color-teal-20 {\n  color: #58FED3; }\n\n.color-cyan-40 {\n  color: #005EB1; }\n\n.color-cyan-30 {\n  color: #338FE5; }\n\n.color-cyan-20 {\n  color: #61C9F0; }\n\n.color-blue-60 {\n  color: #00155D; }\n\n.color-blue-50 {\n  color: #002087; }\n\n.color-blue-40 {\n  color: #0044C6; }\n\n.color-blue-30 {\n  color: #006CFC; }\n\n.color-blue-20 {\n  color: #68A9FD; }\n\n.color-blue-10 {\n  color: #C5DFFE; }\n\n.color-purple-40 {\n  color: #6D1E7B; }\n\n.color-purple-30 {\n  color: #854DB6; }\n\n.color-purple-20 {\n  color: #B184DE; }\n\n.color-pink-40 {\n  color: #A62070; }\n\n.color-pink-30 {\n  color: #D92763; }\n\n.color-pink-20 {\n  color: #D55392; }\n\n.color-watson-violet-1 {\n  color: #ece8f5; }\n\n.color-watson-violet-10 {\n  color: #e2d2f4; }\n\n.color-watson-violet-20 {\n  color: #d2b5f0; }\n\n.color-watson-violet-30 {\n  color: #bf93eb; }\n\n.color-watson-violet-40 {\n  color: #b07ce8; }\n\n.color-watson-violet-50 {\n  color: #9753e1; }\n\n.color-watson-violet-60 {\n  color: #7732bb; }\n\n.color-watson-violet-70 {\n  color: #602797; }\n\n.color-watson-violet-80 {\n  color: #44216a; }\n\n.color-watson-violet-90 {\n  color: #321c4c; }\n\n.bgcolor-grey-100 {\n  background-color: #272727; }\n\n.bgcolor-grey-90 {\n  background-color: #393939; }\n\n.bgcolor-grey-80 {\n  background-color: #4e4e4e; }\n\n.bgcolor-grey-70 {\n  background-color: #626262; }\n\n.bgcolor-grey-60 {\n  background-color: #8c8c8c; }\n\n.bgcolor-grey-50 {\n  background-color: #a3a4a3; }\n\n.bgcolor-grey-40 {\n  background-color: #b4b4b4; }\n\n.bgcolor-grey-30 {\n  background-color: #c6c6c6; }\n\n.bgcolor-grey-20 {\n  background-color: #d8d8d8; }\n\n.bgcolor-grey-10 {\n  background-color: #eaeaea; }\n\n.bgcolor-natural-white {\n  background-color: #f4f4f4; }\n\n.bgcolor-cool-grey-100 {\n  background-color: #23292e; }\n\n.bgcolor-cool-grey-90 {\n  background-color: #343c41; }\n\n.bgcolor-cool-grey-80 {\n  background-color: #484f55; }\n\n.bgcolor-cool-grey-70 {\n  background-color: #5d636a; }\n\n.bgcolor-cool-grey-60 {\n  background-color: #868c91; }\n\n.bgcolor-cool-white {\n  background-color: #EDF5FF; }\n\n.bgcolor-warm-grey-50 {\n  background-color: #A8A3A3; }\n\n.bgcolor-warm-grey-40 {\n  background-color: #B9B4B4; }\n\n.bgcolor-warm-grey-30 {\n  background-color: #CAC5C5; }\n\n.bgcolor-warm-grey-20 {\n  background-color: #DCD7D6; }\n\n.bgcolor-warm-grey-10 {\n  background-color: #EDE9E7; }\n\n.bgcolor-warm-white {\n  background-color: #F8F4F2; }\n\n.bgcolor-pure-white {\n  background-color: #ffffff; }\n\n.bgcolor-black {\n  background-color: #000000; }\n\n.bgcolor-teal-40 {\n  background-color: #26B4CE; }\n\n.bgcolor-teal-30 {\n  background-color: #61E4E2; }\n\n.bgcolor-teal-20 {\n  background-color: #58FED3; }\n\n.bgcolor-cyan-40 {\n  background-color: #005EB1; }\n\n.bgcolor-cyan-30 {\n  background-color: #338FE5; }\n\n.bgcolor-cyan-20 {\n  background-color: #61C9F0; }\n\n.bgcolor-blue-60 {\n  background-color: #00155D; }\n\n.bgcolor-blue-50 {\n  background-color: #002087; }\n\n.bgcolor-blue-40 {\n  background-color: #0044C6; }\n\n.bgcolor-blue-30 {\n  background-color: #006CFC; }\n\n.bgcolor-blue-20 {\n  background-color: #68A9FD; }\n\n.bgcolor-blue-10 {\n  background-color: #C5DFFE; }\n\n.bgcolor-purple-40 {\n  background-color: #6D1E7B; }\n\n.bgcolor-purple-30 {\n  background-color: #854DB6; }\n\n.bgcolor-purple-20 {\n  background-color: #B184DE; }\n\n.bgcolor-pink-40 {\n  background-color: #A62070; }\n\n.bgcolor-pink-30 {\n  background-color: #D92763; }\n\n.bgcolor-pink-20 {\n  background-color: #D55392; }\n\n.bgcolor-watson-violet-1 {\n  color: #ece8f5; }\n\n.bgcolor-watson-violet-10 {\n  color: #e2d2f4; }\n\n.bgcolor-watson-violet-20 {\n  color: #d2b5f0; }\n\n.bgcolor-watson-violet-30 {\n  color: #bf93eb; }\n\n.bgcolor-watson-violet-40 {\n  color: #b07ce8; }\n\n.bgcolor-watson-violet-50 {\n  color: #9753e1; }\n\n.bgcolor-watson-violet-60 {\n  color: #7732bb; }\n\n.bgcolor-watson-violet-70 {\n  color: #602797; }\n\n.bgcolor-watson-violet-80 {\n  color: #44216a; }\n\n.bgcolor-watson-violet-90 {\n  color: #321c4c; }\n\nhtml, body {\n  height: 100%; }\n\n#app {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n\n.AppView {\n  flex: 1;\n  display: flex;\n  flex-direction: column; }\n  .AppView a {\n    color: #006CFC; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23903,10 +23519,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-
-var _extends2 = __webpack_require__(131);
-
-var _extends3 = _interopRequireDefault(_extends2);
 
 var _getPrototypeOf = __webpack_require__(10);
 
@@ -23932,148 +23544,555 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _globals = __webpack_require__(64);
+__webpack_require__(143);
 
-var _globals2 = _interopRequireDefault(_globals);
+var _ibmArrowForwardLinkDark = __webpack_require__(145);
+
+var _ibmArrowForwardLinkDark2 = _interopRequireDefault(_ibmArrowForwardLinkDark);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Button = function (_React$Component) {
-	(0, _inherits3.default)(Button, _React$Component);
+var AppHeader = function (_React$Component) {
+	(0, _inherits3.default)(AppHeader, _React$Component);
 
-	function Button() {
-		(0, _classCallCheck3.default)(this, Button);
+	function AppHeader() {
+		(0, _classCallCheck3.default)(this, AppHeader);
 
-		var _this = (0, _possibleConstructorReturn3.default)(this, (Button.__proto__ || (0, _getPrototypeOf2.default)(Button)).call(this));
+		var _this = (0, _possibleConstructorReturn3.default)(this, (AppHeader.__proto__ || (0, _getPrototypeOf2.default)(AppHeader)).call(this));
 
-		console.log("Button!!!");
+		console.log("AppHeader!!!");
 		return _this;
 	}
 
-	(0, _createClass3.default)(Button, [{
+	(0, _createClass3.default)(AppHeader, [{
 		key: 'render',
 		value: function render() {
-			var _this2 = this;
-
 			return _react2.default.createElement(
 				'div',
-				{
-					className: 'Button ' + this.props.className,
-					style: (0, _extends3.default)({
-						border: _globals2.default.styles.border,
-						padding: '0.5rem 1rem'
-					}, this.props.style, {
-						cursor: 'pointer'
-					}),
-					onClick: function onClick(evt) {
-						return _this2.props.onClick ? _this2.props.onClick(evt) : null;
-					}
-				},
+				{ className: 'AppHeader' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'label' },
-					this.props.children
+					{ className: 'ibm' },
+					_react2.default.createElement(
+						'div',
+						{
+							className: 'name-wrap ibm-col-md-4 ibm-type-e',
+							style: {
+								display: 'flex',
+								flexDirection: 'row',
+								alignItems: 'flex-end'
+							}
+						},
+						_react2.default.createElement(
+							'div',
+							{ className: 'app-name' },
+							'IBM Motion Calculator'
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'app-version ibm-type-c color-grey-60', style: { marginLeft: '0.5rem' } },
+							'v7.0.0'
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'ibm-col-md-4 link-wrap' },
+						_react2.default.createElement(
+							'a',
+							{ href: 'https://github.com/IBM/motion', target: '_blank' },
+							'IBM Motion Guide ',
+							_react2.default.createElement('img', { style: { position: 'relative', top: '0.1rem' }, src: _ibmArrowForwardLinkDark2.default })
+						)
+					)
 				)
 			);
 		}
 	}]);
-	return Button;
+	return AppHeader;
 }(_react2.default.Component);
 
-exports.default = Button;
+exports.default = AppHeader;
 
 /***/ }),
-/* 131 */
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(144);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(44)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./AppHeader.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./AppHeader.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(43)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*-----------------------------------------------------\n *\tcolors\n */\n.color-grey-100 {\n  color: #272727; }\n\n.color-grey-90 {\n  color: #393939; }\n\n.color-grey-80 {\n  color: #4e4e4e; }\n\n.color-grey-70 {\n  color: #626262; }\n\n.color-grey-60 {\n  color: #8c8c8c; }\n\n.color-grey-50 {\n  color: #a3a4a3; }\n\n.color-grey-40 {\n  color: #b4b4b4; }\n\n.color-grey-30 {\n  color: #c6c6c6; }\n\n.color-grey-20 {\n  color: #d8d8d8; }\n\n.color-grey-10 {\n  color: #eaeaea; }\n\n.color-natural-white {\n  color: #f4f4f4; }\n\n.color-cool-grey-100 {\n  color: #23292e; }\n\n.color-cool-grey-90 {\n  color: #343c41; }\n\n.color-cool-grey-80 {\n  color: #484f55; }\n\n.color-cool-grey-70 {\n  color: #5d636a; }\n\n.color-cool-grey-60 {\n  color: #868c91; }\n\n.color-cool-white {\n  color: #EDF5FF; }\n\n.color-warm-grey-50 {\n  color: #A8A3A3; }\n\n.color-warm-grey-40 {\n  color: #B9B4B4; }\n\n.color-warm-grey-30 {\n  color: #CAC5C5; }\n\n.color-warm-grey-20 {\n  color: #DCD7D6; }\n\n.color-warm-grey-10 {\n  color: #EDE9E7; }\n\n.color-warm-white {\n  color: #F8F4F2; }\n\n.color-pure-white {\n  color: #ffffff; }\n\n.color-black {\n  color: #000000; }\n\n.color-teal-40 {\n  color: #26B4CE; }\n\n.color-teal-30 {\n  color: #61E4E2; }\n\n.color-teal-20 {\n  color: #58FED3; }\n\n.color-cyan-40 {\n  color: #005EB1; }\n\n.color-cyan-30 {\n  color: #338FE5; }\n\n.color-cyan-20 {\n  color: #61C9F0; }\n\n.color-blue-60 {\n  color: #00155D; }\n\n.color-blue-50 {\n  color: #002087; }\n\n.color-blue-40 {\n  color: #0044C6; }\n\n.color-blue-30 {\n  color: #006CFC; }\n\n.color-blue-20 {\n  color: #68A9FD; }\n\n.color-blue-10 {\n  color: #C5DFFE; }\n\n.color-purple-40 {\n  color: #6D1E7B; }\n\n.color-purple-30 {\n  color: #854DB6; }\n\n.color-purple-20 {\n  color: #B184DE; }\n\n.color-pink-40 {\n  color: #A62070; }\n\n.color-pink-30 {\n  color: #D92763; }\n\n.color-pink-20 {\n  color: #D55392; }\n\n.color-watson-violet-1 {\n  color: #ece8f5; }\n\n.color-watson-violet-10 {\n  color: #e2d2f4; }\n\n.color-watson-violet-20 {\n  color: #d2b5f0; }\n\n.color-watson-violet-30 {\n  color: #bf93eb; }\n\n.color-watson-violet-40 {\n  color: #b07ce8; }\n\n.color-watson-violet-50 {\n  color: #9753e1; }\n\n.color-watson-violet-60 {\n  color: #7732bb; }\n\n.color-watson-violet-70 {\n  color: #602797; }\n\n.color-watson-violet-80 {\n  color: #44216a; }\n\n.color-watson-violet-90 {\n  color: #321c4c; }\n\n.bgcolor-grey-100 {\n  background-color: #272727; }\n\n.bgcolor-grey-90 {\n  background-color: #393939; }\n\n.bgcolor-grey-80 {\n  background-color: #4e4e4e; }\n\n.bgcolor-grey-70 {\n  background-color: #626262; }\n\n.bgcolor-grey-60 {\n  background-color: #8c8c8c; }\n\n.bgcolor-grey-50 {\n  background-color: #a3a4a3; }\n\n.bgcolor-grey-40 {\n  background-color: #b4b4b4; }\n\n.bgcolor-grey-30 {\n  background-color: #c6c6c6; }\n\n.bgcolor-grey-20 {\n  background-color: #d8d8d8; }\n\n.bgcolor-grey-10 {\n  background-color: #eaeaea; }\n\n.bgcolor-natural-white {\n  background-color: #f4f4f4; }\n\n.bgcolor-cool-grey-100 {\n  background-color: #23292e; }\n\n.bgcolor-cool-grey-90 {\n  background-color: #343c41; }\n\n.bgcolor-cool-grey-80 {\n  background-color: #484f55; }\n\n.bgcolor-cool-grey-70 {\n  background-color: #5d636a; }\n\n.bgcolor-cool-grey-60 {\n  background-color: #868c91; }\n\n.bgcolor-cool-white {\n  background-color: #EDF5FF; }\n\n.bgcolor-warm-grey-50 {\n  background-color: #A8A3A3; }\n\n.bgcolor-warm-grey-40 {\n  background-color: #B9B4B4; }\n\n.bgcolor-warm-grey-30 {\n  background-color: #CAC5C5; }\n\n.bgcolor-warm-grey-20 {\n  background-color: #DCD7D6; }\n\n.bgcolor-warm-grey-10 {\n  background-color: #EDE9E7; }\n\n.bgcolor-warm-white {\n  background-color: #F8F4F2; }\n\n.bgcolor-pure-white {\n  background-color: #ffffff; }\n\n.bgcolor-black {\n  background-color: #000000; }\n\n.bgcolor-teal-40 {\n  background-color: #26B4CE; }\n\n.bgcolor-teal-30 {\n  background-color: #61E4E2; }\n\n.bgcolor-teal-20 {\n  background-color: #58FED3; }\n\n.bgcolor-cyan-40 {\n  background-color: #005EB1; }\n\n.bgcolor-cyan-30 {\n  background-color: #338FE5; }\n\n.bgcolor-cyan-20 {\n  background-color: #61C9F0; }\n\n.bgcolor-blue-60 {\n  background-color: #00155D; }\n\n.bgcolor-blue-50 {\n  background-color: #002087; }\n\n.bgcolor-blue-40 {\n  background-color: #0044C6; }\n\n.bgcolor-blue-30 {\n  background-color: #006CFC; }\n\n.bgcolor-blue-20 {\n  background-color: #68A9FD; }\n\n.bgcolor-blue-10 {\n  background-color: #C5DFFE; }\n\n.bgcolor-purple-40 {\n  background-color: #6D1E7B; }\n\n.bgcolor-purple-30 {\n  background-color: #854DB6; }\n\n.bgcolor-purple-20 {\n  background-color: #B184DE; }\n\n.bgcolor-pink-40 {\n  background-color: #A62070; }\n\n.bgcolor-pink-30 {\n  background-color: #D92763; }\n\n.bgcolor-pink-20 {\n  background-color: #D55392; }\n\n.bgcolor-watson-violet-1 {\n  color: #ece8f5; }\n\n.bgcolor-watson-violet-10 {\n  color: #e2d2f4; }\n\n.bgcolor-watson-violet-20 {\n  color: #d2b5f0; }\n\n.bgcolor-watson-violet-30 {\n  color: #bf93eb; }\n\n.bgcolor-watson-violet-40 {\n  color: #b07ce8; }\n\n.bgcolor-watson-violet-50 {\n  color: #9753e1; }\n\n.bgcolor-watson-violet-60 {\n  color: #7732bb; }\n\n.bgcolor-watson-violet-70 {\n  color: #602797; }\n\n.bgcolor-watson-violet-80 {\n  color: #44216a; }\n\n.bgcolor-watson-violet-90 {\n  color: #321c4c; }\n\n.AppHeader {\n  border-bottom: solid 1px #b4b4b4; }\n  .AppHeader .link-wrap {\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-end; }\n  @media only screen and (max-width: 640px) {\n    .AppHeader .link-wrap {\n      justify-content: flex-start; } }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNHB4IiB2aWV3Qm94PSIwIDAgMTYgMTQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQ2LjIgKDQ0NDk2KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5pYm0tYXJyb3ctZm9yd2FyZC1saW5rLWRhcms8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9ImxpbmstYnV0dG9uIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTQuMDAwMDAwLCAtMy4wMDAwMDApIiBmaWxsPSIjMDA2NEZGIj4KICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTMiPgogICAgICAgICAgICAgICAgPGcgaWQ9ImlibS1hcnJvdy1mb3J3YXJkLWxpbmstZGFyayIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTQuNDAwMDAwLCAzLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJpYm0tYXJyb3ctZm9yd2FyZC1saW5rIiBwb2ludHM9IjguMjYyMjcyNzMgMCA3LjI5NjgxODE4IDAuOTg4NCAxMi4zOTQ3NzI3IDYuMjQxOSAwIDYuMjQxOSAwIDcuNjQxOSAxMi4zOTYxMzY0IDcuNjQxOSA3LjI5NjgxODE4IDEyLjg5NTQgOC4yNjIyNzI3MyAxMy44ODM4IDE1IDYuOTQyNiI+PC9wb2x5Z29uPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="
+
+/***/ }),
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-var _assign = __webpack_require__(132);
+var _getPrototypeOf = __webpack_require__(10);
 
-var _assign2 = _interopRequireDefault(_assign);
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(12);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(13);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(14);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(17);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(147);
+
+var _LeftColumnMove = __webpack_require__(149);
+
+var _LeftColumnMove2 = _interopRequireDefault(_LeftColumnMove);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _assign2.default || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
+var PROPERTY_MOVE = 'move',
+    PROPERTY_SCALE = 'scale',
+    PROPERTY_FADE = 'fade';
 
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }
+var AppBody = function (_React$Component) {
+	(0, _inherits3.default)(AppBody, _React$Component);
 
-  return target;
-};
+	function AppBody() {
+		(0, _classCallCheck3.default)(this, AppBody);
+
+		var _this = (0, _possibleConstructorReturn3.default)(this, (AppBody.__proto__ || (0, _getPrototypeOf2.default)(AppBody)).call(this));
+
+		console.log("AppBody!!!");
+
+		_this.state = {
+			property: 'move'
+		};
+		return _this;
+	}
+
+	(0, _createClass3.default)(AppBody, [{
+		key: 'render',
+		value: function render() {
+
+			var LeftColumn = void 0;
+			switch (this.state.property) {
+
+				default:
+				case PROPERTY_MOVE:
+					{
+						LeftColumn = _react2.default.createElement(_LeftColumnMove2.default, null);
+						break;
+					}
+			}
+			return _react2.default.createElement(
+				'div',
+				{ className: 'AppBody ibm' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'left-column ibm-col-md-3' },
+					LeftColumn
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'right-column ibm-col-md-5' },
+					'right'
+				)
+			);
+		}
+	}]);
+	return AppBody;
+}(_react2.default.Component);
+
+exports.default = AppBody;
 
 /***/ }),
-/* 132 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(133), __esModule: true };
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(148);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(44)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./AppBody.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./AppBody.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
-/* 133 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(134);
-module.exports = __webpack_require__(2).Object.assign;
+exports = module.exports = __webpack_require__(43)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*-----------------------------------------------------\n *\tcolors\n */\n.color-grey-100 {\n  color: #272727; }\n\n.color-grey-90 {\n  color: #393939; }\n\n.color-grey-80 {\n  color: #4e4e4e; }\n\n.color-grey-70 {\n  color: #626262; }\n\n.color-grey-60 {\n  color: #8c8c8c; }\n\n.color-grey-50 {\n  color: #a3a4a3; }\n\n.color-grey-40 {\n  color: #b4b4b4; }\n\n.color-grey-30 {\n  color: #c6c6c6; }\n\n.color-grey-20 {\n  color: #d8d8d8; }\n\n.color-grey-10 {\n  color: #eaeaea; }\n\n.color-natural-white {\n  color: #f4f4f4; }\n\n.color-cool-grey-100 {\n  color: #23292e; }\n\n.color-cool-grey-90 {\n  color: #343c41; }\n\n.color-cool-grey-80 {\n  color: #484f55; }\n\n.color-cool-grey-70 {\n  color: #5d636a; }\n\n.color-cool-grey-60 {\n  color: #868c91; }\n\n.color-cool-white {\n  color: #EDF5FF; }\n\n.color-warm-grey-50 {\n  color: #A8A3A3; }\n\n.color-warm-grey-40 {\n  color: #B9B4B4; }\n\n.color-warm-grey-30 {\n  color: #CAC5C5; }\n\n.color-warm-grey-20 {\n  color: #DCD7D6; }\n\n.color-warm-grey-10 {\n  color: #EDE9E7; }\n\n.color-warm-white {\n  color: #F8F4F2; }\n\n.color-pure-white {\n  color: #ffffff; }\n\n.color-black {\n  color: #000000; }\n\n.color-teal-40 {\n  color: #26B4CE; }\n\n.color-teal-30 {\n  color: #61E4E2; }\n\n.color-teal-20 {\n  color: #58FED3; }\n\n.color-cyan-40 {\n  color: #005EB1; }\n\n.color-cyan-30 {\n  color: #338FE5; }\n\n.color-cyan-20 {\n  color: #61C9F0; }\n\n.color-blue-60 {\n  color: #00155D; }\n\n.color-blue-50 {\n  color: #002087; }\n\n.color-blue-40 {\n  color: #0044C6; }\n\n.color-blue-30 {\n  color: #006CFC; }\n\n.color-blue-20 {\n  color: #68A9FD; }\n\n.color-blue-10 {\n  color: #C5DFFE; }\n\n.color-purple-40 {\n  color: #6D1E7B; }\n\n.color-purple-30 {\n  color: #854DB6; }\n\n.color-purple-20 {\n  color: #B184DE; }\n\n.color-pink-40 {\n  color: #A62070; }\n\n.color-pink-30 {\n  color: #D92763; }\n\n.color-pink-20 {\n  color: #D55392; }\n\n.color-watson-violet-1 {\n  color: #ece8f5; }\n\n.color-watson-violet-10 {\n  color: #e2d2f4; }\n\n.color-watson-violet-20 {\n  color: #d2b5f0; }\n\n.color-watson-violet-30 {\n  color: #bf93eb; }\n\n.color-watson-violet-40 {\n  color: #b07ce8; }\n\n.color-watson-violet-50 {\n  color: #9753e1; }\n\n.color-watson-violet-60 {\n  color: #7732bb; }\n\n.color-watson-violet-70 {\n  color: #602797; }\n\n.color-watson-violet-80 {\n  color: #44216a; }\n\n.color-watson-violet-90 {\n  color: #321c4c; }\n\n.bgcolor-grey-100 {\n  background-color: #272727; }\n\n.bgcolor-grey-90 {\n  background-color: #393939; }\n\n.bgcolor-grey-80 {\n  background-color: #4e4e4e; }\n\n.bgcolor-grey-70 {\n  background-color: #626262; }\n\n.bgcolor-grey-60 {\n  background-color: #8c8c8c; }\n\n.bgcolor-grey-50 {\n  background-color: #a3a4a3; }\n\n.bgcolor-grey-40 {\n  background-color: #b4b4b4; }\n\n.bgcolor-grey-30 {\n  background-color: #c6c6c6; }\n\n.bgcolor-grey-20 {\n  background-color: #d8d8d8; }\n\n.bgcolor-grey-10 {\n  background-color: #eaeaea; }\n\n.bgcolor-natural-white {\n  background-color: #f4f4f4; }\n\n.bgcolor-cool-grey-100 {\n  background-color: #23292e; }\n\n.bgcolor-cool-grey-90 {\n  background-color: #343c41; }\n\n.bgcolor-cool-grey-80 {\n  background-color: #484f55; }\n\n.bgcolor-cool-grey-70 {\n  background-color: #5d636a; }\n\n.bgcolor-cool-grey-60 {\n  background-color: #868c91; }\n\n.bgcolor-cool-white {\n  background-color: #EDF5FF; }\n\n.bgcolor-warm-grey-50 {\n  background-color: #A8A3A3; }\n\n.bgcolor-warm-grey-40 {\n  background-color: #B9B4B4; }\n\n.bgcolor-warm-grey-30 {\n  background-color: #CAC5C5; }\n\n.bgcolor-warm-grey-20 {\n  background-color: #DCD7D6; }\n\n.bgcolor-warm-grey-10 {\n  background-color: #EDE9E7; }\n\n.bgcolor-warm-white {\n  background-color: #F8F4F2; }\n\n.bgcolor-pure-white {\n  background-color: #ffffff; }\n\n.bgcolor-black {\n  background-color: #000000; }\n\n.bgcolor-teal-40 {\n  background-color: #26B4CE; }\n\n.bgcolor-teal-30 {\n  background-color: #61E4E2; }\n\n.bgcolor-teal-20 {\n  background-color: #58FED3; }\n\n.bgcolor-cyan-40 {\n  background-color: #005EB1; }\n\n.bgcolor-cyan-30 {\n  background-color: #338FE5; }\n\n.bgcolor-cyan-20 {\n  background-color: #61C9F0; }\n\n.bgcolor-blue-60 {\n  background-color: #00155D; }\n\n.bgcolor-blue-50 {\n  background-color: #002087; }\n\n.bgcolor-blue-40 {\n  background-color: #0044C6; }\n\n.bgcolor-blue-30 {\n  background-color: #006CFC; }\n\n.bgcolor-blue-20 {\n  background-color: #68A9FD; }\n\n.bgcolor-blue-10 {\n  background-color: #C5DFFE; }\n\n.bgcolor-purple-40 {\n  background-color: #6D1E7B; }\n\n.bgcolor-purple-30 {\n  background-color: #854DB6; }\n\n.bgcolor-purple-20 {\n  background-color: #B184DE; }\n\n.bgcolor-pink-40 {\n  background-color: #A62070; }\n\n.bgcolor-pink-30 {\n  background-color: #D92763; }\n\n.bgcolor-pink-20 {\n  background-color: #D55392; }\n\n.bgcolor-watson-violet-1 {\n  color: #ece8f5; }\n\n.bgcolor-watson-violet-10 {\n  color: #e2d2f4; }\n\n.bgcolor-watson-violet-20 {\n  color: #d2b5f0; }\n\n.bgcolor-watson-violet-30 {\n  color: #bf93eb; }\n\n.bgcolor-watson-violet-40 {\n  color: #b07ce8; }\n\n.bgcolor-watson-violet-50 {\n  color: #9753e1; }\n\n.bgcolor-watson-violet-60 {\n  color: #7732bb; }\n\n.bgcolor-watson-violet-70 {\n  color: #602797; }\n\n.bgcolor-watson-violet-80 {\n  color: #44216a; }\n\n.bgcolor-watson-violet-90 {\n  color: #321c4c; }\n\n.AppBody {\n  flex: 1;\n  display: flex;\n  flex-direction: row; }\n  .AppBody .left-column {\n    border-right: solid 1px #b4b4b4; }\n", ""]);
+
+// exports
 
 
 /***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.3.1 Object.assign(target, source)
-var $export = __webpack_require__(9);
-
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(135) });
-
-
-/***/ }),
-/* 135 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-// 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(26);
-var gOPS = __webpack_require__(46);
-var pIE = __webpack_require__(27);
-var toObject = __webpack_require__(45);
-var IObject = __webpack_require__(63);
-var $assign = Object.assign;
 
-// should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(18)(function () {
-  var A = {};
-  var B = {};
-  // eslint-disable-next-line no-undef
-  var S = Symbol();
-  var K = 'abcdefghijklmnopqrst';
-  A[S] = 7;
-  K.split('').forEach(function (k) { B[k] = k; });
-  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
-}) ? function assign(target, source) { // eslint-disable-line no-unused-vars
-  var T = toObject(target);
-  var aLen = arguments.length;
-  var index = 1;
-  var getSymbols = gOPS.f;
-  var isEnum = pIE.f;
-  while (aLen > index) {
-    var S = IObject(arguments[index++]);
-    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
-    var length = keys.length;
-    var j = 0;
-    var key;
-    while (length > j) if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
-  } return T;
-} : $assign;
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(12);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(13);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(14);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(17);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _LeftColumnPrompt = __webpack_require__(150);
+
+var _LeftColumnPrompt2 = _interopRequireDefault(_LeftColumnPrompt);
+
+var _OpenSelector = __webpack_require__(151);
+
+var _OpenSelector2 = _interopRequireDefault(_OpenSelector);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var LeftColumnMove = function (_React$Component) {
+	(0, _inherits3.default)(LeftColumnMove, _React$Component);
+
+	function LeftColumnMove() {
+		(0, _classCallCheck3.default)(this, LeftColumnMove);
+
+		var _this = (0, _possibleConstructorReturn3.default)(this, (LeftColumnMove.__proto__ || (0, _getPrototypeOf2.default)(LeftColumnMove)).call(this));
+
+		console.log("LeftColumnMove!!!");
+		return _this;
+	}
+
+	(0, _createClass3.default)(LeftColumnMove, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'LeftColumnMove' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'input-wrap' },
+					_react2.default.createElement(
+						_LeftColumnPrompt2.default,
+						null,
+						'1. Choose a property to move:'
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-wrap' },
+						_react2.default.createElement(_OpenSelector2.default, null)
+					)
+				)
+			);
+		}
+	}]);
+	return LeftColumnMove;
+}(_react2.default.Component);
+
+exports.default = LeftColumnMove;
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(12);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(13);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(14);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(17);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var LeftColumnPrompt = function (_React$Component) {
+	(0, _inherits3.default)(LeftColumnPrompt, _React$Component);
+
+	function LeftColumnPrompt() {
+		(0, _classCallCheck3.default)(this, LeftColumnPrompt);
+
+		var _this = (0, _possibleConstructorReturn3.default)(this, (LeftColumnPrompt.__proto__ || (0, _getPrototypeOf2.default)(LeftColumnPrompt)).call(this));
+
+		console.log("LeftColumnPrompt!!!");
+		return _this;
+	}
+
+	(0, _createClass3.default)(LeftColumnPrompt, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				{ className: "LeftColumnPrompt ibm-type-c",
+					style: {
+						maxWidth: '100000px'
+					}
+				},
+				this.props.children
+			);
+		}
+	}]);
+	return LeftColumnPrompt;
+}(_react2.default.Component);
+
+exports.default = LeftColumnPrompt;
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(12);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(13);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(14);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(17);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(152);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Option = function Option(props) {
+	return _react2.default.createElement(
+		'div',
+		{ className: 'option ibm-col-md-1 ' + 'hello', 'data-option-value': '1' },
+		'Option 1'
+	);
+};
+
+var OpenSelector = function (_React$Component) {
+	(0, _inherits3.default)(OpenSelector, _React$Component);
+
+	function OpenSelector() {
+		(0, _classCallCheck3.default)(this, OpenSelector);
+
+		var _this = (0, _possibleConstructorReturn3.default)(this, (OpenSelector.__proto__ || (0, _getPrototypeOf2.default)(OpenSelector)).call(this));
+
+		console.log("OpenSelector!!!");
+
+		_this.state = {
+			selectedId: 0
+		};
+		return _this;
+	}
+
+	(0, _createClass3.default)(OpenSelector, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'OpenSelector', style: {
+						display: 'flex',
+						flexDirection: 'row'
+					} },
+				_react2.default.createElement(
+					'div',
+					{ className: 'option ibm-col-md-1', 'data-option-value': '1' },
+					'Option 1'
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'option ibm-col-md-1', 'data-option-value': '1' },
+					'Option 1'
+				)
+			);
+		}
+	}]);
+	return OpenSelector;
+}(_react2.default.Component);
+
+exports.default = OpenSelector;
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(153);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(44)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./OpenSelector.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/index.js!./OpenSelector.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(43)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*-----------------------------------------------------\n *\tcolors\n */\n.color-grey-100 {\n  color: #272727; }\n\n.color-grey-90 {\n  color: #393939; }\n\n.color-grey-80 {\n  color: #4e4e4e; }\n\n.color-grey-70 {\n  color: #626262; }\n\n.color-grey-60 {\n  color: #8c8c8c; }\n\n.color-grey-50 {\n  color: #a3a4a3; }\n\n.color-grey-40 {\n  color: #b4b4b4; }\n\n.color-grey-30 {\n  color: #c6c6c6; }\n\n.color-grey-20 {\n  color: #d8d8d8; }\n\n.color-grey-10 {\n  color: #eaeaea; }\n\n.color-natural-white {\n  color: #f4f4f4; }\n\n.color-cool-grey-100 {\n  color: #23292e; }\n\n.color-cool-grey-90 {\n  color: #343c41; }\n\n.color-cool-grey-80 {\n  color: #484f55; }\n\n.color-cool-grey-70 {\n  color: #5d636a; }\n\n.color-cool-grey-60 {\n  color: #868c91; }\n\n.color-cool-white {\n  color: #EDF5FF; }\n\n.color-warm-grey-50 {\n  color: #A8A3A3; }\n\n.color-warm-grey-40 {\n  color: #B9B4B4; }\n\n.color-warm-grey-30 {\n  color: #CAC5C5; }\n\n.color-warm-grey-20 {\n  color: #DCD7D6; }\n\n.color-warm-grey-10 {\n  color: #EDE9E7; }\n\n.color-warm-white {\n  color: #F8F4F2; }\n\n.color-pure-white {\n  color: #ffffff; }\n\n.color-black {\n  color: #000000; }\n\n.color-teal-40 {\n  color: #26B4CE; }\n\n.color-teal-30 {\n  color: #61E4E2; }\n\n.color-teal-20 {\n  color: #58FED3; }\n\n.color-cyan-40 {\n  color: #005EB1; }\n\n.color-cyan-30 {\n  color: #338FE5; }\n\n.color-cyan-20 {\n  color: #61C9F0; }\n\n.color-blue-60 {\n  color: #00155D; }\n\n.color-blue-50 {\n  color: #002087; }\n\n.color-blue-40 {\n  color: #0044C6; }\n\n.color-blue-30 {\n  color: #006CFC; }\n\n.color-blue-20 {\n  color: #68A9FD; }\n\n.color-blue-10 {\n  color: #C5DFFE; }\n\n.color-purple-40 {\n  color: #6D1E7B; }\n\n.color-purple-30 {\n  color: #854DB6; }\n\n.color-purple-20 {\n  color: #B184DE; }\n\n.color-pink-40 {\n  color: #A62070; }\n\n.color-pink-30 {\n  color: #D92763; }\n\n.color-pink-20 {\n  color: #D55392; }\n\n.color-watson-violet-1 {\n  color: #ece8f5; }\n\n.color-watson-violet-10 {\n  color: #e2d2f4; }\n\n.color-watson-violet-20 {\n  color: #d2b5f0; }\n\n.color-watson-violet-30 {\n  color: #bf93eb; }\n\n.color-watson-violet-40 {\n  color: #b07ce8; }\n\n.color-watson-violet-50 {\n  color: #9753e1; }\n\n.color-watson-violet-60 {\n  color: #7732bb; }\n\n.color-watson-violet-70 {\n  color: #602797; }\n\n.color-watson-violet-80 {\n  color: #44216a; }\n\n.color-watson-violet-90 {\n  color: #321c4c; }\n\n.bgcolor-grey-100 {\n  background-color: #272727; }\n\n.bgcolor-grey-90 {\n  background-color: #393939; }\n\n.bgcolor-grey-80 {\n  background-color: #4e4e4e; }\n\n.bgcolor-grey-70 {\n  background-color: #626262; }\n\n.bgcolor-grey-60 {\n  background-color: #8c8c8c; }\n\n.bgcolor-grey-50 {\n  background-color: #a3a4a3; }\n\n.bgcolor-grey-40 {\n  background-color: #b4b4b4; }\n\n.bgcolor-grey-30 {\n  background-color: #c6c6c6; }\n\n.bgcolor-grey-20 {\n  background-color: #d8d8d8; }\n\n.bgcolor-grey-10 {\n  background-color: #eaeaea; }\n\n.bgcolor-natural-white {\n  background-color: #f4f4f4; }\n\n.bgcolor-cool-grey-100 {\n  background-color: #23292e; }\n\n.bgcolor-cool-grey-90 {\n  background-color: #343c41; }\n\n.bgcolor-cool-grey-80 {\n  background-color: #484f55; }\n\n.bgcolor-cool-grey-70 {\n  background-color: #5d636a; }\n\n.bgcolor-cool-grey-60 {\n  background-color: #868c91; }\n\n.bgcolor-cool-white {\n  background-color: #EDF5FF; }\n\n.bgcolor-warm-grey-50 {\n  background-color: #A8A3A3; }\n\n.bgcolor-warm-grey-40 {\n  background-color: #B9B4B4; }\n\n.bgcolor-warm-grey-30 {\n  background-color: #CAC5C5; }\n\n.bgcolor-warm-grey-20 {\n  background-color: #DCD7D6; }\n\n.bgcolor-warm-grey-10 {\n  background-color: #EDE9E7; }\n\n.bgcolor-warm-white {\n  background-color: #F8F4F2; }\n\n.bgcolor-pure-white {\n  background-color: #ffffff; }\n\n.bgcolor-black {\n  background-color: #000000; }\n\n.bgcolor-teal-40 {\n  background-color: #26B4CE; }\n\n.bgcolor-teal-30 {\n  background-color: #61E4E2; }\n\n.bgcolor-teal-20 {\n  background-color: #58FED3; }\n\n.bgcolor-cyan-40 {\n  background-color: #005EB1; }\n\n.bgcolor-cyan-30 {\n  background-color: #338FE5; }\n\n.bgcolor-cyan-20 {\n  background-color: #61C9F0; }\n\n.bgcolor-blue-60 {\n  background-color: #00155D; }\n\n.bgcolor-blue-50 {\n  background-color: #002087; }\n\n.bgcolor-blue-40 {\n  background-color: #0044C6; }\n\n.bgcolor-blue-30 {\n  background-color: #006CFC; }\n\n.bgcolor-blue-20 {\n  background-color: #68A9FD; }\n\n.bgcolor-blue-10 {\n  background-color: #C5DFFE; }\n\n.bgcolor-purple-40 {\n  background-color: #6D1E7B; }\n\n.bgcolor-purple-30 {\n  background-color: #854DB6; }\n\n.bgcolor-purple-20 {\n  background-color: #B184DE; }\n\n.bgcolor-pink-40 {\n  background-color: #A62070; }\n\n.bgcolor-pink-30 {\n  background-color: #D92763; }\n\n.bgcolor-pink-20 {\n  background-color: #D55392; }\n\n.bgcolor-watson-violet-1 {\n  color: #ece8f5; }\n\n.bgcolor-watson-violet-10 {\n  color: #e2d2f4; }\n\n.bgcolor-watson-violet-20 {\n  color: #d2b5f0; }\n\n.bgcolor-watson-violet-30 {\n  color: #bf93eb; }\n\n.bgcolor-watson-violet-40 {\n  color: #b07ce8; }\n\n.bgcolor-watson-violet-50 {\n  color: #9753e1; }\n\n.bgcolor-watson-violet-60 {\n  color: #7732bb; }\n\n.bgcolor-watson-violet-70 {\n  color: #602797; }\n\n.bgcolor-watson-violet-80 {\n  color: #44216a; }\n\n.bgcolor-watson-violet-90 {\n  color: #321c4c; }\n\n.OpenSelector {\n  display: flex;\n  flex-direction: row; }\n  .OpenSelector .option {\n    background-color: #ffffff;\n    border: solid 1px #a3a4a3;\n    padding: 0.24rem; }\n", ""]);
+
+// exports
 
 
 /***/ })

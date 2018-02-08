@@ -1,0 +1,18 @@
+@import '../../_temp/curves.scss';
+
+/* Transition timing (easing) classes */
+
+/* class pattern: ibm-motion-[motion mode: n | m]-ease-[in-out | in | out] */
+
+@each $propName, $propValues in $curves {
+	
+	@each $motionModeName, $motionModeValue2 in $propValues {
+
+		@each $easingName, $easingValues in $motionModeValue2 {
+
+			.ibm-motion-#{$motionModeName}-#{$propName}-#{$easingName}{
+				transition-timing-function:#{$easingValues};
+			}
+		}
+	}
+}
