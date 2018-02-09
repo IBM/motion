@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Label from '../Label';
+
 class Dropdown extends React.Component {
 	constructor(){
 		console.log('Dropdown!');
@@ -8,9 +10,10 @@ class Dropdown extends React.Component {
 
 	render(){
 		return(
-			<div className="Dropdown">
-				{this.props.label != null ? <label className="ibm-type-b" style={{marginRight:'1rem'}}>{this.props.label}</label> : null}
+			<div className="Dropdown input-layout-vertical">
+				{this.props.label != null ? <Label text={this.props.label}/> : null}
 				<select
+					className="input-element"
 					style={{
 						...this.props.style
 					}}

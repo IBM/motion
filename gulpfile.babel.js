@@ -20,6 +20,7 @@ gulp.task('build-script', () => {
 		.transform("babelify", { presets: ["env"] })
 		.on('error', err => console.log(err))
 		.bundle()
+		.on('error', err => console.log(err))
 		.pipe(source('motion.js'))
 		.pipe(buffer())
         .pipe(sourcemaps.init())
@@ -32,7 +33,9 @@ gulp.task('build-script', () => {
 gulp.task('build-demo-script', () => {
 	return browserify({entries: './src-demo/app.js', debug: true})
 		.transform("babelify", { presets: ["env", "react"] })
+		.on('error', err => console.log(err))
 		.bundle()
+		.on('error', err => console.log(err))
 		.pipe(source('app.js'))
 		.pipe(buffer())
         .pipe(sourcemaps.init())

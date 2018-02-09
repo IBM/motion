@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Label from '../Label';
+
 class Input extends React.Component{
 	constructor(){
 		super();
@@ -31,9 +33,10 @@ class Input extends React.Component{
 	render(){
 
 		return(
-			<div className="Input">
-				{this.props.label != null ? <label className="ibm-type-b" style={{marginRight:'1rem'}}>{this.props.label}</label> : null}
+			<div className="Input input-layout-vertical">
+				{this.props.label != null ? <Label text={this.props.label}/> : null}
 				<input 
+					className="input-element"
 					style={{
 						...this.props.style
 					}}

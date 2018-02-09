@@ -12,13 +12,10 @@ import getEasing from '../../../src/getCurve.js';
 import getClasses from '../../../src/getClasses.js';
 
 const inputsStyles = {
-	display:"flex",
-	flexDirection:'row',
-	height:'48px',
-	alignItems:'center'
+	
 }
 const inputSetStyles = {
-	marginRight:'2rem'
+	
 }
 const topBorderStyle = {
 	borderTop:`solid #dcdcdc 1px`,
@@ -90,10 +87,10 @@ class SiteBody extends React.Component{
 						<div className="inputs"
 							style={inputsStyles}
 						>
-							<div style={inputSetStyles}>
+							<div className="input-set input-set-first" style={inputSetStyles}>
 								<Dropdown
 									style={{
-										width:`${16 * 12}px`
+										
 									}}
 									label="Property"
 									options={[
@@ -117,10 +114,10 @@ class SiteBody extends React.Component{
 									onChange={ value => this.setState({prop:value})}
 								/>
 							</div>
-							<div style={inputSetStyles}>
+							<div className="input-set" style={inputSetStyles}>
 								<Dropdown
 									style={{
-										width:`${16 * 12}px`
+										
 									}}
 									label="Easing"
 									options={[
@@ -140,10 +137,10 @@ class SiteBody extends React.Component{
 									onChange={ value => this.setState({easingSelection:value})}
 								/>
 							</div>
-							<div style={inputSetStyles}>
+							<div className="input-set" style={inputSetStyles}>
 								<Dropdown
 									style={{
-										width:`${16 * 12}px`
+										
 									}}
 									label="Motion mode"
 									options={[
@@ -163,30 +160,30 @@ class SiteBody extends React.Component{
 						<div className="inputs"
 							style={inputsStyles}
 						>
-							<div style={inputSetStyles}>
+							<div className="input-set input-set-first" style={inputSetStyles}>
 								<Input 
 									style={{
-										width:`${16*12}px`
+										
 									}}
 									label="Distance" 
 									value={100}
 									onChange={distance => this.setState({distance})}
 								/>
 							</div>
-							<div style={inputSetStyles}>
+							<div className="input-set" style={inputSetStyles}>
 								<Input 
 									style={{
-										width:`${16*12}px`
+										
 									}}
 									label="Width" 
 									value={128}
 									onChange={width => this.setState({width})}
 								/>
 							</div>
-							<div style={inputSetStyles}>
+							<div className="input-set" style={inputSetStyles}>
 								<Input 
 									style={{
-										width:`${16*12}px`
+										
 									}}
 									label="height" 
 									value={32}
@@ -197,13 +194,14 @@ class SiteBody extends React.Component{
 						<div className="inputs"
 							style={{
 								...inputsStyles,
-								height:'auto'
+								height:'auto',
+								marginBottom:0
 							}}
 						>
 							<div style={{
 								...inputSetStyles,
 								height:'auto',
-								padding:'16px 0 0'
+								padding:'0 0 0'
 							}}>
 								<Button
 									style={{
@@ -233,9 +231,19 @@ class SiteBody extends React.Component{
 							label="Duration"
 							value={`${Math.round(this.state.duration)} ms`}
 						/>
+					</div>
+				</div>
+				<div
+					className="padding-v"
+				>
+					<div
+						className="outputs"
+					>
 						<Output
 							label="Classes"
-							value={this.state.classes}
+							outputType="code"
+							style={{width:'100%'}}
+							value={this.state.classes.replace(' ', '<br/>')}
 						/>
 					</div>
 				</div>

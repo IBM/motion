@@ -23,8 +23,16 @@ select {
   border-radius: 0; }
 
 label {
-  color: #a4a4a4;
-  font-size: 12px; }
+  color: #a4a4a4; }
+
+.Label {
+  margin-bottom: 8px;
+  margin-right: 1rem; }
+
+.input-layout-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
 
 .padding-h {
   padding-left: 16px;
@@ -33,3 +41,30 @@ label {
 .padding-v {
   padding-top: 16px;
   padding-bottom: 16px; }
+
+.inputs {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem; }
+  .inputs .input-set {
+    display: inline-block;
+    margin: 0 2rem 1rem 0; }
+    .inputs .input-set .input-element {
+      width: 256px; }
+  @media (max-width: 960px) {
+    .inputs {
+      flex-direction: column;
+      align-items: flex-start; }
+      .inputs .input-set.input-set-first {
+        display: block; } }
+  @media (max-width: 640px) {
+    .inputs .input-set {
+      margin-right: 0;
+      display: block; }
+      .inputs .input-set .input-element {
+        width: 100%; } }
+
+.Output .output-content {
+  width: 100%;
+  max-width: 576px; }

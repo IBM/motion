@@ -30,7 +30,17 @@ select{
 
 label{
 	color:#a4a4a4;
-	font-size:12px;
+}
+
+.Label{
+	margin-bottom:8px;
+	margin-right:1rem;
+}
+
+.input-layout-vertical{
+	display:flex;
+	flex-direction:column;
+	align-items:flex-start;
 }
 
 .padding-h{
@@ -41,4 +51,53 @@ label{
 .padding-v{
 	padding-top:$unit;
 	padding-bottom:$unit;
+}
+
+.inputs{
+    //display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom:1rem;
+
+    .input-set{
+    	display:inline-block;
+		margin:0 2rem 1rem 0;
+
+		.input-element{
+			width:256px;
+		}
+	}
+
+	@media (max-width:960px){
+    	flex-direction:column;
+    	align-items:flex-start;
+
+    	.input-set{
+    		&.input-set-first{
+    			display:block;
+    		}
+    	}
+    }
+
+    @media (max-width:640px){
+
+    	.input-set{
+    		margin-right:0;
+
+    		display:block;
+
+    		.input-element{
+    			width:100%;
+    		}
+    	}
+    }
+}
+
+.Output{
+	
+	.output-content{
+		width:100%;
+		max-width:576px;
+	}
 }
