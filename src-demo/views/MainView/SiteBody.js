@@ -26,6 +26,8 @@ const initialStateValues = {
 	distance:100,
 	width:128,
 	height:32,
+	iWidth:64,
+	iHeight:32,
 	duration:getDuration(100, 128*32),
 	easing:getEasing(100, 128*32),
 	prop:constants.PROPERTY_MOVE,
@@ -43,24 +45,28 @@ class SiteBody extends React.Component{
 
 	onGetMotion(evt){
 
+		let theSize = this.state.prop === constants.PROPERTY_SCALE ? Math.abs((this.state.iWidth - this.state.width || this.state.width) * (this.state.iHeight - this.state.height || this.state.height)) : this.state.width * this.state.height;
+
+		console.log(`onGetMotion:${theSize}`);
+
 		this.setState({
 			duration:getDuration(
 				this.state.distance,
-				this.state.width * this.state.height,
+				theSize,
 				this.state.prop,
 				this.state.motionMode,
 				this.state.easingSelection
 			),
 			easing:getEasing(
 				this.state.distance,
-				this.state.width * this.state.height,
+				theSize,
 				this.state.prop,
 				this.state.motionMode,
 				this.state.easingSelection
 			),
 			classes:getClasses(
 				this.state.distance,
-				this.state.width * this.state.height,
+				theSize,
 				this.state.prop,
 				this.state.motionMode,
 				this.state.easingSelection
@@ -163,14 +169,14 @@ class SiteBody extends React.Component{
 							{
 								this.state.prop === constants.PROPERTY_SCALE
 								?(
-									<div className="input-set input-set-first" style={inputSetStyles}>
+									<div className="input-set" style={inputSetStyles}>
 										<Input 
 											style={{
 												
 											}}
 											label="Init. Width" 
 											value={64}
-											onChange={distance => this.setState({distance})}
+											onChange={iWidth => this.setState({iWidth})}
 										/>
 									</div>
 								):null
@@ -178,14 +184,14 @@ class SiteBody extends React.Component{
 							{
 								this.state.prop === constants.PROPERTY_SCALE
 								?(
-									<div className="input-set input-set-first" style={inputSetStyles}>
+									<div className="input-set" style={inputSetStyles}>
 										<Input 
 											style={{
 												
 											}}
 											label="Init. Height" 
 											value={32}
-											onChange={distance => this.setState({distance})}
+											onChange={iHeight => this.setState({iHeight})}
 										/>
 									</div>
 								):null
@@ -236,11 +242,12 @@ class SiteBody extends React.Component{
 							<div style={{
 								...inputSetStyles,
 								height:'auto',
-								padding:'0 0 0'
+								padding:'0 0 0',
+								marginTop:'32px'
 							}}>
 								<Button
 									style={{
-										width:`${16*8}px`
+										width:`256px`
 									}}
 									normalColor="#0F6FFF"
 									hoverColor="#054ADA"

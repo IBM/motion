@@ -7,7 +7,7 @@ class Label extends React.Component{
 
 	render(){
 		return(
-			<label className="Label ibm-type-a" style={{...this.props.style}} for={this.props.for}>{this.props.text}</label>
+			<label className="Label ibm-type-a" style={{...this.props.style}} htmlFor={this.props.for}>{this.props.text}</label>
 		)
 	}
 }

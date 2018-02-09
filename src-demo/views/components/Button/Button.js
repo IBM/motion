@@ -13,7 +13,6 @@ class Button extends React.Component{
 		return(
 			<button
 				style={{
-					...this.props.style,
 					backgroundColor:this.state.state === 'hover' ? this.props.hoverColor : this.props.normalColor,
 					fontSize: '14px',
 					height:'48px',
@@ -22,8 +21,9 @@ class Button extends React.Component{
 					alignItems:'center',
 					border:'none',
 					padding:'0 16px',
-					webkitAppearance: 'none',
-					color:'white'
+					WebkitAppearance: 'none',
+					color:'white',
+					...this.props.style
 				}}
 				onMouseEnter={evt => this.setState({state:'hover'})}
 				onMouseLeave={evt => this.setState({state:'normal'})}
