@@ -7,15 +7,26 @@ class SiteHeader extends React.Component{
 
 	render(){
 		return(
-			<div className="SiteHeader">
+			<div 
+				className="SiteHeader"
+				style={{
+					height:'48px',
+					display:'flex',
+					alignItems:'center',
+					justifyContent:'space-between'
+				}}
+			>
 				<div 
 					className="ibm-type-d padding-h"
 					 style={{
-						height:'48px',
-						display:'flex',
-						alignItems:'center'
+						paddingTop:0,
+						paddingBottom:0,
+						margin:0
 					}}
 				>IBM Motion Generator</div>
+				<div className="padding-h">
+					<a target="_blank" href="https://github.com/IBM/motion">IBM Motion Codebase</a>
+				</div>
 			</div>
 		)
 	}
