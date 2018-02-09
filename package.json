@@ -1,6 +1,6 @@
 {
   "name": "@ibm/motion",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "motion definitions for IBM",
   "main": "dist/index.js",
   "scripts": {
@@ -22,11 +22,9 @@
     "url": "https://github.com/IBM/motion/issues"
   },
   "homepage": "https://github.com/IBM/motion#readme",
-  "dependencies": {
-    "@ibm/type": "^0.1.4",
-    "babel-register": "^6.26.0"
-  },
   "devDependencies": {
+    "@ibm/type": "^0.1.4",
+    "babel-register": "^6.26.0",
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
     "babel-loader": "^7.0.0",
