@@ -204,7 +204,11 @@ class SiteBody extends React.Component{
 											style={{
 												
 											}}
-											label="Distance" 
+											label={{
+												[constants.PROPERTY_MOVE]:'distance',
+												[constants.PROPERTY_FADE]:'Opacity change',
+												[constants.PROPERTY_ROTATE]:'Angle change in degrees',
+											}[this.state.prop]}
 											value={100}
 											onChange={distance => this.setState({distance})}
 										/>
