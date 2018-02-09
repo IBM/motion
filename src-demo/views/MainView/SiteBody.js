@@ -160,16 +160,51 @@ class SiteBody extends React.Component{
 						<div className="inputs"
 							style={inputsStyles}
 						>
-							<div className="input-set input-set-first" style={inputSetStyles}>
-								<Input 
-									style={{
-										
-									}}
-									label="Distance" 
-									value={100}
-									onChange={distance => this.setState({distance})}
-								/>
-							</div>
+							{
+								this.state.prop === constants.PROPERTY_SCALE
+								?(
+									<div className="input-set input-set-first" style={inputSetStyles}>
+										<Input 
+											style={{
+												
+											}}
+											label="Init. Width" 
+											value={64}
+											onChange={distance => this.setState({distance})}
+										/>
+									</div>
+								):null
+							}
+							{
+								this.state.prop === constants.PROPERTY_SCALE
+								?(
+									<div className="input-set input-set-first" style={inputSetStyles}>
+										<Input 
+											style={{
+												
+											}}
+											label="Init. Height" 
+											value={32}
+											onChange={distance => this.setState({distance})}
+										/>
+									</div>
+								):null
+							}
+							{
+								this.state.prop !== constants.PROPERTY_SCALE
+								?(
+									<div className="input-set input-set-first" style={inputSetStyles}>
+										<Input 
+											style={{
+												
+											}}
+											label="Distance" 
+											value={100}
+											onChange={distance => this.setState({distance})}
+										/>
+									</div>
+								):null
+							}
 							<div className="input-set" style={inputSetStyles}>
 								<Input 
 									style={{
