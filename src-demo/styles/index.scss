@@ -9,6 +9,14 @@ body{
 	margin:0;
 }
 
+a{
+	color:#0F6DFF;
+
+	&:hover, &:active{
+		color:#054ADA;
+	}
+}
+
 input{
 	height:32px;
 	font-size:14px;
