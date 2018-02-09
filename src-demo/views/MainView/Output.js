@@ -36,6 +36,7 @@ class Output extends React.Component{
 					):(
 						<div 
 							className="ibm-type-h output-content"
+							style={this.props.contentStyle}
 						>{ReactHtmlParser(this.props.value)}</div>
 					)
 				}

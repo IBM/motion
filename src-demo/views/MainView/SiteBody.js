@@ -225,6 +225,7 @@ class SiteBody extends React.Component{
 						<div className="ibm-type-d">Motion Specs</div>
 						<Output
 							label="Easing"
+							contentStyle={{maxWidth:'100%'}}
 							value={this.state.easing}
 						/>
 						<Output
@@ -241,6 +242,7 @@ class SiteBody extends React.Component{
 					>
 						<Output
 							label="Classes"
+							labelStyle={{marginLeft:'16px'}}
 							outputType="code"
 							style={{width:'100%'}}
 							value={this.state.classes.replace(' ', '<br/>')}
