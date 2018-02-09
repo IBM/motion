@@ -174,7 +174,7 @@ class SiteBody extends React.Component{
 											style={{
 												
 											}}
-											label="Init. Width" 
+											label="Init. Width (px)" 
 											value={64}
 											onChange={iWidth => this.setState({iWidth})}
 										/>
@@ -189,7 +189,7 @@ class SiteBody extends React.Component{
 											style={{
 												
 											}}
-											label="Init. Height" 
+											label="Init. Height (px)" 
 											value={32}
 											onChange={iHeight => this.setState({iHeight})}
 										/>
@@ -205,9 +205,9 @@ class SiteBody extends React.Component{
 												
 											}}
 											label={{
-												[constants.PROPERTY_MOVE]:'distance',
-												[constants.PROPERTY_FADE]:'Opacity change',
-												[constants.PROPERTY_ROTATE]:'Angle change in degrees',
+												[constants.PROPERTY_MOVE]:'distance (px)',
+												[constants.PROPERTY_FADE]:'Opacity change (%)',
+												[constants.PROPERTY_ROTATE]:'Angle change (degrees)',
 											}[this.state.prop]}
 											value={100}
 											onChange={distance => this.setState({distance})}
@@ -220,7 +220,7 @@ class SiteBody extends React.Component{
 									style={{
 										
 									}}
-									label="Width" 
+									label={this.state.prop === constants.PROPERTY_SCALE ? "Target width (px)" : "Width (px)" }
 									value={128}
 									onChange={width => this.setState({width})}
 								/>
@@ -230,7 +230,7 @@ class SiteBody extends React.Component{
 									style={{
 										
 									}}
-									label="height" 
+									label={this.state.prop === constants.PROPERTY_SCALE ? "Target height (px)" : "Height (px)" }
 									value={32}
 									onChange={height => this.setState({height})}
 								/>
