@@ -20,7 +20,7 @@ The duration should change depending on the distance (or the amount of scaling o
 
 ---
 
-**Warning:** IBM Motion is in development and things may change. Look out for a stable release later this year (2017).
+**Warning:** IBM Motion is in development and things may change. Look out for a stable release later this year (2018).
 
 ## Installation and build
 
@@ -44,7 +44,11 @@ $ npm start
 
 ### Transition timing function classes (easing)
 
-This package provides classes that sets the `transition-timing-function` rule on your element.
+This package provides classes that sets the `transition-timing-function` and `transition-duration` rules on your element.
+
+## Motion generator
+
+A tool to make it easy to use IBM Motion is available at: https://ibm.github.io/motion/
 
 |---|---|---|
 

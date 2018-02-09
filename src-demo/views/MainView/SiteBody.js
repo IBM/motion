@@ -21,7 +21,7 @@ const inputSetStyles = {
 	marginRight:'2rem'
 }
 const topBorderStyle = {
-	borderTop:`solid #BEBEBE 1px`,
+	borderTop:`solid #dcdcdc 1px`,
 	paddingTop:'1rem'
 }
 
