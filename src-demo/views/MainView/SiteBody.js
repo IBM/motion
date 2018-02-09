@@ -79,12 +79,12 @@ class SiteBody extends React.Component{
 				</div>
 				<div 
 					className="padding-v padding-h"
+					style={{
+						backgroundColor:'#f3f3f3'
+					}}
 				>
 					<div
 						className=""
-						style={{
-							...topBorderStyle
-						}}
 					>
 						<div className="ibm-type-d">Input</div>
 						<div className="inputs"
@@ -92,6 +92,9 @@ class SiteBody extends React.Component{
 						>
 							<div style={inputSetStyles}>
 								<Dropdown
+									style={{
+										width:`${16 * 12}px`
+									}}
 									label="Property"
 									options={[
 										{
@@ -116,6 +119,9 @@ class SiteBody extends React.Component{
 							</div>
 							<div style={inputSetStyles}>
 								<Dropdown
+									style={{
+										width:`${16 * 12}px`
+									}}
 									label="Easing"
 									options={[
 										{
@@ -136,6 +142,9 @@ class SiteBody extends React.Component{
 							</div>
 							<div style={inputSetStyles}>
 								<Dropdown
+									style={{
+										width:`${16 * 12}px`
+									}}
 									label="Motion mode"
 									options={[
 										{
@@ -156,6 +165,9 @@ class SiteBody extends React.Component{
 						>
 							<div style={inputSetStyles}>
 								<Input 
+									style={{
+										width:`${16*12}px`
+									}}
 									label="Distance" 
 									value={100}
 									onChange={distance => this.setState({distance})}
@@ -163,6 +175,9 @@ class SiteBody extends React.Component{
 							</div>
 							<div style={inputSetStyles}>
 								<Input 
+									style={{
+										width:`${16*12}px`
+									}}
 									label="Width" 
 									value={128}
 									onChange={width => this.setState({width})}
@@ -170,6 +185,9 @@ class SiteBody extends React.Component{
 							</div>
 							<div style={inputSetStyles}>
 								<Input 
+									style={{
+										width:`${16*12}px`
+									}}
 									label="height" 
 									value={32}
 									onChange={height => this.setState({height})}
@@ -185,9 +203,12 @@ class SiteBody extends React.Component{
 							<div style={{
 								...inputSetStyles,
 								height:'auto',
-								padding:'16px 0'
+								padding:'16px 0 0'
 							}}>
 								<Button
+									style={{
+										width:`${16*8}px`
+									}}
 									normalColor="#0F6FFF"
 									hoverColor="#054ADA"
 									label="Get motion"
@@ -196,12 +217,12 @@ class SiteBody extends React.Component{
 							</div>
 						</div>
 					</div>
+				</div>
+				<div 
+					className="padding-v padding-h"
+				>
 					<div
 						className="outputs"
-						style={{
-							...topBorderStyle,
-							marginTop:'1rem'
-						}}
 					>
 						<div className="ibm-type-d">Motion Specs</div>
 						<Output

@@ -5,6 +5,27 @@ body {
   padding: 0 16px;
   margin: 0; }
 
+input {
+  height: 32px;
+  font-size: 14px;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  -webkit-appearance: none;
+  border: none; }
+
+select {
+  height: 32px;
+  font-size: 14px;
+  -webkit-appearance: none;
+  border: none;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 0; }
+
+label {
+  color: #a4a4a4;
+  font-size: 12px; }
+
 .padding-h {
   padding-left: 16px;
   padding-right: 16px; }

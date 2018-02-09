@@ -12,6 +12,7 @@ class Dropdown extends React.Component {
 				{this.props.label != null ? <label className="ibm-type-b" style={{marginRight:'1rem'}}>{this.props.label}</label> : null}
 				<select
 					style={{
+						...this.props.style,
 						fontSize:'12px'
 					}}
 					onChange={ evt => this.props.onChange != null ? this.props.onChange(evt.currentTarget.value) : null}

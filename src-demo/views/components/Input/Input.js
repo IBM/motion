@@ -34,6 +34,9 @@ class Input extends React.Component{
 			<div className="Input">
 				{this.props.label != null ? <label className="ibm-type-b" style={{marginRight:'1rem'}}>{this.props.label}</label> : null}
 				<input 
+					style={{
+						...this.props.style
+					}}
 					onChange={evt => this.onChange(evt)}
 					placeholder={this.props.placeholder}
 					value={this.state.value}

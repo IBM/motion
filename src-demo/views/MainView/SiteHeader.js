@@ -9,13 +9,13 @@ class SiteHeader extends React.Component{
 		return(
 			<div className="SiteHeader">
 				<div 
-					className="ibm-type-e padding-h"
+					className="ibm-type-d padding-h"
 					 style={{
 						height:'48px',
 						display:'flex',
 						alignItems:'center'
 					}}
-				>IBM Motion Demo</div>
+				>IBM Motion Generator</div>
 			</div>
 		)
 	}
