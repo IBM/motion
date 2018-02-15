@@ -87,7 +87,7 @@ console.log(getCurve(
 	7 // motion definition version. supports 6 and 7
 ));
 
-// returns a float value, duration in ms.
+// returns a string value - the cubic-bezier curve definition for the CSS `transition-timing-function` rule.
 ```
 
 ### getMotion() method
@@ -105,7 +105,7 @@ console.log(getMotion(
 	7 // motion definition version. supports 6 and 7
 ));
 
-// returns a float value, duration in ms.
+// returns an object that contains both the duration and curve, as well as a few other informations about the motion.
 ```
 
 ## Motion Classes
