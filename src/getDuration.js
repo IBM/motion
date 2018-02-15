@@ -36,8 +36,8 @@ const getDuration = (
 
 				case constants.MOMENT_CELEBRATORY:{
 					ret = Math.max(
-							0.01 *adjustedSize +130,
-							0
+							0.0000000391113892365457 * size + 0.179937421777222,
+							0.18
 						) *params.durationMultiplier
 					;
 					break;
@@ -45,13 +45,16 @@ const getDuration = (
 
 				case constants.MOMENT_PRODUCTIVE:{
 					ret = Math.max(
-							0.002 *adjustedSize +80,
-							0
+							0.0000000469336670838548 * size + 0.119924906132666,
+							0.1
 						) *params.durationMultiplier
 					;
 					break;
 				}
 			}
+			console.log('getDuration:fade:', ret);
+			ret = ret * 1000;
+			console.log('getDuration:fade:', ret);
 			break;
 		}
 
