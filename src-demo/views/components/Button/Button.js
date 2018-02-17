@@ -15,14 +15,14 @@ class Button extends React.Component{
 				style={{
 					backgroundColor:this.state.state === 'hover' ? this.props.hoverColor : this.props.normalColor,
 					fontSize: '14px',
-					height:'48px',
+					height:this.props.height != null ? this.props.height :  '48px',
 					display:'flex',
 					flexDirection:'row',
 					alignItems:'center',
 					border:'none',
 					padding:'0 16px',
 					WebkitAppearance: 'none',
-					color:'white',
+					color:this.props.color != null ? this.props.color : 'white',
 					...this.props.style
 				}}
 				onMouseEnter={evt => this.setState({state:'hover'})}

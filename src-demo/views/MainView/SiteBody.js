@@ -8,8 +8,10 @@ import Output from './Output.js';
 import Button from '../Components/Button';
 
 import getDuration from '../../../src/getDuration.js';
-import getEasing from '../../../src/getCurve.js';
+import getCurve from '../../../src/getCurve.js';
 import getClasses from '../../../src/getClasses.js';
+
+import MotionPreview from './MotionPreview.js';
 
 const inputsStyles = {
 	
@@ -22,18 +24,25 @@ const topBorderStyle = {
 	paddingTop:'1rem'
 }
 
+const outputModes = ['Motion Specs', 'Preview'];
+
+const I_WIDTH = 48;
+const I_HEIGHT = 48;
+const I_DISTANCE = 100;
+
 const initialStateValues = {
-	distance:100,
-	width:128,
-	height:32,
-	iWidth:64,
-	iHeight:32,
-	duration:getDuration(100, 128*32),
-	easing:getEasing(100, 128*32),
+	distance:I_DISTANCE,
+	width:I_WIDTH,
+	height:I_HEIGHT,
+	iWidth:I_WIDTH,
+	iHeight:I_HEIGHT,
+	duration:getDuration(I_DISTANCE, I_WIDTH*I_HEIGHT),
+	easing:getCurve(I_DISTANCE, I_WIDTH*I_HEIGHT),
 	prop:constants.PROPERTY_MOVE,
 	easingSelection:constants.EASE_IN_OUT,
 	motionMode:constants.MOMENT_PRODUCTIVE,
-	classes:getClasses(100, 128*32)
+	classes:getClasses(I_DISTANCE, I_WIDTH*I_HEIGHT),
+	outputMode:outputModes[0]
 }
 
 class SiteBody extends React.Component{
@@ -45,41 +54,56 @@ class SiteBody extends React.Component{
 
 	onGetMotion(evt){
 
-		let theSize = this.state.prop === constants.PROPERTY_SCALE ? Math.abs((this.state.iWidth - this.state.width || this.state.width) * (this.state.iHeight - this.state.height || this.state.height)) : this.state.width * this.state.height;
+	}
 
-		console.log(`onGetMotion:${theSize}`);
+	componentWillUpdate(nextProps, nextState){
+		console.log('componentWillUpdate...');
 
-		this.setState({
-			duration:getDuration(
-				this.state.distance,
-				theSize,
-				this.state.prop,
-				this.state.motionMode,
-				this.state.easingSelection
-			),
-			easing:getEasing(
-				this.state.distance,
-				theSize,
-				this.state.prop,
-				this.state.motionMode,
-				this.state.easingSelection
-			),
-			classes:getClasses(
-				this.state.distance,
-				theSize,
-				this.state.prop,
-				this.state.motionMode,
-				this.state.easingSelection
-			)
-		})
+		let theSize = 
+			this.state.prop === constants.PROPERTY_SCALE 
+			? 
+				Math.abs(
+					(nextState.iWidth - nextState.width || nextState.width) 
+					* (nextState.iHeight - nextState.height || nextState.height)
+				) 
+			: 
+				nextState.width * nextState.height
+		;
+
+		let duration = getDuration(
+			nextState.distance,
+			theSize,
+			nextState.prop,
+			nextState.motionMode,
+			nextState.easingSelection
+		);
+		let easing = getCurve(
+			nextState.distance,
+			theSize,
+			nextState.prop,
+			nextState.motionMode,
+			nextState.easingSelection
+		);
+		let classes = getClasses(
+			nextState.distance,
+			theSize,
+			nextState.prop,
+			nextState.motionMode,
+			nextState.easingSelection
+		);
+
+		if(this.state.duration !== duration || this.state.easing !== easing || this.state.classes !== classes){
+			console.log('onGetMotion:DIFF!!!!', duration, easing, classes);
+			this.setState({
+				duration, easing, classes
+			});
+		}
 	}
 
 	render(){
+		console.log('SiteBody.render...', this.state);
 		return(
 			<div className="SiteBody">
-				<div className="padding-h ibm-type-c" style={{marginBottom:0}}>
-					<p>Duo Motion comprises several unique concepts - use this tool to get the right motion parameters for your element.</p>
-				</div>
 				<div 
 					className="padding-v padding-h"
 					style={{
@@ -156,7 +180,11 @@ class SiteBody extends React.Component{
 										},
 										{
 											label:'Expressive motion',
-											value:constants.MOMENT_CELEBRATORY
+											value:constants.MOMENT_EXPRESSIVE
+										},
+										{
+											label:'Narrative motion',
+											value:constants.MOMENT_NARRATIVE
 										}
 									]}
 									onChange={ value => this.setState({motionMode:value})}
@@ -176,7 +204,7 @@ class SiteBody extends React.Component{
 											}}
 											label="Init. Width (px)" 
 											value={64}
-											onChange={iWidth => this.setState({iWidth})}
+											onChange={iWidth => this.setState({iWidth:parseFloat(iWidth)})}
 										/>
 									</div>
 								):null
@@ -191,7 +219,7 @@ class SiteBody extends React.Component{
 											}}
 											label="Init. Height (px)" 
 											value={32}
-											onChange={iHeight => this.setState({iHeight})}
+											onChange={iHeight => this.setState({iHeight:parseFloat(iHeight)})}
 										/>
 									</div>
 								):null
@@ -221,8 +249,8 @@ class SiteBody extends React.Component{
 										
 									}}
 									label={this.state.prop === constants.PROPERTY_SCALE ? "Target width (px)" : "Width (px)" }
-									value={128}
-									onChange={width => this.setState({width})}
+									value={I_WIDTH}
+									onChange={width => this.setState({width:parseFloat(width)})}
 								/>
 							</div>
 							<div className="input-set" style={inputSetStyles}>
@@ -231,11 +259,12 @@ class SiteBody extends React.Component{
 										
 									}}
 									label={this.state.prop === constants.PROPERTY_SCALE ? "Target height (px)" : "Height (px)" }
-									value={32}
-									onChange={height => this.setState({height})}
+									value={I_HEIGHT}
+									onChange={height => this.setState({height:parseFloat(height)})}
 								/>
 							</div>
 						</div>
+						{/*
 						<div className="inputs"
 							style={{
 								...inputsStyles,
@@ -260,41 +289,81 @@ class SiteBody extends React.Component{
 								/>
 							</div>
 						</div>
+						*/}
 					</div>
 				</div>
 				<div 
-					className="padding-v padding-h"
+					className="padding-h"
+					style={{
+						marginTop:'2rem'
+					}}
 				>
 					<div
 						className="outputs"
 					>
-						<div className="ibm-type-d">Motion Specs</div>
-						<Output
-							label="Easing"
-							contentStyle={{maxWidth:'100%'}}
-							value={this.state.easing}
-						/>
-						<Output
-							label="Duration"
-							value={`${Math.round(this.state.duration)} ms`}
-						/>
+						<div className=""
+							style={{
+								display:'flex',
+								flexDirection:'row'
+							}}
+						>
+							<div
+								onClick={evt => this.setState({outputMode:outputModes[0]})}
+								className={`${this.state.outputMode === outputModes[0] ? 'ibm-type-d' : 'ibm-type-c'}`}
+								style={{
+									marginBottom:0
+								}}
+							>Motion Specs</div>
+							<div style={{marginRight:'1rem', marginLeft:'1rem'}}></div>
+							<div
+								onClick={evt => this.setState({outputMode:outputModes[1]})}
+								className={`${this.state.outputMode === outputModes[1] ? 'ibm-type-d' : 'ibm-type-c'}`}
+							>Preview</div>
+						</div>
 					</div>
 				</div>
-				<div
-					className="padding-v"
-				>
-					<div
-						className="outputs"
-					>
-						<Output
-							label="Classes"
-							labelStyle={{marginLeft:'16px'}}
-							outputType="code"
-							style={{width:'100%'}}
-							value={this.state.classes.replace(' ', '<br/>')}
-						/>
-					</div>
-				</div>
+				{
+					this.state.outputMode === outputModes[0]
+					? (
+						<div>
+							<div
+								className="padding-v padding-h"
+							>
+								<div
+									className="outputs"
+								>
+									<Output
+										label="Easing"
+										contentStyle={{maxWidth:'100%'}}
+										value={this.state.easing}
+									/>
+									<Output
+										label="Duration"
+										value={`${Math.round(this.state.duration)} ms`}
+									/>
+								</div>
+							</div>
+							<div
+								className="padding-v"
+							>
+								<div
+									className="outputs"
+								>
+									<Output
+										label="Classes"
+										labelStyle={{marginLeft:'16px'}}
+										outputType="code"
+										style={{width:'100%'}}
+										value={this.state.classes.replace(' ', '<br/>')}
+									/>
+								</div>
+							</div>
+						</div>
+					)
+					: (
+						<MotionPreview {...this.state} />
+					)
+				}
 			</div>
 		)
 	}

@@ -46,7 +46,6 @@ gulp.task('build-demo-script', () => {
 });
 
 function buildSassFiles(){
-	console.log('buildSassFiles...');
 
 	//-----------------------------------------------------
 	//	Curves
@@ -129,11 +128,7 @@ gulp.task('demo-sass:watch', function () {
 });
 
 gulp.task('script:watch', function(){
-	gulp.watch('src/**/*', ['build-script']);
-});
-
-gulp.task('demo-script:watch', function(){
-	gulp.watch('src-demo/**/*', ['build-demo-script']);
+	gulp.watch(['src/**/*', 'src-demo/**/*'], ['build-script', 'build-demo-script']);
 });
 
 gulp.task('copy-ibm-type-files', () => {
@@ -143,7 +138,7 @@ gulp.task('copy-ibm-type-files', () => {
 	;
 });
 
-gulp.task('watch', ['script:watch', 'demo-script:watch', 'sass:watch', 'demo-sass:watch']);
+gulp.task('watch', ['default', 'script:watch', 'sass:watch', 'demo-sass:watch', 'asset:watch']);
 
 gulp.task('default', ['build-script', 'build-demo-script', 'sass', 'demo-sass', 'copy-ibm-type-files']);
 

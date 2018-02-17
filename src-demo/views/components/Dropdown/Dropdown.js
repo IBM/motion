@@ -17,7 +17,10 @@ class Dropdown extends React.Component {
 					style={{
 						...this.props.style
 					}}
-					onChange={ evt => this.props.onChange != null ? this.props.onChange(evt.currentTarget.value) : null}
+					onChange={ evt => {
+						console.log('Dropdown.onChange...', evt.currentTarget.value);
+						return this.props.onChange != null ? this.props.onChange(evt.currentTarget.value) : null}
+					}
 				>
 					{
 						this.props.options.map( (entry, entryI) => <option key={`option-${entryI}`} value={entry.value}>{entry.label}</option>)

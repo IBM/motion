@@ -60,7 +60,7 @@ const getMotion = (
 	;
 	
 	let 
-		sizeFactorNatural = helpers.getSizeFactor(distance, size, constants.MOMENT_CELEBRATORY, 1),
+		sizeFactorNatural = helpers.getSizeFactor(distance, size, constants.MOMENT_EXPRESSIVE, 1),
 		sizeFactorMechanical = helpers.getSizeFactor(distance, size, constants.MOMENT_PRODUCTIVE, 1)
 	;
 
@@ -95,13 +95,13 @@ const getMotion = (
 			ret = {
 				meta,
 				input,
-				[constants.MOMENT_CELEBRATORY]:{
+				[constants.MOMENT_EXPRESSIVE]:{
 					curves:{
 						easeInOut:getCurve(
 							distance, 
 							size, 
 							property, 
-							constants.MOMENT_CELEBRATORY, 
+							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_IN_OUT, 
 							version, 
 							params
@@ -110,7 +110,7 @@ const getMotion = (
 							distance, 
 							size, 
 							property, 
-							constants.MOMENT_CELEBRATORY, 
+							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_IN, 
 							version, 
 							params
@@ -119,7 +119,7 @@ const getMotion = (
 							distance, 
 							size, 
 							property, 
-							constants.MOMENT_CELEBRATORY, 
+							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_OUT, 
 							version, 
 							params
@@ -129,7 +129,7 @@ const getMotion = (
 						distance, 
 						size, 
 						property, 
-						constants.MOMENT_CELEBRATORY, 
+						constants.MOMENT_EXPRESSIVE, 
 						constants.EASE_IN_OUT, 
 						version, 
 						params
@@ -186,13 +186,13 @@ const getMotion = (
 			ret = {
 				meta,
 				input,
-				[constants.MOMENT_CELEBRATORY]:{
+				[constants.MOMENT_EXPRESSIVE]:{
 					curves:{
 						easeInOut:getCurve(
 							distance, 
 							size, 
 							property, 
-							constants.MOMENT_CELEBRATORY, 
+							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_IN_OUT, 
 							version, 
 							params
@@ -201,7 +201,7 @@ const getMotion = (
 							distance, 
 							size, 
 							property, 
-							constants.MOMENT_CELEBRATORY, 
+							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_IN, 
 							version, 
 							params
@@ -210,7 +210,7 @@ const getMotion = (
 							distance, 
 							size, 
 							property, 
-							constants.MOMENT_CELEBRATORY, 
+							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_OUT, 
 							version, 
 							params
@@ -220,7 +220,7 @@ const getMotion = (
 						distance, 
 						size, 
 						property, 
-						constants.MOMENT_CELEBRATORY, 
+						constants.MOMENT_EXPRESSIVE, 
 						constants.EASE_IN_OUT, 
 						version, 
 						params
