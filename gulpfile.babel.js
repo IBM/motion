@@ -14,6 +14,7 @@ var gulpFn  = require('gulp-fn');
 import getDuration from './src/getDuration.js';
 const autoprefixer = require('gulp-autoprefixer');
 const gulpCopy = require('gulp-copy');
+const base64 = require('gulp-base64');
 
 gulp.task('build-script', () => {
 	return browserify({entries: './src/motion.js', debug: true})
@@ -94,6 +95,7 @@ gulp.task('demo-sass', () => {
 	return gulp
 		.src('src-demo/styles/index.scss')
 		.pipe(sass().on('error', sass.logError))
+		.pipe(base64())
 		.pipe(rename('index.css'))
 	    .pipe(gulp.dest('./dist-demo/css'))
 	;

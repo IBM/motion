@@ -6,7 +6,6 @@ import SiteBody from './SiteBody.js';
 class MainView extends React.Component{
 	constructor(){
 		super();
-		console.log('MainView!');
 	}
 
 	render(){

@@ -30,7 +30,7 @@ class SiteHeader extends React.Component{
 					</div>
 				</div>
 				<div className="ibm-type-b padding-h" style={{maxWidth:'40em'}}>
-					Duo Motion comprises several unique concepts - use this tool to get the right motion parameters for your element.
+					IBM Motion utilizes several concepts to ensure unique and consistent experience - this includes different motion modes for different experience moments, size based adjustments, and dynamic duration scale. Use this tool to get the right motion parameters for your element.
 				</div>
 			</div>
 		)

@@ -73,3 +73,18 @@ label {
 .Output .output-content {
   width: 100%;
   max-width: 576px; }
+
+.Dropdown {
+  position: relative; }
+  .Dropdown select {
+    cursor: pointer; }
+  .Dropdown .icon {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    height: 20px;
+    width: 20px;
+    transform: translateY(-50%);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAHCAYAAAFGq+z1AAAAAXNSR0IArs4c6QAAAGRJREFUGBljYGBg8ABiDiBGgJMIJhJrKYwNkwZpggvCJOE0P5wFYQSAqAlADJPYAWQzgwRBACSxE4jhAiBBEGCCUBCyF0iBbIcZgSwHcg3ISBQXgYyFaUBWgGENzCSQBpAJKAoAACINDtTizdkAAAAASUVORK5CYII=);
+    background-position: center;
+    background-repeat: no-repeat; }

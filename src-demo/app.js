@@ -6,7 +6,6 @@ import MainView from './views/MainView';
 
 ready()
 	.then( () => {
-		console.log('App!!!');
 
 		ReactDOM.render(
 			<MainView/>,

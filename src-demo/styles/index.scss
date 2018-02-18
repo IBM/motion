@@ -109,3 +109,23 @@ label{
 		max-width:576px;
 	}
 }
+
+.Dropdown{
+	position:relative;
+	
+	select{
+		cursor:pointer;
+	}
+
+	.icon{
+		position:absolute;
+		top:50%;
+		right:8px;
+		height:20px;
+		width:20px;
+		transform:translateY(-50%);
+		background-image:url('./assets/chevron-down.png');
+		background-position:center;
+		background-repeat:no-repeat;
+	}
+}

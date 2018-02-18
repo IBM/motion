@@ -4,7 +4,6 @@ import Label from '../Label';
 
 class Dropdown extends React.Component {
 	constructor(){
-		console.log('Dropdown!');
 		super();
 	}
 
@@ -12,20 +11,24 @@ class Dropdown extends React.Component {
 		return(
 			<div className="Dropdown input-layout-vertical">
 				{this.props.label != null ? <Label text={this.props.label}/> : null}
-				<select
-					className="input-element"
+				<div 
 					style={{
-						...this.props.style
+						position:'relative'
 					}}
-					onChange={ evt => {
-						console.log('Dropdown.onChange...', evt.currentTarget.value);
-						return this.props.onChange != null ? this.props.onChange(evt.currentTarget.value) : null}
-					}
 				>
-					{
-						this.props.options.map( (entry, entryI) => <option key={`option-${entryI}`} value={entry.value}>{entry.label}</option>)
-					}
-				</select>
+					<select
+						className="input-element"
+						style={{
+							...this.props.style
+						}}
+						onChange={ evt => this.props.onChange != null ? this.props.onChange(evt.currentTarget.value) : null}
+					>
+						{
+							this.props.options.map( (entry, entryI) => <option disabled={entry.disabled === true} key={`option-${entryI}`} value={entry.value}>{entry.label}</option>)
+						}
+					</select>
+					<div className="icon"/>
+				</div>
 			</div>
 		)
 	}

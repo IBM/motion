@@ -11,8 +11,6 @@ const getDuration = (
 	params = {}
 ) => {
 
-	console.log('getDuration...', _distance, _size);
-
 	let distance = Math.max(10, parseFloat(_distance)) || 100;
 	let size = Math.max(20, parseFloat(_size)) || 20;
 	params.durationMultiplier = params.durationMultiplier || 1;
@@ -36,6 +34,18 @@ const getDuration = (
 			const SIZE2 = 400 * 400;
 			
 			switch(motionMode){
+
+				case constants.MOMENT_CELEBRATORY:{
+
+					const DUR1 = 310;
+					const DUR2 = 438;
+					
+					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
+					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+					break;
+				}
 
 				case constants.MOMENT_NARRATIVE:{
 
@@ -65,8 +75,8 @@ const getDuration = (
 				default:
 				case constants.MOMENT_PRODUCTIVE:{
 					
-					const DUR1 = 114;
-					const DUR2 = 190;
+					const DUR1 = 108;
+					const DUR2 = 160;
 					
 					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
 					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
@@ -86,6 +96,18 @@ const getDuration = (
 			const SIZE2 = 400 * 400;
 			
 			switch(motionMode){
+
+				case constants.MOMENT_CELEBRATORY:{
+
+					const DUR1 = 360;
+					const DUR2 = 480;
+					
+					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
+					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+					break;
+				}
 
 				case constants.MOMENT_NARRATIVE:{
 
@@ -137,9 +159,21 @@ const getDuration = (
 			
 			switch(motionMode){
 
+				case constants.MOMENT_CELEBRATORY:{
+
+					const DUR1 = 268;
+					const DUR2 = 392;
+					
+					const SLOPE = (DUR2 - DUR1) / (AREA_DELTA_2 - AREA_DELTA_1);
+					const DISPLACEMENT = DUR1 - SLOPE * AREA_DELTA_1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+					break;
+				}
+
 				case constants.MOMENT_NARRATIVE:{
 
-					const DUR1 = 180;
+					const DUR1 = 208;
 					const DUR2 = 260;
 					
 					const SLOPE = (DUR2 - DUR1) / (AREA_DELTA_2 - AREA_DELTA_1);
@@ -193,6 +227,19 @@ const getDuration = (
 			const SIZE_DISPLACEMENT = (SIZE_DUR2 - SIZE_DISTANCE2 * SIZE_SLOPE) / SIZE_DUR1;
 
 			switch(motionMode){
+
+				case constants.MOMENT_CELEBRATORY:{
+
+					const DUR1 = 276;
+					const DUR2 = 466;
+					
+					const SLOPE = (DUR2 - DUR1) / (DISTANCE2 - DISTANCE1);
+					const DISPLACEMENT = DUR1 - SLOPE * DISTANCE1;
+
+					ret = SLOPE * distance + DISPLACEMENT;
+					// ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
+					break;
+				}
 
 				case constants.MOMENT_NARRATIVE:{
 

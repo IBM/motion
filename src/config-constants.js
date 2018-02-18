@@ -16,6 +16,11 @@ const curves = {
 			"easeInOut":"cubic-bezier(0.29, 0.04, 0.23, 1)",
 			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",
 			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
+		},
+		[constants.MOMENT_CELEBRATORY]:{
+			"easeInOut":"cubic-bezier(0.29, 0.04, 0.23, 1)",
+			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",
+			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
 		}
 	},
 	[constants.PROPERTY_SCALE]:{
@@ -30,6 +35,11 @@ const curves = {
 			"easeOut":"cubic-bezier(0, 0, 0.38, 0.9)",
 		},
 		[constants.MOMENT_NARRATIVE]:{
+			"easeInOut":"cubic-bezier(0.29, 0.04, 0.23, 1)",
+			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",
+			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
+		},
+		[constants.MOMENT_CELEBRATORY]:{
 			"easeInOut":"cubic-bezier(0.29, 0.04, 0.23, 1)",
 			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",
 			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
@@ -51,6 +61,12 @@ const curves = {
 			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",
 			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
 		}
+		,
+		[constants.MOMENT_CELEBRATORY]:{
+			"easeInOut":"cubic-bezier(0.29, 0.04, 0.23, 1)",
+			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",
+			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
+		}
 	},
 	[constants.PROPERTY_ROTATE]:{
 		[constants.MOMENT_EXPRESSIVE]:{
@@ -67,11 +83,16 @@ const curves = {
 			"easeInOut":"cubic-bezier(0.29, 0.04, 0.23, 1)",
 			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",
 			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
+		},
+		[constants.MOMENT_CELEBRATORY]:{
+			"easeInOut":"cubic-bezier(0.29, 0.04, 0.23, 1)",
+			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",
+			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
 		}
 	}
 };
 
-const motionModes = [constants.MOMENT_EXPRESSIVE, constants.MOMENT_PRODUCTIVE, constants.MOMENT_NARRATIVE];
+const motionModes = [constants.MOMENT_EXPRESSIVE, constants.MOMENT_PRODUCTIVE, constants.MOMENT_NARRATIVE, constants.MOMENT_CELEBRATORY];
 
 const distances = {
 	[constants.PROPERTY_MOVE]:[10, 25, 50, 75, 100, 200, 400, 800, 1600, 3200],
