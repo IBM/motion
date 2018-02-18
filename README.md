@@ -12,7 +12,7 @@ Motion in interface design is defined by many things such as the property that i
 
 #### Motion modes
 
-This package recognizes that there is a need for multiple types of motion for different moments. Currently it supports two type of motions for different moments - the productive motion that is efficient and quick, ideal for micro interactions, and the  expressive motion for more conversational exprience. Much attention has been given to maintaining consistency between these two modes - even though they use different acceleration curves and different duration, they feel the same.
+This package recognizes that there is a need for multiple types of motion for different moments. Currently it supports two type of motions for different moments - the productive motion that is efficient and quick, ideal for micro interactions, and the expressive motion for more conversational experience. Much attention has been given to maintaining consistency between these two modes - even though they use different acceleration curves and different duration, they feel the same.
 
 #### Dynamic duration
 
