@@ -138,7 +138,7 @@ gulp.task('copy-ibm-type-files', () => {
 	;
 });
 
-gulp.task('watch', ['default', 'script:watch', 'sass:watch', 'demo-sass:watch', 'asset:watch']);
+gulp.task('watch', ['default', 'script:watch', 'sass:watch', 'demo-sass:watch']);
 
 gulp.task('default', ['build-script', 'build-demo-script', 'sass', 'demo-sass', 'copy-ibm-type-files']);
 

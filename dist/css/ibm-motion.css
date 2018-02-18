@@ -114,307 +114,307 @@
 
 /* Transition duration classes */
 .ibm-motion-expr-move-dur-10 {
-  transition-duration: 114ms; }
-
-.ibm-motion-expr-move-dur-25 {
-  transition-duration: 115ms; }
-
-.ibm-motion-expr-move-dur-50 {
   transition-duration: 118ms; }
 
-.ibm-motion-expr-move-dur-75 {
+.ibm-motion-expr-move-dur-25 {
   transition-duration: 120ms; }
+
+.ibm-motion-expr-move-dur-50 {
+  transition-duration: 123ms; }
+
+.ibm-motion-expr-move-dur-75 {
+  transition-duration: 125ms; }
 
 .ibm-motion-expr-move-dur-100 {
-  transition-duration: 123ms; }
+  transition-duration: 128ms; }
 
 .ibm-motion-expr-move-dur-200 {
-  transition-duration: 133ms; }
+  transition-duration: 139ms; }
 
 .ibm-motion-expr-move-dur-400 {
-  transition-duration: 154ms; }
+  transition-duration: 160ms; }
 
 .ibm-motion-expr-move-dur-800 {
-  transition-duration: 195ms; }
+  transition-duration: 203ms; }
 
 .ibm-motion-expr-move-dur-1600 {
-  transition-duration: 278ms; }
+  transition-duration: 290ms; }
 
 .ibm-motion-expr-move-dur-3200 {
-  transition-duration: 443ms; }
+  transition-duration: 462ms; }
 
 .ibm-motion-prod-move-dur-10 {
-  transition-duration: 80ms; }
-
-.ibm-motion-prod-move-dur-25 {
-  transition-duration: 81ms; }
-
-.ibm-motion-prod-move-dur-50 {
   transition-duration: 83ms; }
 
-.ibm-motion-prod-move-dur-75 {
-  transition-duration: 85ms; }
-
-.ibm-motion-prod-move-dur-100 {
-  transition-duration: 86ms; }
-
-.ibm-motion-prod-move-dur-200 {
-  transition-duration: 94ms; }
-
-.ibm-motion-prod-move-dur-400 {
-  transition-duration: 109ms; }
-
-.ibm-motion-prod-move-dur-800 {
-  transition-duration: 138ms; }
-
-.ibm-motion-prod-move-dur-1600 {
-  transition-duration: 197ms; }
-
-.ibm-motion-prod-move-dur-3200 {
-  transition-duration: 315ms; }
-
-.ibm-motion-narr-move-dur-10 {
-  transition-duration: 182ms; }
-
-.ibm-motion-narr-move-dur-25 {
-  transition-duration: 184ms; }
-
-.ibm-motion-narr-move-dur-50 {
-  transition-duration: 187ms; }
-
-.ibm-motion-narr-move-dur-75 {
-  transition-duration: 190ms; }
-
-.ibm-motion-narr-move-dur-100 {
-  transition-duration: 193ms; }
-
-.ibm-motion-narr-move-dur-200 {
-  transition-duration: 205ms; }
-
-.ibm-motion-narr-move-dur-400 {
-  transition-duration: 230ms; }
-
-.ibm-motion-narr-move-dur-800 {
-  transition-duration: 280ms; }
-
-.ibm-motion-narr-move-dur-1600 {
-  transition-duration: 379ms; }
-
-.ibm-motion-narr-move-dur-3200 {
-  transition-duration: 578ms; }
-
-.ibm-motion-expr-scale-dur-100 {
-  transition-duration: 123ms; }
-
-.ibm-motion-expr-scale-dur-200 {
-  transition-duration: 133ms; }
-
-.ibm-motion-expr-scale-dur-400 {
-  transition-duration: 154ms; }
-
-.ibm-motion-expr-scale-dur-800 {
-  transition-duration: 195ms; }
-
-.ibm-motion-expr-scale-dur-1600 {
-  transition-duration: 278ms; }
-
-.ibm-motion-expr-scale-dur-3200 {
-  transition-duration: 443ms; }
-
-.ibm-motion-expr-scale-dur-6400 {
-  transition-duration: 774ms; }
-
-.ibm-motion-expr-scale-dur-12800 {
-  transition-duration: 1436ms; }
-
-.ibm-motion-expr-scale-dur-25600 {
-  transition-duration: 2760ms; }
-
-.ibm-motion-expr-scale-dur-51200 {
-  transition-duration: 5407ms; }
-
-.ibm-motion-expr-scale-dur-102400 {
-  transition-duration: 10701ms; }
-
-.ibm-motion-expr-scale-dur-204800 {
-  transition-duration: 21289ms; }
-
-.ibm-motion-prod-scale-dur-100 {
-  transition-duration: 86ms; }
-
-.ibm-motion-prod-scale-dur-200 {
-  transition-duration: 94ms; }
-
-.ibm-motion-prod-scale-dur-400 {
-  transition-duration: 109ms; }
-
-.ibm-motion-prod-scale-dur-800 {
-  transition-duration: 138ms; }
-
-.ibm-motion-prod-scale-dur-1600 {
-  transition-duration: 197ms; }
-
-.ibm-motion-prod-scale-dur-3200 {
-  transition-duration: 315ms; }
-
-.ibm-motion-prod-scale-dur-6400 {
-  transition-duration: 552ms; }
-
-.ibm-motion-prod-scale-dur-12800 {
-  transition-duration: 1024ms; }
-
-.ibm-motion-prod-scale-dur-25600 {
-  transition-duration: 1970ms; }
-
-.ibm-motion-prod-scale-dur-51200 {
-  transition-duration: 3861ms; }
-
-.ibm-motion-prod-scale-dur-102400 {
-  transition-duration: 7642ms; }
-
-.ibm-motion-prod-scale-dur-204800 {
-  transition-duration: 15205ms; }
-
-.ibm-motion-narr-scale-dur-100 {
-  transition-duration: 193ms; }
-
-.ibm-motion-narr-scale-dur-200 {
-  transition-duration: 205ms; }
-
-.ibm-motion-narr-scale-dur-400 {
-  transition-duration: 230ms; }
-
-.ibm-motion-narr-scale-dur-800 {
-  transition-duration: 280ms; }
-
-.ibm-motion-narr-scale-dur-1600 {
-  transition-duration: 379ms; }
-
-.ibm-motion-narr-scale-dur-3200 {
-  transition-duration: 578ms; }
-
-.ibm-motion-narr-scale-dur-6400 {
-  transition-duration: 975ms; }
-
-.ibm-motion-narr-scale-dur-12800 {
-  transition-duration: 1769ms; }
-
-.ibm-motion-narr-scale-dur-25600 {
-  transition-duration: 3357ms; }
-
-.ibm-motion-narr-scale-dur-51200 {
-  transition-duration: 6534ms; }
-
-.ibm-motion-narr-scale-dur-102400 {
-  transition-duration: 12886ms; }
-
-.ibm-motion-narr-scale-dur-204800 {
-  transition-duration: 25592ms; }
-
-.ibm-motion-expr-fade-dur-25 {
-  transition-duration: 220ms; }
-
-.ibm-motion-expr-fade-dur-50 {
-  transition-duration: 220ms; }
-
-.ibm-motion-expr-fade-dur-75 {
-  transition-duration: 220ms; }
-
-.ibm-motion-expr-fade-dur-100 {
-  transition-duration: 220ms; }
-
-.ibm-motion-prod-fade-dur-25 {
-  transition-duration: NaNms; }
-
-.ibm-motion-prod-fade-dur-50 {
-  transition-duration: NaNms; }
-
-.ibm-motion-prod-fade-dur-75 {
-  transition-duration: NaNms; }
-
-.ibm-motion-prod-fade-dur-100 {
-  transition-duration: NaNms; }
-
-.ibm-motion-narr-fade-dur-25 {
-  transition-duration: 120ms; }
-
-.ibm-motion-narr-fade-dur-50 {
-  transition-duration: 120ms; }
-
-.ibm-motion-narr-fade-dur-75 {
-  transition-duration: 120ms; }
-
-.ibm-motion-narr-fade-dur-100 {
-  transition-duration: 120ms; }
-
-.ibm-motion-expr-rotate-dur-30 {
+.ibm-motion-prod-move-dur-25 {
   transition-duration: 84ms; }
 
-.ibm-motion-expr-rotate-dur-60 {
-  transition-duration: 102ms; }
+.ibm-motion-prod-move-dur-50 {
+  transition-duration: 86ms; }
 
-.ibm-motion-expr-rotate-dur-90 {
-  transition-duration: 119ms; }
+.ibm-motion-prod-move-dur-75 {
+  transition-duration: 88ms; }
 
-.ibm-motion-expr-rotate-dur-120 {
-  transition-duration: 136ms; }
+.ibm-motion-prod-move-dur-100 {
+  transition-duration: 90ms; }
 
-.ibm-motion-expr-rotate-dur-150 {
-  transition-duration: 154ms; }
+.ibm-motion-prod-move-dur-200 {
+  transition-duration: 98ms; }
 
-.ibm-motion-expr-rotate-dur-180 {
-  transition-duration: 171ms; }
+.ibm-motion-prod-move-dur-400 {
+  transition-duration: 113ms; }
 
-.ibm-motion-expr-rotate-dur-270 {
-  transition-duration: 224ms; }
+.ibm-motion-prod-move-dur-800 {
+  transition-duration: 144ms; }
 
-.ibm-motion-expr-rotate-dur-360 {
-  transition-duration: 276ms; }
+.ibm-motion-prod-move-dur-1600 {
+  transition-duration: 205ms; }
 
-.ibm-motion-prod-rotate-dur-30 {
-  transition-duration: 41ms; }
+.ibm-motion-prod-move-dur-3200 {
+  transition-duration: 328ms; }
 
-.ibm-motion-prod-rotate-dur-60 {
-  transition-duration: 49ms; }
+.ibm-motion-narr-move-dur-10 {
+  transition-duration: 189ms; }
 
-.ibm-motion-prod-rotate-dur-90 {
-  transition-duration: 57ms; }
+.ibm-motion-narr-move-dur-25 {
+  transition-duration: 191ms; }
 
-.ibm-motion-prod-rotate-dur-120 {
-  transition-duration: 65ms; }
+.ibm-motion-narr-move-dur-50 {
+  transition-duration: 195ms; }
 
-.ibm-motion-prod-rotate-dur-150 {
-  transition-duration: 74ms; }
+.ibm-motion-narr-move-dur-75 {
+  transition-duration: 198ms; }
 
-.ibm-motion-prod-rotate-dur-180 {
-  transition-duration: 82ms; }
+.ibm-motion-narr-move-dur-100 {
+  transition-duration: 201ms; }
 
-.ibm-motion-prod-rotate-dur-270 {
-  transition-duration: 106ms; }
+.ibm-motion-narr-move-dur-200 {
+  transition-duration: 214ms; }
 
-.ibm-motion-prod-rotate-dur-360 {
-  transition-duration: 130ms; }
-
-.ibm-motion-narr-rotate-dur-30 {
-  transition-duration: 148ms; }
-
-.ibm-motion-narr-rotate-dur-60 {
-  transition-duration: 179ms; }
-
-.ibm-motion-narr-rotate-dur-90 {
-  transition-duration: 209ms; }
-
-.ibm-motion-narr-rotate-dur-120 {
+.ibm-motion-narr-move-dur-400 {
   transition-duration: 240ms; }
 
-.ibm-motion-narr-rotate-dur-150 {
-  transition-duration: 271ms; }
+.ibm-motion-narr-move-dur-800 {
+  transition-duration: 291ms; }
 
-.ibm-motion-narr-rotate-dur-180 {
-  transition-duration: 302ms; }
-
-.ibm-motion-narr-rotate-dur-270 {
+.ibm-motion-narr-move-dur-1600 {
   transition-duration: 395ms; }
 
+.ibm-motion-narr-move-dur-3200 {
+  transition-duration: 602ms; }
+
+.ibm-motion-expr-scale-dur-100 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-200 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-400 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-800 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-1600 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-3200 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-6400 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-12800 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-25600 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-51200 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-102400 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-scale-dur-204800 {
+  transition-duration: 125ms; }
+
+.ibm-motion-prod-scale-dur-100 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-200 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-400 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-800 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-1600 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-3200 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-6400 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-12800 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-25600 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-51200 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-102400 {
+  transition-duration: 91ms; }
+
+.ibm-motion-prod-scale-dur-204800 {
+  transition-duration: 91ms; }
+
+.ibm-motion-narr-scale-dur-100 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-200 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-400 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-800 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-1600 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-3200 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-6400 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-12800 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-25600 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-51200 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-102400 {
+  transition-duration: 174ms; }
+
+.ibm-motion-narr-scale-dur-204800 {
+  transition-duration: 174ms; }
+
+.ibm-motion-expr-fade-dur-25 {
+  transition-duration: 36ms; }
+
+.ibm-motion-expr-fade-dur-50 {
+  transition-duration: 72ms; }
+
+.ibm-motion-expr-fade-dur-75 {
+  transition-duration: 109ms; }
+
+.ibm-motion-expr-fade-dur-100 {
+  transition-duration: 145ms; }
+
+.ibm-motion-prod-fade-dur-25 {
+  transition-duration: 28ms; }
+
+.ibm-motion-prod-fade-dur-50 {
+  transition-duration: 57ms; }
+
+.ibm-motion-prod-fade-dur-75 {
+  transition-duration: 85ms; }
+
+.ibm-motion-prod-fade-dur-100 {
+  transition-duration: 113ms; }
+
+.ibm-motion-narr-fade-dur-25 {
+  transition-duration: 57ms; }
+
+.ibm-motion-narr-fade-dur-50 {
+  transition-duration: 113ms; }
+
+.ibm-motion-narr-fade-dur-75 {
+  transition-duration: 170ms; }
+
+.ibm-motion-narr-fade-dur-100 {
+  transition-duration: 226ms; }
+
+.ibm-motion-expr-rotate-dur-30 {
+  transition-duration: 31ms; }
+
+.ibm-motion-expr-rotate-dur-60 {
+  transition-duration: 63ms; }
+
+.ibm-motion-expr-rotate-dur-90 {
+  transition-duration: 94ms; }
+
+.ibm-motion-expr-rotate-dur-120 {
+  transition-duration: 125ms; }
+
+.ibm-motion-expr-rotate-dur-150 {
+  transition-duration: 157ms; }
+
+.ibm-motion-expr-rotate-dur-180 {
+  transition-duration: 188ms; }
+
+.ibm-motion-expr-rotate-dur-270 {
+  transition-duration: 282ms; }
+
+.ibm-motion-expr-rotate-dur-360 {
+  transition-duration: 376ms; }
+
+.ibm-motion-prod-rotate-dur-30 {
+  transition-duration: 21ms; }
+
+.ibm-motion-prod-rotate-dur-60 {
+  transition-duration: 43ms; }
+
+.ibm-motion-prod-rotate-dur-90 {
+  transition-duration: 64ms; }
+
+.ibm-motion-prod-rotate-dur-120 {
+  transition-duration: 85ms; }
+
+.ibm-motion-prod-rotate-dur-150 {
+  transition-duration: 107ms; }
+
+.ibm-motion-prod-rotate-dur-180 {
+  transition-duration: 128ms; }
+
+.ibm-motion-prod-rotate-dur-270 {
+  transition-duration: 192ms; }
+
+.ibm-motion-prod-rotate-dur-360 {
+  transition-duration: 256ms; }
+
+.ibm-motion-narr-rotate-dur-30 {
+  transition-duration: 45ms; }
+
+.ibm-motion-narr-rotate-dur-60 {
+  transition-duration: 89ms; }
+
+.ibm-motion-narr-rotate-dur-90 {
+  transition-duration: 134ms; }
+
+.ibm-motion-narr-rotate-dur-120 {
+  transition-duration: 179ms; }
+
+.ibm-motion-narr-rotate-dur-150 {
+  transition-duration: 223ms; }
+
+.ibm-motion-narr-rotate-dur-180 {
+  transition-duration: 268ms; }
+
+.ibm-motion-narr-rotate-dur-270 {
+  transition-duration: 402ms; }
+
 .ibm-motion-narr-rotate-dur-360 {
-  transition-duration: 488ms; }
+  transition-duration: 536ms; }

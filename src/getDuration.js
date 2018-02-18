@@ -11,8 +11,10 @@ const getDuration = (
 	params = {}
 ) => {
 
-	let distance = parseFloat(_distance);
-	let size = parseFloat(_size);
+	console.log('getDuration...', _distance, _size);
+
+	let distance = Math.max(10, parseFloat(_distance)) || 100;
+	let size = Math.max(20, parseFloat(_size)) || 20;
 	params.durationMultiplier = params.durationMultiplier || 1;
 	params.sizeFactorAdjuster = parseFloat(params.sizeFactorAdjuster || 1);
 
@@ -30,87 +32,161 @@ const getDuration = (
 
 		case constants.PROPERTY_FADE:{
 
-			const FADE_PRODUCTIVE_MIN = .12;
-			const FADE_PRODUCTIVE_SLOPE = (.18 - FADE_PRODUCTIVE_MIN) / (1280000 - 1600);
-			const FADE_PRODUCTIVE_DISPLACEMENT = FADE_PRODUCTIVE_MIN - FADE_EXPRESSIVE_SLOPE * 1600;
-
-			const FADE_EXPRESSIVE_MIN = .22;
-			const FADE_EXPRESSIVE_SLOPE = (.33 - FADE_EXPRESSIVE_MIN) / (1280000 - 1600);
-			const FADE_EXPRESSIVE_DISPLACEMENT = FADE_EXPRESSIVE_MIN - FADE_EXPRESSIVE_SLOPE * 1600;
-
-			const FADE_NARRATIVE_MIN = .12;
-			const FADE_NARRATIVE_SLOPE = (.6 - FADE_NARRATIVE_MIN) / (1280000 - 1600);
-			const FADE_NARRATIVE_DISPLACEMENT = FADE_NARRATIVE_MIN - FADE_EXPRESSIVE_SLOPE * 1600;
-
-			let adjustedSize = size / SIZE_BASE *100;
-
+			const SIZE1 = 48 * 48;
+			const SIZE2 = 400 * 400;
+			
 			switch(motionMode){
 
-				case constants.MOMENT_PRODUCTIVE:{
-					ret = Math.max(
-							FADE_PRODUCTIVE_SLOPE * size + FADE_PRODUCTIVE_DISPLACEMENT,
-							FADE_PRODUCTIVE_MIN
-						) *params.durationMultiplier
-					;
+				case constants.MOMENT_NARRATIVE:{
+
+					const DUR1 = 228;
+					const DUR2 = 344;
+					
+					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
+					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
+
+					ret = SLOPE * size + DISPLACEMENT;
 					break;
 				}
 
 				case constants.MOMENT_EXPRESSIVE:{
-					ret = Math.max(
-							FADE_EXPRESSIVE_SLOPE * size + FADE_EXPRESSIVE_DISPLACEMENT,
-							FADE_EXPRESSIVE_MIN
-						) *params.durationMultiplier
-					;
+					
+					const DUR1 = 146;
+					const DUR2 = 240;
+					
+					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
+					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+
 					break;
 				}
 
-				case constants.MOMENT_NARRATIVE:{
-					ret = Math.max(
-							FADE_NARRATIVE_SLOPE * size + FADE_NARRATIVE_DISPLACEMENT,
-							FADE_NARRATIVE_MIN
-						) *params.durationMultiplier
-					;
+				default:
+				case constants.MOMENT_PRODUCTIVE:{
+					
+					const DUR1 = 114;
+					const DUR2 = 190;
+					
+					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
+					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+
 					break;
 				}
 			}
-			ret = ret * 1000;
+			ret = ret / 100 * distance;
 			break;
 		}
 
 		case constants.PROPERTY_ROTATE:{
 
-			const ROTATE_SIZE_SLOPE = 0.00001526251526;
-
+			const SIZE1 = 16 * 10;
+			const SIZE2 = 400 * 400;
+			
 			switch(motionMode){
 
-				case constants.MOMENT_PRODUCTIVE:{
-					ret = (2 * Math.sqrt(size * ROTATE_SIZE_SLOPE) + 4.7) / 5 * distance * 0.01666666667 + 2;
+				case constants.MOMENT_NARRATIVE:{
+
+					const DUR1 = 268;
+					const DUR2 = 394;
+					
+					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
+					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
+
+					ret = SLOPE * size + DISPLACEMENT;
 					break;
 				}
 
 				case constants.MOMENT_EXPRESSIVE:{
-					ret = (5 * Math.sqrt(size * ROTATE_SIZE_SLOPE) + 9) / 8 * distance * 0.03 + 4;
+					
+					const DUR1 = 188;
+					const DUR2 = 280;
+					
+					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
+					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+
 					break;
 				}
 
-				case constants.MOMENT_NARRATIVE:{
-					ret = (8 * Math.sqrt(size * ROTATE_SIZE_SLOPE) + 16) / 8 * distance * 0.03 + 7;
+				default:
+				case constants.MOMENT_PRODUCTIVE:{
+					
+					const DUR1 = 128;
+					const DUR2 = 190;
+					
+					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
+					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+
 					break;
 				}
 			}
-			ret = ret / 60 * 1000;
+			ret = ret / 180 * distance;
+			break;
+		}
+
+		case constants.PROPERTY_SCALE:{
+
+			const AREA_DELTA_1 = 100 * 200 - 100 * 100;
+			const AREA_DELTA_2 = 400 * 400 - 100 * 100;
+			
+			switch(motionMode){
+
+				case constants.MOMENT_NARRATIVE:{
+
+					const DUR1 = 180;
+					const DUR2 = 260;
+					
+					const SLOPE = (DUR2 - DUR1) / (AREA_DELTA_2 - AREA_DELTA_1);
+					const DISPLACEMENT = DUR1 - SLOPE * AREA_DELTA_1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+					break;
+				}
+
+				case constants.MOMENT_EXPRESSIVE:{
+					
+					const DUR1 = 128;
+					const DUR2 = 168;
+					
+					const SLOPE = (DUR2 - DUR1) / (AREA_DELTA_2 - AREA_DELTA_1);
+					const DISPLACEMENT = DUR1 - SLOPE * AREA_DELTA_1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+
+					break;
+				}
+
+				default:
+				case constants.MOMENT_PRODUCTIVE:{
+					
+					const DUR1 = 94;
+					const DUR2 = 143;
+					
+					const SLOPE = (DUR2 - DUR1) / (AREA_DELTA_2 - AREA_DELTA_1);
+					const DISPLACEMENT = DUR1 - SLOPE * AREA_DELTA_1;
+
+					ret = SLOPE * size + DISPLACEMENT;
+
+					break;
+				}
+			}
 			break;
 		}
 
 		case constants.PROPERTY_MOVE:
-		case constants.PROPERTY_SCALE:
 		default:{
 
 			const DISTANCE1 = 100;
 			const DISTANCE2 = 1400;
 
 			const SIZE_DUR1 = 200;
-			const SIZE_DUR2 = 192;
+			const SIZE_DUR2 = 208;
 			const SIZE_DISTANCE1 = 100 * 100;
 			const SIZE_DISTANCE2 = 400 * 400;
 			const SIZE_SLOPE = (SIZE_DUR2 - SIZE_DUR1) / (SIZE_DISTANCE2 - SIZE_DISTANCE1) / SIZE_DUR1;
@@ -127,7 +203,7 @@ const getDuration = (
 					const DISPLACEMENT = DUR1 - SLOPE * DISTANCE1;
 
 					ret = SLOPE * distance + DISPLACEMENT;
-					ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
+					// ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
 					break;
 				}
 
@@ -140,7 +216,7 @@ const getDuration = (
 					const DISPLACEMENT = DUR1 - SLOPE * DISTANCE1;
 
 					ret = SLOPE * distance + DISPLACEMENT;
-					ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
+					// ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
 
 					break;
 				}
@@ -155,7 +231,7 @@ const getDuration = (
 					const DISPLACEMENT = DUR1 - SLOPE * DISTANCE1;
 
 					ret = SLOPE * distance + DISPLACEMENT;
-					ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
+					// ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
 					break;
 				}
 			}

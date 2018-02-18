@@ -26,22 +26,25 @@ const topBorderStyle = {
 
 const outputModes = ['Motion Specs', 'Preview'];
 
-const I_WIDTH = 48;
-const I_HEIGHT = 48;
+const I_WIDTH1 = 48;
+const I_HEIGHT1 = 48;
 const I_DISTANCE = 100;
+const I_WIDTH2 = 64;
+const I_HEIGHT2 = 128;
+const I_ROTATION = 180;
 
 const initialStateValues = {
 	distance:I_DISTANCE,
-	width:I_WIDTH,
-	height:I_HEIGHT,
-	iWidth:I_WIDTH,
-	iHeight:I_HEIGHT,
-	duration:getDuration(I_DISTANCE, I_WIDTH*I_HEIGHT),
-	easing:getCurve(I_DISTANCE, I_WIDTH*I_HEIGHT),
+	width2:I_WIDTH2,
+	height2:I_HEIGHT2,
+	width1:I_WIDTH1,
+	height1:I_HEIGHT1,
+	duration:getDuration(I_DISTANCE, I_WIDTH1 * I_HEIGHT1),
+	easing:getCurve(I_DISTANCE, I_WIDTH1 * I_HEIGHT1),
 	prop:constants.PROPERTY_MOVE,
 	easingSelection:constants.EASE_IN_OUT,
 	motionMode:constants.MOMENT_PRODUCTIVE,
-	classes:getClasses(I_DISTANCE, I_WIDTH*I_HEIGHT),
+	classes:getClasses(I_DISTANCE, I_WIDTH1 * I_HEIGHT1),
 	outputMode:outputModes[0]
 }
 
@@ -57,18 +60,19 @@ class SiteBody extends React.Component{
 	}
 
 	componentWillUpdate(nextProps, nextState){
-		console.log('componentWillUpdate...');
+		console.log('componentWillUpdate...', nextProps, nextState);
 
 		let theSize = 
-			this.state.prop === constants.PROPERTY_SCALE 
+			nextState.prop === constants.PROPERTY_SCALE 
 			? 
 				Math.abs(
-					(nextState.iWidth - nextState.width || nextState.width) 
-					* (nextState.iHeight - nextState.height || nextState.height)
+					nextState.width2 * nextState.height2 - nextState.width1 * nextState.height1
 				) 
 			: 
-				nextState.width * nextState.height
+				nextState.width1 * nextState.height1
 		;
+
+		console.log('componentWillUpdate:theSize===', theSize);
 
 		let duration = getDuration(
 			nextState.distance,
@@ -93,7 +97,7 @@ class SiteBody extends React.Component{
 		);
 
 		if(this.state.duration !== duration || this.state.easing !== easing || this.state.classes !== classes){
-			console.log('onGetMotion:DIFF!!!!', duration, easing, classes);
+			console.log('componentWillUpdate:DIFF!!!!', duration, easing, classes);
 			this.setState({
 				duration, easing, classes
 			});
@@ -195,36 +199,6 @@ class SiteBody extends React.Component{
 							style={inputsStyles}
 						>
 							{
-								this.state.prop === constants.PROPERTY_SCALE
-								?(
-									<div className="input-set" style={inputSetStyles}>
-										<Input 
-											style={{
-												
-											}}
-											label="Init. Width (px)" 
-											value={64}
-											onChange={iWidth => this.setState({iWidth:parseFloat(iWidth)})}
-										/>
-									</div>
-								):null
-							}
-							{
-								this.state.prop === constants.PROPERTY_SCALE
-								?(
-									<div className="input-set" style={inputSetStyles}>
-										<Input 
-											style={{
-												
-											}}
-											label="Init. Height (px)" 
-											value={32}
-											onChange={iHeight => this.setState({iHeight:parseFloat(iHeight)})}
-										/>
-									</div>
-								):null
-							}
-							{
 								this.state.prop !== constants.PROPERTY_SCALE
 								?(
 									<div className="input-set input-set-first" style={inputSetStyles}>
@@ -238,7 +212,7 @@ class SiteBody extends React.Component{
 												[constants.PROPERTY_ROTATE]:'Angle change (degrees)',
 											}[this.state.prop]}
 											value={100}
-											onChange={distance => this.setState({distance})}
+											onChange={distance => this.setState({distance: distance || 0})}
 										/>
 									</div>
 								):null
@@ -248,9 +222,9 @@ class SiteBody extends React.Component{
 									style={{
 										
 									}}
-									label={this.state.prop === constants.PROPERTY_SCALE ? "Target width (px)" : "Width (px)" }
-									value={I_WIDTH}
-									onChange={width => this.setState({width:parseFloat(width)})}
+									label={this.state.prop === constants.PROPERTY_SCALE ? "Initial Width (px)" : "Width (px)" }
+									value={I_WIDTH1}
+									onChange={width => this.setState({width1:parseFloat(width) || 0})}
 								/>
 							</div>
 							<div className="input-set" style={inputSetStyles}>
@@ -258,11 +232,41 @@ class SiteBody extends React.Component{
 									style={{
 										
 									}}
-									label={this.state.prop === constants.PROPERTY_SCALE ? "Target height (px)" : "Height (px)" }
-									value={I_HEIGHT}
-									onChange={height => this.setState({height:parseFloat(height)})}
+									label={this.state.prop === constants.PROPERTY_SCALE ? "Initial Height (px)" : "Height (px)" }
+									value={I_HEIGHT1}
+									onChange={height => this.setState({height1:parseFloat(height) || 0})}
 								/>
 							</div>
+							{
+								this.state.prop === constants.PROPERTY_SCALE
+								?(
+									<div className="input-set" style={inputSetStyles}>
+										<Input 
+											style={{
+												
+											}}
+											label="Target Width (px)" 
+											value={I_WIDTH2}
+											onChange={width => this.setState({width2:parseFloat(width) || 0})}
+										/>
+									</div>
+								):null
+							}
+							{
+								this.state.prop === constants.PROPERTY_SCALE
+								?(
+									<div className="input-set" style={inputSetStyles}>
+										<Input 
+											style={{
+												
+											}}
+											label="Target Height (px)" 
+											value={I_HEIGHT2}
+											onChange={height => this.setState({height2:parseFloat(height) || 0})}
+										/>
+									</div>
+								):null
+							}
 						</div>
 						{/*
 						<div className="inputs"
