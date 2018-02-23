@@ -48,13 +48,19 @@ var getDuration = function getDuration() {
 
 					case _constants2.default.MOMENT_CELEBRATORY:
 						{
-							ret = Math.max(0.01 * adjustedSize + 130, 0) * params.durationMultiplier;
+							ret = Math.max(
+								0.150,
+								Math.max(0.01 * adjustedSize + 130, 0) * params.durationMultiplier
+							);
 							break;
 						}
 
 					case _constants2.default.MOMENT_PRODUCTIVE:
 						{
-							ret = Math.max(0.002 * adjustedSize + 80, 0) * params.durationMultiplier;
+							ret = Math.max(
+								0.120,
+								Math.max(0.002 * adjustedSize + 80, 0) * params.durationMultiplier
+							);
 							break;
 						}
 				}

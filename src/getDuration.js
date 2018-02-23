@@ -43,7 +43,10 @@ const getDuration = (
 					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
 					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
 
-					ret = SLOPE * size + DISPLACEMENT;
+					ret = Math.max(
+						310,
+						SLOPE * size + DISPLACEMENT
+					);
 					break;
 				}
 
@@ -55,7 +58,10 @@ const getDuration = (
 					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
 					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
 
-					ret = SLOPE * size + DISPLACEMENT;
+					ret = Math.max(
+						230,
+						SLOPE * size + DISPLACEMENT
+					);
 					break;
 				}
 
@@ -67,7 +73,10 @@ const getDuration = (
 					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
 					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
 
-					ret = SLOPE * size + DISPLACEMENT;
+					ret = Math.max(
+						150,
+						SLOPE * size + DISPLACEMENT
+					);
 
 					break;
 				}
@@ -81,12 +90,16 @@ const getDuration = (
 					const SLOPE = (DUR2 - DUR1) / (SIZE2 - SIZE1);
 					const DISPLACEMENT = DUR1 - SLOPE * SIZE1;
 
-					ret = SLOPE * size + DISPLACEMENT;
+					ret = Math.max(
+						110,
+						SLOPE * size + DISPLACEMENT
+					);
 
 					break;
 				}
 			}
 			ret = ret / 100 * distance;
+			console.log('fade:ret==='+ret);
 			break;
 		}
 
