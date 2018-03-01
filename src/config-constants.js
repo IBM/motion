@@ -47,21 +47,20 @@ const curves = {
 	},
 	[constants.PROPERTY_FADE]:{
 		[constants.MOMENT_EXPRESSIVE]:{
-			"easeInOut":"cubic-bezier(.28, .08, .57, 1)",
-			"easeIn":"cubic-bezier(0, 0, .57, 1)",
-			"easeOut":"cubic-bezier(.39, .07, 1, 1)",
+			"easeInOut":"cubic-bezier(0.4, 0.14, 0.3, 1)",
+			"easeIn":"cubic-bezier(0.4, 0.14, 1, 1)",
+			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
 		},
 		[constants.MOMENT_PRODUCTIVE]:{
 			"easeInOut":"cubic-bezier(0.2, 0.2, 0.38, 0.9)",
-			"easeIn":"cubic-bezier(0, 0, .57, 1)",
-			"easeOut":"cubic-bezier(.39, .07, 1, 1)",
+			"easeIn":"cubic-bezier(0.2, 0, 1, 0.9)",
+			"easeOut":"cubic-bezier(0, 0, 0.38, 0.9)",
 		},
 		[constants.MOMENT_NARRATIVE]:{
 			"easeInOut":"cubic-bezier(0.29, 0.04, 0.23, 1)",
 			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",
 			"easeOut":"cubic-bezier(0, 0, 0.3, 1)",
-		}
-		,
+		},
 		[constants.MOMENT_CELEBRATORY]:{
 			"easeInOut":"cubic-bezier(0.29, 0.04, 0.23, 1)",
 			"easeIn":"cubic-bezier(0.39, .06, 1, 1)",

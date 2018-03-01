@@ -77,22 +77,22 @@
   transition-timing-function: cubic-bezier(0, 0, 0.3, 1); }
 
 .ibm-motion-expr-fade-ease-in-out {
-  transition-timing-function: cubic-bezier(.28, .08, .57, 1); }
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1); }
 
 .ibm-motion-expr-fade-ease-in {
-  transition-timing-function: cubic-bezier(0, 0, .57, 1); }
+  transition-timing-function: cubic-bezier(0.4, 0.14, 1, 1); }
 
 .ibm-motion-expr-fade-ease-out {
-  transition-timing-function: cubic-bezier(.39, .07, 1, 1); }
+  transition-timing-function: cubic-bezier(0, 0, 0.3, 1); }
 
 .ibm-motion-prod-fade-ease-in-out {
   transition-timing-function: cubic-bezier(0.2, 0.2, 0.38, 0.9); }
 
 .ibm-motion-prod-fade-ease-in {
-  transition-timing-function: cubic-bezier(0, 0, .57, 1); }
+  transition-timing-function: cubic-bezier(0.2, 0, 1, 0.9); }
 
 .ibm-motion-prod-fade-ease-out {
-  transition-timing-function: cubic-bezier(.39, .07, 1, 1); }
+  transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9); }
 
 .ibm-motion-narr-fade-ease-in-out {
   transition-timing-function: cubic-bezier(0.29, 0.04, 0.23, 1); }
