@@ -45,15 +45,14 @@ import getCurve from './getCurve';
 import constants from './constants'
 import helpers from './helpers';
 const getMotion = (
-	_distance = 200, 
-	_size = 20, 
+	_distance = 100, 
+	_size = 16, 
 	property = constants.PROPERTY_MOVE, 
-	version = 7, 
-	params = {}
+	motionMode = constants.MOMENT_PRODUCTIVE, 
+	easing = constants.EASE_IN_OUT, 
+	unit = 'rem', remSize = 16,
 ) => {
 	// console.log('getMotion...', distance, size, property, version, params);
-
-	params.durationMultiplier = params.durationMultiplier || 1;
 
 	const 
 		SIZE_BASE = constants.SIZE_BASE
@@ -66,11 +65,9 @@ const getMotion = (
 
 	let distance = parseFloat(_distance);
 	let size = parseFloat(_size);
-	params.sizeFactorAdjuster = parseFloat(params.sizeFactorAdjuster);
-
+	
 	let meta = {
 		version,
-		params,
 		units:{
 			duration:'ms',
 			distance:'px',
@@ -82,7 +79,6 @@ const getMotion = (
 		property,
 		distance,
 		size,
-		sizeFactorAdjuster:params.sizeFactorAdjuster,
 	}
 
 	let ret;
@@ -103,8 +99,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_IN_OUT, 
-							version, 
-							params
+							unit, unitSize
 						),
 						easeIn:getCurve(
 							distance, 
@@ -112,8 +107,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_IN, 
-							version, 
-							params
+							unit, unitSize
 						),
 						easeOut:getCurve(
 							distance, 
@@ -121,8 +115,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_OUT, 
-							version, 
-							params
+							unit, unitSize
 						),
 					},
 					duration:getDuration(
@@ -131,8 +124,7 @@ const getMotion = (
 						property, 
 						constants.MOMENT_EXPRESSIVE, 
 						constants.EASE_IN_OUT, 
-						version, 
-						params
+						unit, unitSize
 					),
 				},
 				[constants.MOMENT_PRODUCTIVE]:{
@@ -143,8 +135,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_PRODUCTIVE, 
 							constants.EASE_IN_OUT, 
-							version, 
-							params
+							unit, unitSize
 						),
 						easeIn:getCurve(
 							distance, 
@@ -152,8 +143,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_PRODUCTIVE, 
 							constants.EASE_IN, 
-							version, 
-							params
+							unit, unitSize
 						),
 						easeOut:getCurve(
 							distance, 
@@ -161,8 +151,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_PRODUCTIVE, 
 							constants.EASE_OUT, 
-							version, 
-							params
+							unit, unitSize
 						),
 					},
 					duration:getDuration(
@@ -171,8 +160,7 @@ const getMotion = (
 						property, 
 						constants.MOMENT_PRODUCTIVE, 
 						constants.EASE_IN_OUT, 
-						version, 
-						params
+						unit, unitSize
 					),
 				},
 			}
@@ -194,8 +182,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_IN_OUT, 
-							version, 
-							params
+							unit, unitSize
 						),
 						easeIn:getCurve(
 							distance, 
@@ -203,8 +190,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_IN, 
-							version, 
-							params
+							unit, unitSize
 						),
 						easeOut:getCurve(
 							distance, 
@@ -212,8 +198,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_EXPRESSIVE, 
 							constants.EASE_OUT, 
-							version, 
-							params
+							unit, unitSize
 						),
 					},
 					duration:getDuration(
@@ -222,8 +207,7 @@ const getMotion = (
 						property, 
 						constants.MOMENT_EXPRESSIVE, 
 						constants.EASE_IN_OUT, 
-						version, 
-						params
+						unit, unitSize
 					),
 				},
 				[constants.MOMENT_PRODUCTIVE]:{
@@ -234,8 +218,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_PRODUCTIVE, 
 							constants.EASE_IN_OUT, 
-							version, 
-							params
+							unit, unitSize
 						),
 						easeIn:getCurve(
 							distance, 
@@ -243,8 +226,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_PRODUCTIVE, 
 							constants.EASE_IN, 
-							version, 
-							params
+							unit, unitSize
 						),
 						easeOut:getCurve(
 							distance, 
@@ -252,8 +234,7 @@ const getMotion = (
 							property, 
 							constants.MOMENT_PRODUCTIVE, 
 							constants.EASE_OUT, 
-							version, 
-							params
+							unit, unitSize
 						),
 					},
 					duration:getDuration(
@@ -262,8 +243,7 @@ const getMotion = (
 						property, 
 						constants.MOMENT_PRODUCTIVE, 
 						constants.EASE_IN_OUT, 
-						version, 
-						params
+						unit, unitSize
 					),
 				},
 			};

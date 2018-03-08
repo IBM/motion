@@ -52,7 +52,7 @@ A tool to make it easy to use IBM Motion is available at: https://ibm.github.io/
 
 |---|---|---|
 
-## JavascriptcComponents of this package
+## JavaScript  Components of this package
 
 ### getDuration() method
 
@@ -66,7 +66,8 @@ console.log(getDuration(
 	'move', // property. 'move', 'scale', 'fade'
 	'mechanical', // motion mode. 'natural', 'mechanical'
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
-	7 // motion definition version. supports 6 and 7
+	'rem', // unit. supports 'rem' and 'px'. default is 'rem'
+    16 // unit size in pixel. default is 16.
 ));
 
 // returns a float value, duration in ms.
@@ -84,29 +85,13 @@ console.log(getCurve(
 	'move', // property. 'move', 'scale', 'fade'
 	'mechanical', // motion mode. 'natural', 'mechanical'
 	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
-	7 // motion definition version. supports 6 and 7
+	'rem', // unit. supports 'rem' and 'px'. default is 'rem'
+    16 // unit size in pixel. default is 16.
 ));
 
 // returns a string value - the cubic-bezier curve definition for the CSS `transition-timing-function` rule.
 ```
 
-### getMotion() method
-
-Generate a full JavaScript object that contains durations and curves based on various factors including distance, size.
-
-```
-import getMotion from '@ibm/motion/getMotion.js';
-console.log(getMotion(
-	200, // distance of motion in pixels
-	20, // size (area) of the element being animated. set to 20 for the standard size
-	'move', // property. 'move', 'scale', 'fade'
-	'mechanical', // motion mode. 'natural', 'mechanical'
-	'easeInOut', // easing. 'easeInOut', 'easeIn', 'easeOut'
-	7 // motion definition version. supports 6 and 7
-));
-
-// returns an object that contains both the duration and curve, as well as a few other informations about the motion.
-```
 
 ## Motion Classes
 
@@ -141,4 +126,3 @@ The classes for `rotate` use amount of angle change and follow this pattern:
 The classes for `scale` uses the size change as the differentiator and follows this pattern:
 
 `ibm-motion-[motion mode:expr|prod]-[property:move|scale|fade|rotate]-dur-[width*height steps:64|256|1024|4096|16384|65536|262144|1048576|4194304|16777216]`
-

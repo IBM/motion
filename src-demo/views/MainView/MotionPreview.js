@@ -11,39 +11,37 @@ class MotionPreview extends React.Component{
 		this.state = {
 			left:unitSpace,
 			top:100,
-			rotation:0
+			rotation:0,
+			moved:false
 		}
 	}
 
 	playMotion(){
 		this.setState({
-			left:this.state.left === unitSpace ? parseFloat(this.props.distance) + unitSpace : unitSpace,
-			width:this.state.width === this.props.width2 ? this.props.width1 : this.props.width2,
-			height:this.state.height === this.props.height2 ? this.props.height1 : this.props.height2,
-			rotation:this.state.rotation === this.props.rotation ? 0 : this.props.rotation,
-			opacity:this.state.opacity === this.props.opacity ? 0 : this.props.opacity
+			moved:!this.state.moved
 		})
 	}
 
 	componentWillMount(){
-		this.componentWillUpdate(this.props, this.state);
+		// this.componentWillUpdate(this.props, this.state);
 	}
 
 	componentWillUpdate(nextProps, nextState){
-		if(
-			nextProps.width1 !== this.state.width 
-			|| nextProps.height1 !== this.state.height
-			|| nextProps.rotation !== this.state.rotation
-			|| nextProps.opacity !== this.state.opacity
-		) this.setState({
-			width:nextProps.width1,
-			height:nextProps.height1,
-			rotation:nextProps.rotation,
-			opacity:nextProps.opacity
-		})
+		// if(
+		// 	nextProps.width1 !== this.state.width 
+		// 	|| nextProps.height1 !== this.state.height
+		// 	|| nextProps.rotation !== this.state.rotation
+		// 	|| nextProps.opacity !== this.state.opacity
+		// ) this.setState({
+		// 	width:nextProps.width1,
+		// 	height:nextProps.height1,
+		// 	rotation:nextProps.rotation,
+		// 	opacity:nextProps.opacity
+		// })
 	}
 
 	render(){
+		console.log('MotionPreview.render...', this.props);
 		return(
 			<div 
 				className="MotionPreview"
@@ -82,10 +80,11 @@ class MotionPreview extends React.Component{
 					</span>
 				</div>
 				<div
+					className={`moving-element ${this.state.moved}`}
 					style={{
 						position:'absolute',
-						width:`${this.props.prop === constants.PROPERTY_SCALE ? this.state.width : this.props.width1}px`,
-						height:`${this.props.prop === constants.PROPERTY_SCALE ? this.state.height : this.props.height1}px`,
+						width:`${this.props.prop === constants.PROPERTY_SCALE ? (this.state.moved !== true ? this.props.width1 : this.props.width2) : this.props.width1}${this.props.unit}`,
+						height:`${this.props.prop === constants.PROPERTY_SCALE ? (this.state.moved !== true ? this.props.height1 : this.props.height2) : this.props.height1}${this.props.unit}`,
 						transitionPropperty:'all',
 						transitionTimingFunction:this.props.easing,
 						transitionDuration:`${this.props.duration}ms`,
@@ -96,9 +95,9 @@ class MotionPreview extends React.Component{
 							[constants.MOMENT_CELEBRATORY]:'#D7306D'
 						}[this.props.motionMode],
 						top:'64px',
-						left:`${this.props.prop === constants.PROPERTY_MOVE ? this.state.left : unitSpace}px`,
-						transform:`rotate(${this.props.prop === constants.PROPERTY_ROTATE ? this.state.rotation : 0}deg)`,
-						opacity:this.props.prop === constants.PROPERTY_FADE ? this.state.opacity : 1
+						left:`${this.props.prop === constants.PROPERTY_MOVE ? (this.state.moved !== true ? (this.props.unit === 'rem' ? 1 : 16) : this.props.distance) : (this.props.unit === 'rem' ? 1 : 16)}${this.props.unit}`,
+						transform:`rotate(${this.props.prop === constants.PROPERTY_ROTATE && this.state.moved !== true ? 0 : this.props.rotation}deg)`,
+						opacity:this.props.prop === constants.PROPERTY_FADE && this.state.moved !== true  ? 0 : this.props.opacity
 					}}
 				/>
 			</div>

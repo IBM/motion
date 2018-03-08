@@ -3,18 +3,22 @@ import helpers from './helpers';
 
 const getDuration = (
 	_distance = 100, 
-	_size = 20, 
+	_size = 16, 
 	property = constants.PROPERTY_MOVE, 
 	motionMode = constants.MOMENT_PRODUCTIVE, 
 	easing = constants.EASE_IN_OUT, 
-	version = 7, 
-	params = {}
+	unit = 'rem', remSize = 16,
 ) => {
 
-	let distance = Math.max(10, parseFloat(_distance)) || 100;
-	let size = Math.max(20, parseFloat(_size)) || 20;
-	params.durationMultiplier = params.durationMultiplier || 1;
-	params.sizeFactorAdjuster = parseFloat(params.sizeFactorAdjuster || 1);
+	if(unit === 'rem'){
+		if(property === constants.PROPERTY_MOVE || property === constants.PROPERTY_SCALE) _distance *= remSize;
+		_size *= (remSize * remSize);
+	}
+	console.log('_distance is '+_distance);
+	console.log('_size is '+_size);
+
+	let distance = Math.max(10, parseFloat(_distance));
+	let size = Math.max(unit === 'rem' ? 1 : 16, parseFloat(_size));
 
 	const 
 		SIZE_BASE = constants.SIZE_BASE

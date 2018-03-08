@@ -42,7 +42,7 @@ class Input extends React.Component{
 					}}
 					onChange={evt => this.onChange(evt)}
 					placeholder={this.props.placeholder}
-					value={this.state.value}
+					value={this.props.value}
 				></input>
 			</div>
 		)

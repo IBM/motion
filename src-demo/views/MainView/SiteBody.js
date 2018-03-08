@@ -26,12 +26,14 @@ const topBorderStyle = {
 
 const outputModes = ['Motion Specs', 'Preview'];
 
-const I_WIDTH1 = 128;
-const I_HEIGHT1 = 128;
-const I_DISTANCE = 256;
-const I_WIDTH2 = 384;
-const I_HEIGHT2 = 128;
+const I_WIDTH1 = 16;
+const I_HEIGHT1 = 4;
+const I_DISTANCE = 16;
+const I_WIDTH2 = 16;
+const I_HEIGHT2 = 16;
 const I_ROTATION = 180;
+const UNIT_REM = 'rem';
+const UNIT_PX = 'px';
 
 const initialStateValues = {
 	distance:I_DISTANCE,
@@ -47,7 +49,8 @@ const initialStateValues = {
 	easingSelection:constants.EASE_IN_OUT,
 	motionMode:constants.MOMENT_PRODUCTIVE,
 	classes:getClasses(I_DISTANCE, I_WIDTH1 * I_HEIGHT1),
-	outputMode:outputModes[1]
+	outputMode:outputModes[1],
+	unit:UNIT_REM
 }
 
 class SiteBody extends React.Component{
@@ -92,21 +95,24 @@ class SiteBody extends React.Component{
 			theSize,
 			nextState.prop,
 			nextState.motionMode,
-			nextState.easingSelection
+			nextState.easingSelection,
+			nextState.unit
 		);
 		let easing = getCurve(
 			this.getRightPropValue(nextState),
 			theSize,
 			nextState.prop,
 			nextState.motionMode,
-			nextState.easingSelection
+			nextState.easingSelection,
+			nextState.unit
 		);
 		let classes = getClasses(
 			this.getRightPropValue(nextState),
 			theSize,
 			nextState.prop,
 			nextState.motionMode,
-			nextState.easingSelection
+			nextState.easingSelection,
+			nextState.unit
 		);
 
 		if(this.state.duration !== duration || this.state.easing !== easing || this.state.classes !== classes){
@@ -220,6 +226,34 @@ class SiteBody extends React.Component{
 									onChange={ value => this.setState({motionMode:value})}
 								/>
 							</div>
+							<div className="input-set" style={inputSetStyles}>
+								<Dropdown
+									style={{
+										
+									}}
+									label="Unit"
+									options={[
+										{
+											label:'Root Em (rem)',
+											value:UNIT_REM
+										},
+										{
+											label:'Pixels',
+											value:UNIT_PX
+										}
+									]}
+									onChange={ value => {
+										this.setState({
+											distance: this.state.distance * (value === UNIT_REM ? 1 / 16 : 16),
+											width1: this.state.width1 * (value === UNIT_REM ? 1 / 16 : 16),
+											height1: this.state.height1 * (value === UNIT_REM ? 1 / 16 : 16),
+											width2: this.state.width2 * (value === UNIT_REM ? 1 / 16 : 16),
+											height2: this.state.height2 * (value === UNIT_REM ? 1 / 16 : 16),
+											unit:value
+										})
+									}}
+								/>
+							</div>
 						</div>
 						<div className="inputs"
 							style={inputsStyles}
@@ -232,7 +266,7 @@ class SiteBody extends React.Component{
 											style={{
 												
 											}}
-											label='distance (px)'
+											label={`distance (${this.state.unit})`}
 											value={this.state.distance}
 											onChange={distance => this.setState({distance: distance || 0})}
 										/>
@@ -274,7 +308,7 @@ class SiteBody extends React.Component{
 									style={{
 										
 									}}
-									label={this.state.prop === constants.PROPERTY_SCALE ? "Initial Width (px)" : "Width (px)" }
+									label={this.state.prop === constants.PROPERTY_SCALE ? `Initial Width (${this.state.unit})` : `Width (${this.state.unit})` }
 									value={this.state.width1}
 									onChange={width => this.setState({width1:parseFloat(width) || 0})}
 								/>
@@ -284,7 +318,7 @@ class SiteBody extends React.Component{
 									style={{
 										
 									}}
-									label={this.state.prop === constants.PROPERTY_SCALE ? "Initial Height (px)" : "Height (px)" }
+									label={this.state.prop === constants.PROPERTY_SCALE ? `Initial Height (${this.state.unit})` : `Height (${this.state.unit})` }
 									value={this.state.height1}
 									onChange={height => this.setState({height1:parseFloat(height) || 0})}
 								/>
@@ -297,7 +331,7 @@ class SiteBody extends React.Component{
 											style={{
 												
 											}}
-											label="Target Width (px)" 
+											label={`Target Width (${this.state.unit})`}
 											value={this.state.width2}
 											onChange={width => this.setState({width2:parseFloat(width) || 0})}
 										/>
@@ -312,7 +346,7 @@ class SiteBody extends React.Component{
 											style={{
 												
 											}}
-											label="Target Height (px)" 
+											label={`Target Height (${this.state.unit})`}
 											value={this.state.height2}
 											onChange={height => this.setState({height2:parseFloat(height) || 0})}
 										/>
