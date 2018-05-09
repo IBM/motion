@@ -1,6 +1,9 @@
-const browserify = require('browserify');
 const gulp = require('gulp');
+
+const browserify = require('browserify');
+const babelify    = require('babelify');
 const source = require('vinyl-source-stream');
+
 const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
@@ -15,18 +18,50 @@ import getDuration from './src/getDuration.js';
 const autoprefixer = require('gulp-autoprefixer');
 const gulpCopy = require('gulp-copy');
 const base64 = require('gulp-base64');
+var watchify = require('watchify');
 
-gulp.task('build-script', () => {
-	return browserify({entries: './src/motion.js', debug: true})
+/*
+gulp.task('build-script-index', () => {
+	// return compile('src/index.js', 'index.js', false);
+	return
+		browserify({
+			entries:'./src/index.js',
+			debug:true
+		})
 		.transform("babelify", { presets: ["env"] })
-		.on('error', err => console.log(err))
 		.bundle()
-		.on('error', err => console.log(err))
-		.pipe(source('motion.js'))
-		.pipe(buffer())
+		.pipe(source('index.js'))
+        .pipe(buffer())
         .pipe(sourcemaps.init())
-		.pipe(uglify())
-		.pipe(sourcemaps.write('./dist/maps'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./dist/maps'))
+        .pipe(gulp.dest('./dist'))
+	;
+});
+*/
+
+gulp.task('build-script-index', () => {
+	return 
+		gulp.src("./src/index.js")
+		.pipe(babel())
+		.pipe(gulp.dest("dist"));
+    ;
+});
+
+
+
+gulp.task('build-script-getduration', () => {
+	return 
+		browserify({
+			entries: './src/getDuration.js', 
+			debug: true
+		})
+		.transform("babelify", { presets: ["env"] })
+		.bundle()
+		// .pipe(buffer())
+  //       .pipe(sourcemaps.init())
+		// .pipe(uglify())
+		// .pipe(sourcemaps.write('./dist/maps'))
 		.pipe(gulp.dest('./dist'))
     ;
 });
@@ -139,6 +174,8 @@ gulp.task('copy-ibm-type-files', () => {
 	    .pipe(gulpCopy('./dist-demo/css'))
 	;
 });
+
+gulp.task('build-script', ['build-script-index']);
 
 gulp.task('watch', ['default', 'script:watch', 'sass:watch', 'demo-sass:watch']);
 

@@ -74,7 +74,11 @@
     "url-loader": "^0.5.9",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.11.0",
     "webpack": "^3.6.0",
     "webpack-build-notifier": "^0.1.16"
+  },
+  "dependencies": {
+    "babel-register": "^6.26.0"
   }
 }

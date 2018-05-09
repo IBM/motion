@@ -14,8 +14,6 @@ const getDuration = (
 		if(property === constants.PROPERTY_MOVE || property === constants.PROPERTY_SCALE) _distance *= remSize;
 		_size *= (remSize * remSize);
 	}
-	console.log('_distance is '+_distance);
-	console.log('_size is '+_size);
 
 	let distance = Math.max(10, parseFloat(_distance));
 	let size = Math.max(unit === 'rem' ? 1 : 16, parseFloat(_size));
@@ -254,7 +252,7 @@ const getDuration = (
 					const DISPLACEMENT = DUR1 - SLOPE * DISTANCE1;
 
 					ret = SLOPE * distance + DISPLACEMENT;
-					// ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
+					ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
 					break;
 				}
 
@@ -267,7 +265,7 @@ const getDuration = (
 					const DISPLACEMENT = DUR1 - SLOPE * DISTANCE1;
 
 					ret = SLOPE * distance + DISPLACEMENT;
-					// ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
+					ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
 					break;
 				}
 
@@ -280,7 +278,7 @@ const getDuration = (
 					const DISPLACEMENT = DUR1 - SLOPE * DISTANCE1;
 
 					ret = SLOPE * distance + DISPLACEMENT;
-					// ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
+					ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
 
 					break;
 				}
@@ -295,7 +293,7 @@ const getDuration = (
 					const DISPLACEMENT = DUR1 - SLOPE * DISTANCE1;
 
 					ret = SLOPE * distance + DISPLACEMENT;
-					// ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
+					ret = ret * (size * SIZE_SLOPE + SIZE_DISPLACEMENT);
 					break;
 				}
 			}
