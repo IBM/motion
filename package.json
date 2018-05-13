@@ -1,6 +1,6 @@
 {
   "name": "@ibm/motion",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "motion definitions for IBM",
   "main": "dist/index.js",
   "scripts": {
@@ -25,7 +25,11 @@
   "devDependencies": {
     "@ibm/type": "^0.1.4",
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
     "body-parser": "^1.16.1",
     "browserify": "^16.2.2",
