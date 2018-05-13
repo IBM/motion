@@ -1,85 +1,86 @@
-const gulp = require('gulp');
+'use strict';
 
 const browserify = require('browserify');
-const babelify    = require('babelify');
+const gulp = require('gulp');
 const source = require('vinyl-source-stream');
-
 const buffer = require('vinyl-buffer');
+const gutil = require('gulp-util');
 const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
+const babelify = require('babelify');
 const sass = require('gulp-sass');
-const sourcemaps = require("gulp-sourcemaps");
-const babel = require("gulp-babel");
+const gulpFn  = require('gulp-fn');
 const rename = require('gulp-rename');
 const cleanCSS = require('gulp-clean-css');
 const fs = require('fs');
-const motionConstants = require('./src/config-constants.js');
-var gulpFn  = require('gulp-fn');
-import getDuration from './src/getDuration.js';
 const autoprefixer = require('gulp-autoprefixer');
 const gulpCopy = require('gulp-copy');
-const base64 = require('gulp-base64');
-var watchify = require('watchify');
 
-/*
-gulp.task('build-script-index', () => {
-	// return compile('src/index.js', 'index.js', false);
-	return
-		browserify({
-			entries:'./src/index.js',
-			debug:true
-		})
-		.transform("babelify", { presets: ["env"] })
+const motionConstants = require('./src/config-constants.js');
+import getDuration from './src/getDuration.js';
+
+gulp.task('build-script-index', function () {
+
+    browserify({entries: './src/index.js', extensions: ['.js'], debug: true, standalone:'motion'})
+		.transform(babelify)
 		.bundle()
 		.pipe(source('index.js'))
-        .pipe(buffer())
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(sourcemaps.write('./dist/maps'))
-        .pipe(gulp.dest('./dist'))
+		.pipe(gulp.dest('dist'))
+	;
+
+});
+
+gulp.task('build-script-getDuration', function () {
+
+    browserify({entries: './src/getDuration.js', extensions: ['.js'], debug: true, standalone:'getDuration'})
+		.transform(babelify)
+		.bundle()
+		.pipe(source('getDuration.js'))
+		.pipe(gulp.dest('dist'))
+	;
+
+});
+
+gulp.task('build-script-getCurve', function () {
+
+    browserify({entries: './src/getCurve.js', extensions: ['.js'], debug: true, standalone:'getCurve'})
+		.transform(babelify)
+		.bundle()
+		.pipe(source('getCurve.js'))
+		.pipe(gulp.dest('dist'))
+	;
+
+});
+/*
+gulp.task('copy-config-constants', () => {
+	return gulp
+		.src('./src/config-constants.js')
+	    .pipe(gulp.dest('dist'))
+	;
+});
+
+gulp.task('copy-constants', () => {
+	return gulp
+		.src('./src/constants.js')
+	    .pipe(gulp.dest('dist'))
+	;
+});
+
+gulp.task('copy-helpers', () => {
+	return gulp
+		.src('./src/helpers.js')
+	    .pipe(gulp.dest('dist'))
 	;
 });
 */
-
-gulp.task('build-script-index', () => {
-	return 
-		gulp.src("./src/index.js")
-		.pipe(babel())
-		.pipe(gulp.dest("dist"));
-    ;
-});
-
-
-
-gulp.task('build-script-getduration', () => {
-	return 
-		browserify({
-			entries: './src/getDuration.js', 
-			debug: true
-		})
-		.transform("babelify", { presets: ["env"] })
-		.bundle()
-		// .pipe(buffer())
-  //       .pipe(sourcemaps.init())
-		// .pipe(uglify())
-		// .pipe(sourcemaps.write('./dist/maps'))
-		.pipe(gulp.dest('./dist'))
-    ;
-});
-
-gulp.task('build-demo-script', () => {
-	return browserify({entries: './src-demo/app.js', debug: true})
-		.transform("babelify", { presets: ["env", "react"] })
-		.on('error', err => console.log(err))
-		.bundle()
-		.on('error', err => console.log(err))
-		.pipe(source('app.js'))
-		.pipe(buffer())
-        .pipe(sourcemaps.init())
-		.pipe(uglify())
-		.pipe(sourcemaps.write('./dist-demo/maps'))
-		.pipe(gulp.dest('./dist-demo'))
-    ;
-});
+gulp.task('build-script', [
+	'build-script-index', 
+	'build-script-getDuration',
+	'build-script-getCurve',
+	// 'copy-config-constants', 
+	// 'copy-constants', 
+	// 'copy-helpers'
+]);
 
 function buildSassFiles(){
 
@@ -157,16 +158,6 @@ gulp.task('sass', () => {
         .pipe(gulp.dest('./dist/css'))
 	;
 });
-gulp.task('sass:watch', function () {
-	gulp.watch('src/scss/**/*.scss', ['sass']);
-});
-gulp.task('demo-sass:watch', function () {
-	gulp.watch('src-demo/styles/**/*.scss', ['demo-sass']);
-});
-
-gulp.task('script:watch', function(){
-	gulp.watch(['src/**/*', 'src-demo/**/*'], ['build-script', 'build-demo-script']);
-});
 
 gulp.task('copy-ibm-type-files', () => {
 	return gulp
@@ -175,9 +166,4 @@ gulp.task('copy-ibm-type-files', () => {
 	;
 });
 
-gulp.task('build-script', ['build-script-index']);
-
-gulp.task('watch', ['default', 'script:watch', 'sass:watch', 'demo-sass:watch']);
-
-gulp.task('default', ['build-script', 'build-demo-script', 'sass', 'demo-sass', 'copy-ibm-type-files']);
-
+gulp.task('default', ['build-script', 'sass', 'copy-ibm-type-files']);
